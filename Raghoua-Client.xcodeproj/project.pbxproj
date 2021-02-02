@@ -1,0 +1,639 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		093E327925C4F8E5003BC986 /* 3rbi.strings in Resources */ = {isa = PBXBuildFile; fileRef = 093E327825C4F8E5003BC986 /* 3rbi.strings */; };
+		093E328825C59B92003BC986 /* successfulRegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093E328725C59B92003BC986 /* successfulRegistrationVC.swift */; };
+		093E328B25C5B2BE003BC986 /* howDidYouKnowAboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093E328A25C5B2BE003BC986 /* howDidYouKnowAboutUsVC.swift */; };
+		093E32A925C5C9DA003BC986 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093E32A825C5C9D9003BC986 /* Style.swift */; };
+		09663FCD25C636BE00EA80F8 /* protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09663FCC25C636BE00EA80F8 /* protocols.swift */; };
+		09663FD525C6CE7200EA80F8 /* addressesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09663FD425C6CE7200EA80F8 /* addressesListVC.swift */; };
+		09663FD825C6D5BB00EA80F8 /* addressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09663FD725C6D5BB00EA80F8 /* addressCell.swift */; };
+		09663FDD25C6EBA000EA80F8 /* bottomPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09663FDC25C6EB9F00EA80F8 /* bottomPopupView.swift */; };
+		09663FE025C6F63D00EA80F8 /* radioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09663FDF25C6F63D00EA80F8 /* radioButton.swift */; };
+		09663FE425C7066100EA80F8 /* choicesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09663FE325C7066100EA80F8 /* choicesCell.swift */; };
+		097F4ED525C46BDD0098A855 /* setNewPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F4ED425C46BDD0098A855 /* setNewPasswordVC.swift */; };
+		097F4EDA25C48C6F0098A855 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F4ED925C48C6F0098A855 /* UIViewControllerExt.swift */; };
+		097F4EDD25C48EF70098A855 /* regionedMobileNumberTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F4EDC25C48EF70098A855 /* regionedMobileNumberTF.swift */; };
+		097F4EEF25C49D0B0098A855 /* registerMobNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F4EEE25C49D0B0098A855 /* registerMobNumberVC.swift */; };
+		097F4F0325C4C8BB0098A855 /* verifyRegisteredMobNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F4F0225C4C8BB0098A855 /* verifyRegisteredMobNumberVC.swift */; };
+		097F4F0625C4CE3C0098A855 /* createNewAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F4F0525C4CE3C0098A855 /* createNewAccountVC.swift */; };
+		09C7551725C1C305003CC87F /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C7551625C1C305003CC87F /* StringExt.swift */; };
+		09C7552025C1CBE7003CC87F /* welcomeBackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C7551F25C1CBE7003CC87F /* welcomeBackVC.swift */; };
+		09C7552A25C21490003CC87F /* Loading Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 09C7552925C21490003CC87F /* Loading Animation.json */; };
+		09C7553A25C2FEDC003CC87F /* basicBlueShadowedBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C7553925C2FEDC003CC87F /* basicBlueShadowedBtn.swift */; };
+		09C7553D25C30BA4003CC87F /* passwordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C7553C25C30BA4003CC87F /* passwordTextField.swift */; };
+		09C7554C25C361EB003CC87F /* forgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C7554B25C361EB003CC87F /* forgetPasswordVC.swift */; };
+		09C7554F25C36D37003CC87F /* basicTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C7554E25C36D37003CC87F /* basicTextField.swift */; };
+		09F1A25225C15D8600E57AE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F1A25125C15D8600E57AE1 /* AppDelegate.swift */; };
+		09F1A25425C15D8600E57AE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F1A25325C15D8600E57AE1 /* SceneDelegate.swift */; };
+		09F1A25625C15D8600E57AE1 /* welcomeHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F1A25525C15D8600E57AE1 /* welcomeHomeVC.swift */; };
+		09F1A25925C15D8600E57AE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09F1A25725C15D8600E57AE1 /* Main.storyboard */; };
+		09F1A25B25C15DA400E57AE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09F1A25A25C15DA400E57AE1 /* Assets.xcassets */; };
+		09F1A25E25C15DA400E57AE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09F1A25C25C15DA400E57AE1 /* LaunchScreen.storyboard */; };
+		09F1A26C25C1755700E57AE1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09F1A26E25C1755700E57AE1 /* Localizable.strings */; };
+		09F1A27F25C1B3B900E57AE1 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F1A27E25C1B3B900E57AE1 /* UIViewExt.swift */; };
+		09FA9C7325C387AB00E718C4 /* basicLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FA9C7225C387AB00E718C4 /* basicLabel.swift */; };
+		09FA9C7625C3899600E718C4 /* continueWithGoogleBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FA9C7525C3899600E718C4 /* continueWithGoogleBtn.swift */; };
+		09FA9C7925C3AC0D00E718C4 /* restPassMobNumberVerifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FA9C7825C3AC0C00E718C4 /* restPassMobNumberVerifyVC.swift */; };
+		09FA9C7C25C4214F00E718C4 /* codeDigitsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FA9C7B25C4214F00E718C4 /* codeDigitsTextField.swift */; };
+		09FF3D9B25C83CD7000C542B /* addAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FF3D9A25C83CD7000C542B /* addAddressVC.swift */; };
+		09FF3D9E25C84510000C542B /* spotYourLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FF3D9D25C84510000C542B /* spotYourLocationVC.swift */; };
+		09FF3DCE25C8B7E0000C542B /* basicTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FF3DCD25C8B7E0000C542B /* basicTextView.swift */; };
+		F274A8D16C23A4FFFA122EEF /* Pods_Raghoua_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E0A932C56CE018328D7E866 /* Pods_Raghoua_Client.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		093E327525C4F7CD003BC986 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		093E327825C4F8E5003BC986 /* 3rbi.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = 3rbi.strings; sourceTree = "<group>"; };
+		093E328025C50349003BC986 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		093E328725C59B92003BC986 /* successfulRegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = successfulRegistrationVC.swift; sourceTree = "<group>"; };
+		093E328A25C5B2BE003BC986 /* howDidYouKnowAboutUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = howDidYouKnowAboutUsVC.swift; sourceTree = "<group>"; };
+		093E32A825C5C9D9003BC986 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		09663FCC25C636BE00EA80F8 /* protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = protocols.swift; sourceTree = "<group>"; };
+		09663FD425C6CE7200EA80F8 /* addressesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addressesListVC.swift; sourceTree = "<group>"; };
+		09663FD725C6D5BB00EA80F8 /* addressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addressCell.swift; sourceTree = "<group>"; };
+		09663FDC25C6EB9F00EA80F8 /* bottomPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bottomPopupView.swift; sourceTree = "<group>"; };
+		09663FDF25C6F63D00EA80F8 /* radioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = radioButton.swift; sourceTree = "<group>"; };
+		09663FE325C7066100EA80F8 /* choicesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = choicesCell.swift; sourceTree = "<group>"; };
+		097F4ED425C46BDD0098A855 /* setNewPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setNewPasswordVC.swift; sourceTree = "<group>"; };
+		097F4ED925C48C6F0098A855 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		097F4EDC25C48EF70098A855 /* regionedMobileNumberTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = regionedMobileNumberTF.swift; sourceTree = "<group>"; };
+		097F4EEE25C49D0B0098A855 /* registerMobNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerMobNumberVC.swift; sourceTree = "<group>"; };
+		097F4F0225C4C8BB0098A855 /* verifyRegisteredMobNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = verifyRegisteredMobNumberVC.swift; sourceTree = "<group>"; };
+		097F4F0525C4CE3C0098A855 /* createNewAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createNewAccountVC.swift; sourceTree = "<group>"; };
+		09C7551025C1BCB7003CC87F /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		09C7551125C1BCD1003CC87F /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		09C7551625C1C305003CC87F /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		09C7551F25C1CBE7003CC87F /* welcomeBackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = welcomeBackVC.swift; sourceTree = "<group>"; };
+		09C7552925C21490003CC87F /* Loading Animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Loading Animation.json"; sourceTree = "<group>"; };
+		09C7553925C2FEDC003CC87F /* basicBlueShadowedBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = basicBlueShadowedBtn.swift; sourceTree = "<group>"; };
+		09C7553C25C30BA4003CC87F /* passwordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = passwordTextField.swift; sourceTree = "<group>"; };
+		09C7554B25C361EB003CC87F /* forgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forgetPasswordVC.swift; sourceTree = "<group>"; };
+		09C7554E25C36D37003CC87F /* basicTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = basicTextField.swift; sourceTree = "<group>"; };
+		09F1A24E25C15D8600E57AE1 /* Raghoua-Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Raghoua-Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		09F1A25125C15D8600E57AE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		09F1A25325C15D8600E57AE1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		09F1A25525C15D8600E57AE1 /* welcomeHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = welcomeHomeVC.swift; sourceTree = "<group>"; };
+		09F1A25825C15D8600E57AE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		09F1A25A25C15DA400E57AE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		09F1A25D25C15DA400E57AE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		09F1A25F25C15DA400E57AE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09F1A26F25C1755D00E57AE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		09F1A27B25C19A3A00E57AE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		09F1A27E25C1B3B900E57AE1 /* UIViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		09FA9C7225C387AB00E718C4 /* basicLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = basicLabel.swift; sourceTree = "<group>"; };
+		09FA9C7525C3899600E718C4 /* continueWithGoogleBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = continueWithGoogleBtn.swift; sourceTree = "<group>"; };
+		09FA9C7825C3AC0C00E718C4 /* restPassMobNumberVerifyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = restPassMobNumberVerifyVC.swift; sourceTree = "<group>"; };
+		09FA9C7B25C4214F00E718C4 /* codeDigitsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = codeDigitsTextField.swift; sourceTree = "<group>"; };
+		09FF3D9A25C83CD7000C542B /* addAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addAddressVC.swift; sourceTree = "<group>"; };
+		09FF3D9D25C84510000C542B /* spotYourLocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spotYourLocationVC.swift; sourceTree = "<group>"; };
+		09FF3DCD25C8B7E0000C542B /* basicTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = basicTextView.swift; sourceTree = "<group>"; };
+		2E1A7516DCE57B99F190C7D8 /* Pods-Raghoua-Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raghoua-Client.debug.xcconfig"; path = "Target Support Files/Pods-Raghoua-Client/Pods-Raghoua-Client.debug.xcconfig"; sourceTree = "<group>"; };
+		8E0A932C56CE018328D7E866 /* Pods_Raghoua_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Raghoua_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE1BDD61E1DA8CDCACC41D84 /* Pods-Raghoua-Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raghoua-Client.release.xcconfig"; path = "Target Support Files/Pods-Raghoua-Client/Pods-Raghoua-Client.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		09F1A24B25C15D8600E57AE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F274A8D16C23A4FFFA122EEF /* Pods_Raghoua_Client.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09663FCB25C636A600EA80F8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				09663FCC25C636BE00EA80F8 /* protocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		09C7552E25C2D6D6003CC87F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				09F1A25A25C15DA400E57AE1 /* Assets.xcassets */,
+				09C7552925C21490003CC87F /* Loading Animation.json */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		09C7554025C354D0003CC87F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				093E32A825C5C9D9003BC986 /* Style.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		09F1A24525C15D8600E57AE1 = {
+			isa = PBXGroup;
+			children = (
+				09F1A25025C15D8600E57AE1 /* Raghoua-Client */,
+				09F1A24F25C15D8600E57AE1 /* Products */,
+				C63A5173574DA9F226981A85 /* Pods */,
+				679695DB85B355A11D99F198 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		09F1A24F25C15D8600E57AE1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				09F1A24E25C15D8600E57AE1 /* Raghoua-Client.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		09F1A25025C15D8600E57AE1 /* Raghoua-Client */ = {
+			isa = PBXGroup;
+			children = (
+				09663FCB25C636A600EA80F8 /* Protocols */,
+				09C7554025C354D0003CC87F /* Services */,
+				09C7552E25C2D6D6003CC87F /* Assets */,
+				09F1A28325C1B51900E57AE1 /* Model */,
+				09F1A28225C1B51000E57AE1 /* View */,
+				09F1A28125C1B50700E57AE1 /* Controller */,
+				09F1A27D25C1B35900E57AE1 /* Extensions */,
+				09F1A25125C15D8600E57AE1 /* AppDelegate.swift */,
+				09F1A25325C15D8600E57AE1 /* SceneDelegate.swift */,
+				09F1A25725C15D8600E57AE1 /* Main.storyboard */,
+				09F1A26E25C1755700E57AE1 /* Localizable.strings */,
+				09F1A25C25C15DA400E57AE1 /* LaunchScreen.storyboard */,
+				09F1A25F25C15DA400E57AE1 /* Info.plist */,
+				093E327825C4F8E5003BC986 /* 3rbi.strings */,
+			);
+			path = "Raghoua-Client";
+			sourceTree = "<group>";
+		};
+		09F1A27D25C1B35900E57AE1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				097F4ED925C48C6F0098A855 /* UIViewControllerExt.swift */,
+				09F1A27E25C1B3B900E57AE1 /* UIViewExt.swift */,
+				09C7551625C1C305003CC87F /* StringExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		09F1A28125C1B50700E57AE1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				09F1A25525C15D8600E57AE1 /* welcomeHomeVC.swift */,
+				09C7551F25C1CBE7003CC87F /* welcomeBackVC.swift */,
+				09C7554B25C361EB003CC87F /* forgetPasswordVC.swift */,
+				09FA9C7825C3AC0C00E718C4 /* restPassMobNumberVerifyVC.swift */,
+				097F4ED425C46BDD0098A855 /* setNewPasswordVC.swift */,
+				097F4EEE25C49D0B0098A855 /* registerMobNumberVC.swift */,
+				097F4F0225C4C8BB0098A855 /* verifyRegisteredMobNumberVC.swift */,
+				097F4F0525C4CE3C0098A855 /* createNewAccountVC.swift */,
+				093E328725C59B92003BC986 /* successfulRegistrationVC.swift */,
+				093E328A25C5B2BE003BC986 /* howDidYouKnowAboutUsVC.swift */,
+				09663FD425C6CE7200EA80F8 /* addressesListVC.swift */,
+				09FF3D9D25C84510000C542B /* spotYourLocationVC.swift */,
+				09FF3D9A25C83CD7000C542B /* addAddressVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		09F1A28225C1B51000E57AE1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				09C7553925C2FEDC003CC87F /* basicBlueShadowedBtn.swift */,
+				09C7553C25C30BA4003CC87F /* passwordTextField.swift */,
+				09C7554E25C36D37003CC87F /* basicTextField.swift */,
+				09FA9C7B25C4214F00E718C4 /* codeDigitsTextField.swift */,
+				09FA9C7225C387AB00E718C4 /* basicLabel.swift */,
+				09FF3DCD25C8B7E0000C542B /* basicTextView.swift */,
+				09FA9C7525C3899600E718C4 /* continueWithGoogleBtn.swift */,
+				097F4EDC25C48EF70098A855 /* regionedMobileNumberTF.swift */,
+				09663FDC25C6EB9F00EA80F8 /* bottomPopupView.swift */,
+				09663FD725C6D5BB00EA80F8 /* addressCell.swift */,
+				09663FDF25C6F63D00EA80F8 /* radioButton.swift */,
+				09663FE325C7066100EA80F8 /* choicesCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		09F1A28325C1B51900E57AE1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		679695DB85B355A11D99F198 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8E0A932C56CE018328D7E866 /* Pods_Raghoua_Client.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C63A5173574DA9F226981A85 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2E1A7516DCE57B99F190C7D8 /* Pods-Raghoua-Client.debug.xcconfig */,
+				DE1BDD61E1DA8CDCACC41D84 /* Pods-Raghoua-Client.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		09F1A24D25C15D8600E57AE1 /* Raghoua-Client */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 09F1A26225C15DA400E57AE1 /* Build configuration list for PBXNativeTarget "Raghoua-Client" */;
+			buildPhases = (
+				A55CB231BCF092364839C029 /* [CP] Check Pods Manifest.lock */,
+				09F1A24A25C15D8600E57AE1 /* Sources */,
+				09F1A24B25C15D8600E57AE1 /* Frameworks */,
+				09F1A24C25C15D8600E57AE1 /* Resources */,
+				89AFBB143A6A8ECE177B0261 /* [CP] Embed Pods Frameworks */,
+				669BF9DDB4DD69999C438A7A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Raghoua-Client";
+			productName = "Raghoua-Client";
+			productReference = 09F1A24E25C15D8600E57AE1 /* Raghoua-Client.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		09F1A24625C15D8600E57AE1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					09F1A24D25C15D8600E57AE1 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = 09F1A24925C15D8600E57AE1 /* Build configuration list for PBXProject "Raghoua-Client" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ar,
+			);
+			mainGroup = 09F1A24525C15D8600E57AE1;
+			productRefGroup = 09F1A24F25C15D8600E57AE1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				09F1A24D25C15D8600E57AE1 /* Raghoua-Client */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		09F1A24C25C15D8600E57AE1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09F1A25E25C15DA400E57AE1 /* LaunchScreen.storyboard in Resources */,
+				093E327925C4F8E5003BC986 /* 3rbi.strings in Resources */,
+				09C7552A25C21490003CC87F /* Loading Animation.json in Resources */,
+				09F1A26C25C1755700E57AE1 /* Localizable.strings in Resources */,
+				09F1A25B25C15DA400E57AE1 /* Assets.xcassets in Resources */,
+				09F1A25925C15D8600E57AE1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		669BF9DDB4DD69999C438A7A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Raghoua-Client/Pods-Raghoua-Client-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Raghoua-Client/Pods-Raghoua-Client-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Raghoua-Client/Pods-Raghoua-Client-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89AFBB143A6A8ECE177B0261 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Raghoua-Client/Pods-Raghoua-Client-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Raghoua-Client/Pods-Raghoua-Client-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Raghoua-Client/Pods-Raghoua-Client-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A55CB231BCF092364839C029 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Raghoua-Client-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		09F1A24A25C15D8600E57AE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09C7552025C1CBE7003CC87F /* welcomeBackVC.swift in Sources */,
+				09FA9C7925C3AC0D00E718C4 /* restPassMobNumberVerifyVC.swift in Sources */,
+				09663FD825C6D5BB00EA80F8 /* addressCell.swift in Sources */,
+				09663FE025C6F63D00EA80F8 /* radioButton.swift in Sources */,
+				09663FDD25C6EBA000EA80F8 /* bottomPopupView.swift in Sources */,
+				09FF3D9E25C84510000C542B /* spotYourLocationVC.swift in Sources */,
+				09FF3D9B25C83CD7000C542B /* addAddressVC.swift in Sources */,
+				09663FCD25C636BE00EA80F8 /* protocols.swift in Sources */,
+				097F4EDA25C48C6F0098A855 /* UIViewControllerExt.swift in Sources */,
+				097F4F0325C4C8BB0098A855 /* verifyRegisteredMobNumberVC.swift in Sources */,
+				093E328B25C5B2BE003BC986 /* howDidYouKnowAboutUsVC.swift in Sources */,
+				093E32A925C5C9DA003BC986 /* Style.swift in Sources */,
+				09C7554C25C361EB003CC87F /* forgetPasswordVC.swift in Sources */,
+				09663FD525C6CE7200EA80F8 /* addressesListVC.swift in Sources */,
+				097F4EEF25C49D0B0098A855 /* registerMobNumberVC.swift in Sources */,
+				09663FE425C7066100EA80F8 /* choicesCell.swift in Sources */,
+				09FF3DCE25C8B7E0000C542B /* basicTextView.swift in Sources */,
+				097F4EDD25C48EF70098A855 /* regionedMobileNumberTF.swift in Sources */,
+				09F1A27F25C1B3B900E57AE1 /* UIViewExt.swift in Sources */,
+				09F1A25625C15D8600E57AE1 /* welcomeHomeVC.swift in Sources */,
+				093E328825C59B92003BC986 /* successfulRegistrationVC.swift in Sources */,
+				09FA9C7625C3899600E718C4 /* continueWithGoogleBtn.swift in Sources */,
+				09C7554F25C36D37003CC87F /* basicTextField.swift in Sources */,
+				09FA9C7C25C4214F00E718C4 /* codeDigitsTextField.swift in Sources */,
+				09C7553A25C2FEDC003CC87F /* basicBlueShadowedBtn.swift in Sources */,
+				09F1A25225C15D8600E57AE1 /* AppDelegate.swift in Sources */,
+				09F1A25425C15D8600E57AE1 /* SceneDelegate.swift in Sources */,
+				097F4F0625C4CE3C0098A855 /* createNewAccountVC.swift in Sources */,
+				097F4ED525C46BDD0098A855 /* setNewPasswordVC.swift in Sources */,
+				09C7553D25C30BA4003CC87F /* passwordTextField.swift in Sources */,
+				09FA9C7325C387AB00E718C4 /* basicLabel.swift in Sources */,
+				09C7551725C1C305003CC87F /* StringExt.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		09F1A25725C15D8600E57AE1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				09F1A25825C15D8600E57AE1 /* Base */,
+				093E327525C4F7CD003BC986 /* ar */,
+				093E328025C50349003BC986 /* en */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		09F1A25C25C15DA400E57AE1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				09F1A25D25C15DA400E57AE1 /* Base */,
+				09F1A27B25C19A3A00E57AE1 /* en */,
+				09C7551025C1BCB7003CC87F /* ar */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		09F1A26E25C1755700E57AE1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				09F1A26F25C1755D00E57AE1 /* en */,
+				09C7551125C1BCD1003CC87F /* ar */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		09F1A26025C15DA400E57AE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		09F1A26125C15DA400E57AE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		09F1A26325C15DA400E57AE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E1A7516DCE57B99F190C7D8 /* Pods-Raghoua-Client.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6FWNBQ59FK;
+				INFOPLIST_FILE = "Raghoua-Client/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "AhmedTarek.Raghoua-Client";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		09F1A26425C15DA400E57AE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE1BDD61E1DA8CDCACC41D84 /* Pods-Raghoua-Client.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6FWNBQ59FK;
+				INFOPLIST_FILE = "Raghoua-Client/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "AhmedTarek.Raghoua-Client";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		09F1A24925C15D8600E57AE1 /* Build configuration list for PBXProject "Raghoua-Client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09F1A26025C15DA400E57AE1 /* Debug */,
+				09F1A26125C15DA400E57AE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		09F1A26225C15DA400E57AE1 /* Build configuration list for PBXNativeTarget "Raghoua-Client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09F1A26325C15DA400E57AE1 /* Debug */,
+				09F1A26425C15DA400E57AE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 09F1A24625C15D8600E57AE1 /* Project object */;
+}

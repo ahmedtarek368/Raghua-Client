@@ -1,0 +1,32 @@
+PODS:
+  - BottomPopup (0.6.0)
+  - GoogleMaps (4.1.0):
+    - GoogleMaps/Maps (= 4.1.0)
+  - GoogleMaps/Base (4.1.0)
+  - GoogleMaps/Maps (4.1.0):
+    - GoogleMaps/Base
+  - lottie-ios (3.1.9)
+  - MOLH (1.4.3)
+
+DEPENDENCIES:
+  - BottomPopup
+  - GoogleMaps
+  - lottie-ios
+  - MOLH
+
+SPEC REPOS:
+  trunk:
+    - BottomPopup
+    - GoogleMaps
+    - lottie-ios
+    - MOLH
+
+SPEC CHECKSUMS:
+  BottomPopup: 1d5649a3b29396238f0e8f3c82075a7bfcf37ba7
+  GoogleMaps: 008e2c80e38605b56b560e8deb73d4194ff30bef
+  lottie-ios: 3a3758ef5a008e762faec9c9d50a39842f26d124
+  MOLH: e45827d200aeb1310641090fd8cd03ad2b42ae72
+
+PODFILE CHECKSUM: 122dadea7193d2a468515427121a55c78a048404
+
+COCOAPODS: 1.9.3
