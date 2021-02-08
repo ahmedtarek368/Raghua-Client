@@ -10,4 +10,7 @@ target 'Raghoua-Client' do
   pod 'BottomPopup'
   pod 'GoogleMaps'
   pod 'MOLH'
+  pod 'Alamofire'
+  pod 'FBSDKLoginKit'
+  
 end

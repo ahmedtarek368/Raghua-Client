@@ -21,6 +21,12 @@ class addressCell: UITableViewCell {
             detailedAddress.textAlignment = .right
         }
     }
+    
+    func updateCell(address: Address){
+        self.addressType.text = "\(address.addressType)"
+        self.address.text = "\(address.address)"
+        self.detailedAddress.text = "\(address.street) \(address.nearestPlace)"
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

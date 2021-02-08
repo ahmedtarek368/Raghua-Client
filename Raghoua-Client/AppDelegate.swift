@@ -8,8 +8,11 @@
 import UIKit
 import GoogleMaps
 import MOLH
+import FBSDKCoreKit
 //AIzaSyDDN8kxOEXKznFoCeiXXFCMiinpCvj8Gsc
 
+
+//@UIApplicationMain
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -20,8 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyDDN8kxOEXKznFoCeiXXFCMiinpCvj8Gsc")
         MOLHLanguage.setDefaultLanguage("ar")
         MOLH.shared.activate(true)
+        FBSDKCoreKit.ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
 //        UserDefaults.standard.set(["ar"], forKey: "AppleLanguages")
 //        UserDefaults.standard.synchronize()
+//        ApplicationDelegate.shared.application(
+//            application,
+//            didFinishLaunchingWithOptions: launchOptions
+//        )
         return true
     }
 

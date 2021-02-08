@@ -11,10 +11,12 @@ import BottomPopup
 
 class howDidYouKnowAboutUsVC: UIViewController {
     
-    
+    var user: User = User()
     @IBOutlet weak var bottomPopupView: bottomPopupView!
     @IBOutlet weak var choicesTV: UITableView!
-    let choicesAr : [String] = ["عن طريق اعلان","اخبرني صديق لي ","عن طريق السوشيال ميديا"]
+    let choices : [String] = ["from advertisement".localized,"from social media".localized,"a friend told me".localized]
+    
+    //let choicesEn : [String] = ["from addvertisement","a friend told me","from social media"]
     
     override func viewDidLayoutSubviews() {
         bottomPopupView.setBottomPopupHeight(height: Float(UIScreen.main.bounds.size.height/4.98))
@@ -38,6 +40,7 @@ class howDidYouKnowAboutUsVC: UIViewController {
     
     @IBAction func sendBtnPressed(_ sender: Any) {
         let addressesListView : addressesListVC = self.storyboard?.instantiateViewController(identifier: "ALVC") as! addressesListVC
+        addressesListView.user = self.user
         self.navigationController?.pushViewController(addressesListView, animated: true)
     }
 }
@@ -49,12 +52,12 @@ extension howDidYouKnowAboutUsVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return choicesAr.count
+        return choices.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : choicesCell = tableView.dequeueReusableCell(withIdentifier: "CC", for: indexPath) as! choicesCell
-        cell.initializeCell(choiceText: choicesAr[indexPath.row])
+        cell.initializeCell(choiceText: choices[indexPath.row])
         return cell
     }
     

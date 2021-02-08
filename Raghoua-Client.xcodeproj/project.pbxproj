@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		093E327925C4F8E5003BC986 /* 3rbi.strings in Resources */ = {isa = PBXBuildFile; fileRef = 093E327825C4F8E5003BC986 /* 3rbi.strings */; };
+		0935F93825CC48F700F9CF5D /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0935F93725CC48F700F9CF5D /* Address.swift */; };
 		093E328825C59B92003BC986 /* successfulRegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093E328725C59B92003BC986 /* successfulRegistrationVC.swift */; };
 		093E328B25C5B2BE003BC986 /* howDidYouKnowAboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093E328A25C5B2BE003BC986 /* howDidYouKnowAboutUsVC.swift */; };
-		093E32A925C5C9DA003BC986 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093E32A825C5C9D9003BC986 /* Style.swift */; };
+		09645EA125CB602C0040C02A /* verficationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09645EA025CB602C0040C02A /* verficationCode.swift */; };
+		09645EA425CB6D550040C02A /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09645EA325CB6D550040C02A /* UIButtonExt.swift */; };
 		09663FCD25C636BE00EA80F8 /* protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09663FCC25C636BE00EA80F8 /* protocols.swift */; };
 		09663FD525C6CE7200EA80F8 /* addressesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09663FD425C6CE7200EA80F8 /* addressesListVC.swift */; };
 		09663FD825C6D5BB00EA80F8 /* addressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09663FD725C6D5BB00EA80F8 /* addressCell.swift */; };
@@ -23,6 +24,10 @@
 		097F4EEF25C49D0B0098A855 /* registerMobNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F4EEE25C49D0B0098A855 /* registerMobNumberVC.swift */; };
 		097F4F0325C4C8BB0098A855 /* verifyRegisteredMobNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F4F0225C4C8BB0098A855 /* verifyRegisteredMobNumberVC.swift */; };
 		097F4F0625C4CE3C0098A855 /* createNewAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F4F0525C4CE3C0098A855 /* createNewAccountVC.swift */; };
+		09C1550025CA114300E7FC56 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C154FF25CA114300E7FC56 /* User.swift */; };
+		09C1550A25CA15D600E7FC56 /* networkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1550925CA15D600E7FC56 /* networkServices.swift */; };
+		09C1550D25CA3F6500E7FC56 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1550C25CA3F6500E7FC56 /* URLs.swift */; };
+		09C326CF25D04E3D00B621F2 /* laundriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C326CE25D04E3D00B621F2 /* laundriesCell.swift */; };
 		09C7551725C1C305003CC87F /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C7551625C1C305003CC87F /* StringExt.swift */; };
 		09C7552025C1CBE7003CC87F /* welcomeBackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C7551F25C1CBE7003CC87F /* welcomeBackVC.swift */; };
 		09C7552A25C21490003CC87F /* Loading Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 09C7552925C21490003CC87F /* Loading Animation.json */; };
@@ -30,6 +35,11 @@
 		09C7553D25C30BA4003CC87F /* passwordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C7553C25C30BA4003CC87F /* passwordTextField.swift */; };
 		09C7554C25C361EB003CC87F /* forgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C7554B25C361EB003CC87F /* forgetPasswordVC.swift */; };
 		09C7554F25C36D37003CC87F /* basicTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C7554E25C36D37003CC87F /* basicTextField.swift */; };
+		09DCD15C25CEF55A002EC380 /* laundriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DCD15B25CEF55A002EC380 /* laundriesVC.swift */; };
+		09DCD15F25CF08CD002EC380 /* Reciept.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DCD15E25CF08CD002EC380 /* Reciept.storyboard */; };
+		09DCD16325CFD206002EC380 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DCD16225CFD205002EC380 /* Favorites.storyboard */; };
+		09DCD16625CFD3F6002EC380 /* MyAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DCD16525CFD3F6002EC380 /* MyAccount.storyboard */; };
+		09DCD16825CFD51B002EC380 /* Laundries.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DCD16A25CFD51B002EC380 /* Laundries.storyboard */; };
 		09F1A25225C15D8600E57AE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F1A25125C15D8600E57AE1 /* AppDelegate.swift */; };
 		09F1A25425C15D8600E57AE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F1A25325C15D8600E57AE1 /* SceneDelegate.swift */; };
 		09F1A25625C15D8600E57AE1 /* welcomeHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F1A25525C15D8600E57AE1 /* welcomeHomeVC.swift */; };
@@ -49,24 +59,30 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		093E327525C4F7CD003BC986 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
-		093E327825C4F8E5003BC986 /* 3rbi.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = 3rbi.strings; sourceTree = "<group>"; };
-		093E328025C50349003BC986 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		0935F93725CC48F700F9CF5D /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		093E328725C59B92003BC986 /* successfulRegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = successfulRegistrationVC.swift; sourceTree = "<group>"; };
 		093E328A25C5B2BE003BC986 /* howDidYouKnowAboutUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = howDidYouKnowAboutUsVC.swift; sourceTree = "<group>"; };
-		093E32A825C5C9D9003BC986 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		09645E9825CB170E0040C02A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		09645E9A25CB17B30040C02A /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		09645EA025CB602C0040C02A /* verficationCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = verficationCode.swift; sourceTree = "<group>"; };
+		09645EA325CB6D550040C02A /* UIButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
 		09663FCC25C636BE00EA80F8 /* protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = protocols.swift; sourceTree = "<group>"; };
 		09663FD425C6CE7200EA80F8 /* addressesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addressesListVC.swift; sourceTree = "<group>"; };
 		09663FD725C6D5BB00EA80F8 /* addressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addressCell.swift; sourceTree = "<group>"; };
 		09663FDC25C6EB9F00EA80F8 /* bottomPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bottomPopupView.swift; sourceTree = "<group>"; };
 		09663FDF25C6F63D00EA80F8 /* radioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = radioButton.swift; sourceTree = "<group>"; };
 		09663FE325C7066100EA80F8 /* choicesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = choicesCell.swift; sourceTree = "<group>"; };
+		096988F425CCC129005E1563 /* Raghoua-Client.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Raghoua-Client.entitlements"; sourceTree = "<group>"; };
 		097F4ED425C46BDD0098A855 /* setNewPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setNewPasswordVC.swift; sourceTree = "<group>"; };
 		097F4ED925C48C6F0098A855 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		097F4EDC25C48EF70098A855 /* regionedMobileNumberTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = regionedMobileNumberTF.swift; sourceTree = "<group>"; };
 		097F4EEE25C49D0B0098A855 /* registerMobNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerMobNumberVC.swift; sourceTree = "<group>"; };
 		097F4F0225C4C8BB0098A855 /* verifyRegisteredMobNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = verifyRegisteredMobNumberVC.swift; sourceTree = "<group>"; };
 		097F4F0525C4CE3C0098A855 /* createNewAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createNewAccountVC.swift; sourceTree = "<group>"; };
+		09C154FF25CA114300E7FC56 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		09C1550925CA15D600E7FC56 /* networkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networkServices.swift; sourceTree = "<group>"; };
+		09C1550C25CA3F6500E7FC56 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
+		09C326CE25D04E3D00B621F2 /* laundriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = laundriesCell.swift; sourceTree = "<group>"; };
 		09C7551025C1BCB7003CC87F /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		09C7551125C1BCD1003CC87F /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		09C7551625C1C305003CC87F /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
@@ -76,6 +92,11 @@
 		09C7553C25C30BA4003CC87F /* passwordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = passwordTextField.swift; sourceTree = "<group>"; };
 		09C7554B25C361EB003CC87F /* forgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forgetPasswordVC.swift; sourceTree = "<group>"; };
 		09C7554E25C36D37003CC87F /* basicTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = basicTextField.swift; sourceTree = "<group>"; };
+		09DCD15B25CEF55A002EC380 /* laundriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = laundriesVC.swift; sourceTree = "<group>"; };
+		09DCD15E25CF08CD002EC380 /* Reciept.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reciept.storyboard; sourceTree = "<group>"; };
+		09DCD16225CFD205002EC380 /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
+		09DCD16525CFD3F6002EC380 /* MyAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyAccount.storyboard; sourceTree = "<group>"; };
+		09DCD16925CFD51B002EC380 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Laundries.storyboard; sourceTree = "<group>"; };
 		09F1A24E25C15D8600E57AE1 /* Raghoua-Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Raghoua-Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09F1A25125C15D8600E57AE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09F1A25325C15D8600E57AE1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +140,19 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		0969893A25CEE99A005E1563 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				09F1A25C25C15DA400E57AE1 /* LaunchScreen.storyboard */,
+				09F1A25725C15D8600E57AE1 /* Main.storyboard */,
+				09DCD16A25CFD51B002EC380 /* Laundries.storyboard */,
+				09DCD15E25CF08CD002EC380 /* Reciept.storyboard */,
+				09DCD16225CFD205002EC380 /* Favorites.storyboard */,
+				09DCD16525CFD3F6002EC380 /* MyAccount.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		09C7552E25C2D6D6003CC87F /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,7 +165,8 @@
 		09C7554025C354D0003CC87F /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				093E32A825C5C9D9003BC986 /* Style.swift */,
+				09C1550925CA15D600E7FC56 /* networkServices.swift */,
+				09C1550C25CA3F6500E7FC56 /* URLs.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -157,6 +192,7 @@
 		09F1A25025C15D8600E57AE1 /* Raghoua-Client */ = {
 			isa = PBXGroup;
 			children = (
+				096988F425CCC129005E1563 /* Raghoua-Client.entitlements */,
 				09663FCB25C636A600EA80F8 /* Protocols */,
 				09C7554025C354D0003CC87F /* Services */,
 				09C7552E25C2D6D6003CC87F /* Assets */,
@@ -166,11 +202,9 @@
 				09F1A27D25C1B35900E57AE1 /* Extensions */,
 				09F1A25125C15D8600E57AE1 /* AppDelegate.swift */,
 				09F1A25325C15D8600E57AE1 /* SceneDelegate.swift */,
-				09F1A25725C15D8600E57AE1 /* Main.storyboard */,
+				0969893A25CEE99A005E1563 /* Storyboards */,
 				09F1A26E25C1755700E57AE1 /* Localizable.strings */,
-				09F1A25C25C15DA400E57AE1 /* LaunchScreen.storyboard */,
 				09F1A25F25C15DA400E57AE1 /* Info.plist */,
-				093E327825C4F8E5003BC986 /* 3rbi.strings */,
 			);
 			path = "Raghoua-Client";
 			sourceTree = "<group>";
@@ -181,6 +215,7 @@
 				097F4ED925C48C6F0098A855 /* UIViewControllerExt.swift */,
 				09F1A27E25C1B3B900E57AE1 /* UIViewExt.swift */,
 				09C7551625C1C305003CC87F /* StringExt.swift */,
+				09645EA325CB6D550040C02A /* UIButtonExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -201,6 +236,7 @@
 				09663FD425C6CE7200EA80F8 /* addressesListVC.swift */,
 				09FF3D9D25C84510000C542B /* spotYourLocationVC.swift */,
 				09FF3D9A25C83CD7000C542B /* addAddressVC.swift */,
+				09DCD15B25CEF55A002EC380 /* laundriesVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -220,6 +256,7 @@
 				09663FD725C6D5BB00EA80F8 /* addressCell.swift */,
 				09663FDF25C6F63D00EA80F8 /* radioButton.swift */,
 				09663FE325C7066100EA80F8 /* choicesCell.swift */,
+				09C326CE25D04E3D00B621F2 /* laundriesCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -227,6 +264,9 @@
 		09F1A28325C1B51900E57AE1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				09C154FF25CA114300E7FC56 /* User.swift */,
+				09645EA025CB602C0040C02A /* verficationCode.swift */,
+				0935F93725CC48F700F9CF5D /* Address.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,11 +349,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09DCD15F25CF08CD002EC380 /* Reciept.storyboard in Resources */,
 				09F1A25E25C15DA400E57AE1 /* LaunchScreen.storyboard in Resources */,
-				093E327925C4F8E5003BC986 /* 3rbi.strings in Resources */,
+				09DCD16625CFD3F6002EC380 /* MyAccount.storyboard in Resources */,
 				09C7552A25C21490003CC87F /* Loading Animation.json in Resources */,
+				09DCD16825CFD51B002EC380 /* Laundries.storyboard in Resources */,
 				09F1A26C25C1755700E57AE1 /* Localizable.strings in Resources */,
 				09F1A25B25C15DA400E57AE1 /* Assets.xcassets in Resources */,
+				09DCD16325CFD206002EC380 /* Favorites.storyboard in Resources */,
 				09F1A25925C15D8600E57AE1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,17 +434,21 @@
 				09663FDD25C6EBA000EA80F8 /* bottomPopupView.swift in Sources */,
 				09FF3D9E25C84510000C542B /* spotYourLocationVC.swift in Sources */,
 				09FF3D9B25C83CD7000C542B /* addAddressVC.swift in Sources */,
+				09645EA425CB6D550040C02A /* UIButtonExt.swift in Sources */,
 				09663FCD25C636BE00EA80F8 /* protocols.swift in Sources */,
 				097F4EDA25C48C6F0098A855 /* UIViewControllerExt.swift in Sources */,
 				097F4F0325C4C8BB0098A855 /* verifyRegisteredMobNumberVC.swift in Sources */,
 				093E328B25C5B2BE003BC986 /* howDidYouKnowAboutUsVC.swift in Sources */,
-				093E32A925C5C9DA003BC986 /* Style.swift in Sources */,
 				09C7554C25C361EB003CC87F /* forgetPasswordVC.swift in Sources */,
+				09C1550A25CA15D600E7FC56 /* networkServices.swift in Sources */,
 				09663FD525C6CE7200EA80F8 /* addressesListVC.swift in Sources */,
 				097F4EEF25C49D0B0098A855 /* registerMobNumberVC.swift in Sources */,
 				09663FE425C7066100EA80F8 /* choicesCell.swift in Sources */,
 				09FF3DCE25C8B7E0000C542B /* basicTextView.swift in Sources */,
 				097F4EDD25C48EF70098A855 /* regionedMobileNumberTF.swift in Sources */,
+				09645EA125CB602C0040C02A /* verficationCode.swift in Sources */,
+				09DCD15C25CEF55A002EC380 /* laundriesVC.swift in Sources */,
+				0935F93825CC48F700F9CF5D /* Address.swift in Sources */,
 				09F1A27F25C1B3B900E57AE1 /* UIViewExt.swift in Sources */,
 				09F1A25625C15D8600E57AE1 /* welcomeHomeVC.swift in Sources */,
 				093E328825C59B92003BC986 /* successfulRegistrationVC.swift in Sources */,
@@ -409,6 +456,7 @@
 				09C7554F25C36D37003CC87F /* basicTextField.swift in Sources */,
 				09FA9C7C25C4214F00E718C4 /* codeDigitsTextField.swift in Sources */,
 				09C7553A25C2FEDC003CC87F /* basicBlueShadowedBtn.swift in Sources */,
+				09C1550D25CA3F6500E7FC56 /* URLs.swift in Sources */,
 				09F1A25225C15D8600E57AE1 /* AppDelegate.swift in Sources */,
 				09F1A25425C15D8600E57AE1 /* SceneDelegate.swift in Sources */,
 				097F4F0625C4CE3C0098A855 /* createNewAccountVC.swift in Sources */,
@@ -416,18 +464,28 @@
 				09C7553D25C30BA4003CC87F /* passwordTextField.swift in Sources */,
 				09FA9C7325C387AB00E718C4 /* basicLabel.swift in Sources */,
 				09C7551725C1C305003CC87F /* StringExt.swift in Sources */,
+				09C326CF25D04E3D00B621F2 /* laundriesCell.swift in Sources */,
+				09C1550025CA114300E7FC56 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		09DCD16A25CFD51B002EC380 /* Laundries.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				09DCD16925CFD51B002EC380 /* Base */,
+			);
+			name = Laundries.storyboard;
+			sourceTree = "<group>";
+		};
 		09F1A25725C15D8600E57AE1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				09F1A25825C15D8600E57AE1 /* Base */,
-				093E327525C4F7CD003BC986 /* ar */,
-				093E328025C50349003BC986 /* en */,
+				09645E9825CB170E0040C02A /* en */,
+				09645E9A25CB17B30040C02A /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -578,14 +636,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Raghoua-Client/Raghoua-Client.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6FWNBQ59FK;
+				DEVELOPMENT_TEAM = 585E4XGKBL;
 				INFOPLIST_FILE = "Raghoua-Client/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "AhmedTarek.Raghoua-Client";
+				PRODUCT_BUNDLE_IDENTIFIER = "AhmedTarek.Raghua-Client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -598,14 +657,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Raghoua-Client/Raghoua-Client.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6FWNBQ59FK;
+				DEVELOPMENT_TEAM = 585E4XGKBL;
 				INFOPLIST_FILE = "Raghoua-Client/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "AhmedTarek.Raghoua-Client";
+				PRODUCT_BUNDLE_IDENTIFIER = "AhmedTarek.Raghua-Client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

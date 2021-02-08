@@ -20,6 +20,9 @@
 /* Class = "UIButton"; normalTitle = "الدخول كزائر"; ObjectID = "7Hv-1P-qF8"; */
 "7Hv-1P-qF8.normalTitle" = "الدخول كزائر";
 
+/* Class = "UIButton"; normalTitle = "ارسال"; ObjectID = "9dC-ic-BxD"; */
+"9dC-ic-BxD.normalTitle" = "ارسال";
+
 /* Class = "UIButton"; normalTitle = "تسجيل الدخول"; ObjectID = "9qe-w2-EQr"; */
 "9qe-w2-EQr.normalTitle" = "تسجيل الدخول";
 
@@ -44,8 +47,14 @@
 /* Class = "UILabel"; text = "1:59"; ObjectID = "FAu-zC-TO8"; */
 "FAu-zC-TO8.text" = "1:59";
 
+/* Class = "UITextField"; placeholder = "الشارع"; ObjectID = "FqN-OL-eVh"; */
+"FqN-OL-eVh.placeholder" = "الشارع";
+
 /* Class = "UIButton"; normalTitle = "تسجيل جديد"; ObjectID = "IMh-sA-jMM"; */
 "IMh-sA-jMM.normalTitle" = "تسجيل جديد";
+
+/* Class = "UILabel"; text = "كيف عرفت عنا ؟"; ObjectID = "Ipz-Nt-9je"; */
+"Ipz-Nt-9je.text" = "كيف عرفت عنا ؟";
 
 /* Class = "UITextField"; placeholder = "الاسم"; ObjectID = "KRJ-ha-sjL"; */
 "KRJ-ha-sjL.placeholder" = "الاسم";
@@ -62,8 +71,17 @@
 /* Class = "UILabel"; text = "+2001001234567"; ObjectID = "MXG-gq-gXn"; */
 "MXG-gq-gXn.text" = "+2001001234567";
 
+/* Class = "UIButton"; normalTitle = "شروط الاستخدام وسياسة الخصوصية"; ObjectID = "Mpa-lb-xux"; */
+"Mpa-lb-xux.normalTitle" = "شروط الاستخدام وسياسة الخصوصية";
+
+/* Class = "UIViewController"; title = "SRVC"; ObjectID = "NfM-ia-ctO"; */
+"NfM-ia-ctO.title" = "SRVC";
+
 /* Class = "UILabel"; text = " أدخل رقم جوال المرتبط بحسابك"; ObjectID = "O7o-Z8-xeQ"; */
 "O7o-Z8-xeQ.text" = " أدخل رقم جوال المرتبط بحسابك";
+
+/* Class = "UILabel"; text = "الرياض , الروضة , 1 , 12 , 1"; ObjectID = "O9R-20-YMe"; */
+"O9R-20-YMe.text" = "الرياض , الروضة , 1 , 12 , 1";
 
 /* Class = "UITextField"; placeholder = "إعادة كلمة المرور الجديدة"; ObjectID = "Ojw-AE-mYV"; */
 "Ojw-AE-mYV.placeholder" = "إعادة كلمة المرور الجديدة";
@@ -71,14 +89,38 @@
 /* Class = "UILabel"; text = "لدي حساب بالفعل"; ObjectID = "Qo4-Bp-Dpa"; */
 "Qo4-Bp-Dpa.text" = "لدي حساب بالفعل";
 
+/* Class = "UITextField"; placeholder = "الطابق"; ObjectID = "U7n-gn-2nk"; */
+"U7n-gn-2nk.placeholder" = "الطابق";
+
+/* Class = "UIButton"; normalTitle = "حفظ"; ObjectID = "X9S-9B-SHf"; */
+"X9S-9B-SHf.normalTitle" = "حفظ";
+
+/* Class = "UILabel"; text = "تم تسجيل حسابك بنجاح"; ObjectID = "YHp-fp-CBd"; */
+"YHp-fp-CBd.text" = "تم تسجيل حسابك بنجاح";
+
 /* Class = "UILabel"; text = "ارسلنا إلى الرقم"; ObjectID = "ZrM-xt-C54"; */
 "ZrM-xt-C54.text" = "ارسلنا إلى الرقم";
 
 /* Class = "UIButton"; normalTitle = "إعادة إرسال"; ObjectID = "ZrO-8x-w1o"; */
 "ZrO-8x-w1o.normalTitle" = "إعادة إرسال";
 
+/* Class = "UILabel"; text = "موقعك"; ObjectID = "Zsd-YR-Ng1"; */
+"Zsd-YR-Ng1.text" = "موقعك";
+
+/* Class = "UITextView"; text = "6739 الملوح بن ابي عامر، الروضة،، الرياض 13213 3467، السعودية"; ObjectID = "Zxz-zf-nrg"; */
+"Zxz-zf-nrg.text" = "6739 الملوح بن ابي عامر، الروضة،، الرياض 13213 3467، السعودية";
+
+/* Class = "UITextField"; placeholder = "اقرب معلم"; ObjectID = "aOM-ar-gIa"; */
+"aOM-ar-gIa.placeholder" = "اقرب معلم";
+
 /* Class = "UILabel"; text = "لخدمات غسيل اونلاين"; ObjectID = "aaJ-DG-ngn"; */
 "aaJ-DG-ngn.text" = "لخدمات غسيل اونلاين";
+
+/* Class = "UIButton"; normalTitle = "تأكيد"; ObjectID = "adZ-XL-IfF"; */
+"adZ-XL-IfF.normalTitle" = "تأكيد";
+
+/* Class = "UIButton"; normalTitle = "تخطي"; ObjectID = "bbk-pk-rUB"; */
+"bbk-pk-rUB.normalTitle" = "تخطي";
 
 /* Class = "UILabel"; text = "ادخل رقم جوالك"; ObjectID = "cCX-lw-kaa"; */
 "cCX-lw-kaa.text" = "ادخل رقم جوالك";
@@ -89,17 +131,35 @@
 /* Class = "UITextField"; placeholder = "البريد الالكتروني"; ObjectID = "fEz-Id-iHC"; */
 "fEz-Id-iHC.placeholder" = "البريد الالكتروني";
 
+/* Class = "UILabel"; text = "حدد عنوانك"; ObjectID = "fUP-rw-hit"; */
+"fUP-rw-hit.text" = "حدد عنوانك";
+
+/* Class = "UILabel"; text = "موقعك علي الخريطة"; ObjectID = "hgQ-ok-KHu"; */
+"hgQ-ok-KHu.text" = "موقعك علي الخريطة";
+
 /* Class = "UIButton"; normalTitle = "هل نسيت كلمة المرور ؟"; ObjectID = "iGY-Lz-TT1"; */
 "iGY-Lz-TT1.normalTitle" = "هل نسيت كلمة المرور ؟";
 
+/* Class = "UILabel"; text = "المنزل"; ObjectID = "iPD-Xr-ioM"; */
+"iPD-Xr-ioM.text" = "المنزل";
+
+/* Class = "UITextField"; placeholder = "العمارة او المبني"; ObjectID = "ilw-NX-S8x"; */
+"ilw-NX-S8x.placeholder" = "العمارة او المبني";
+
 /* Class = "UILabel"; text = "مرحبا بعودتك"; ObjectID = "jIp-b9-hEu"; */
 "jIp-b9-hEu.text" = "مرحبا بعودتك";
+
+/* Class = "UILabel"; text = "قائمة عناويني"; ObjectID = "jPb-cN-YNL"; */
+"jPb-cN-YNL.text" = "قائمة عناويني";
 
 /* Class = "UIButton"; normalTitle = "إعادة إرسال"; ObjectID = "jZR-m1-lLx"; */
 "jZR-m1-lLx.normalTitle" = "إعادة إرسال";
 
 /* Class = "UIButton"; normalTitle = "متابعة"; ObjectID = "joC-yR-PYo"; */
 "joC-yR-PYo.normalTitle" = "متابعة";
+
+/* Class = "UILabel"; text = "اضف عنوانك"; ObjectID = "kKi-ya-q5q"; */
+"kKi-ya-q5q.text" = "اضف عنوانك";
 
 /* Class = "UIButton"; normalTitle = "تسجيل الدخول"; ObjectID = "kKz-r6-6Pw"; */
 "kKz-r6-6Pw.normalTitle" = "تسجيل الدخول";
@@ -110,8 +170,17 @@
 /* Class = "UITextField"; placeholder = "كلمة المرور"; ObjectID = "l9a-hK-1m2"; */
 "l9a-hK-1m2.placeholder" = "كلمة المرور";
 
+/* Class = "UITextView"; text = "6739 الملوح بن ابي عامر، الروضة،، الرياض 13213 3467، السعودية"; ObjectID = "lP6-pn-dra"; */
+"lP6-pn-dra.text" = "6739 الملوح بن ابي عامر، الروضة،، الرياض 13213 3467، السعودية";
+
 /* Class = "UITextField"; placeholder = "كلمة المرور"; ObjectID = "lcM-J3-F0U"; */
 "lcM-J3-F0U.placeholder" = "كلمة المرور";
+
+/* Class = "UITextView"; text = "6739 الملوح بن ابي عامر، الروضة،، الرياض 13213 3467، السعودية"; ObjectID = "mYk-Vb-jxQ"; */
+"mYk-Vb-jxQ.text" = "6739 الملوح بن ابي عامر، الروضة،، الرياض 13213 3467، السعودية";
+
+/* Class = "UITextField"; placeholder = "الشقة"; ObjectID = "nMH-T9-Azx"; */
+"nMH-T9-Azx.placeholder" = "الشقة";
 
 /* Class = "UILabel"; text = "لم تتلق رمز؟"; ObjectID = "nmf-73-enh"; */
 "nmf-73-enh.text" = "لم تتلق رمز؟";
@@ -122,11 +191,20 @@
 /* Class = "UITextField"; placeholder = "كلمة المرور"; ObjectID = "qXu-ad-qSF"; */
 "qXu-ad-qSF.placeholder" = "كلمة المرور";
 
+/* Class = "UILabel"; text = "عن طريق اعلان"; ObjectID = "rMQ-Sx-4Cs"; */
+"rMQ-Sx-4Cs.text" = "عن طريق اعلان";
+
+/* Class = "UILabel"; text = "اضافة عنوان"; ObjectID = "sCf-x1-Ex5"; */
+"sCf-x1-Ex5.text" = "اضافة عنوان";
+
 /* Class = "UILabel"; text = "هل نسيت كلمة المرور ؟"; ObjectID = "sOk-ss-JHQ"; */
 "sOk-ss-JHQ.text" = "هل نسيت كلمة المرور ؟";
 
 /* Class = "UIButton"; normalTitle = "الدخول كزائر"; ObjectID = "sOx-iO-kO3"; */
 "sOx-iO-kO3.normalTitle" = "الدخول كزائر";
+
+/* Class = "UIButton"; normalTitle = "متابعة"; ObjectID = "v58-as-Gmh"; */
+"v58-as-Gmh.normalTitle" = "متابعة";
 
 /* Class = "UILabel"; text = "تحقق من جوالك أرسلنا رمز التحقق عليه"; ObjectID = "vdr-t9-30Y"; */
 "vdr-t9-30Y.text" = "تحقق من جوالك أرسلنا رمز التحقق عليه";
@@ -140,166 +218,14 @@
 /* Class = "UILabel"; text = "سنرسل رمز التحقق إلى جوالك عبر رسالة نصية"; ObjectID = "xIM-Z2-xwm"; */
 "xIM-Z2-xwm.text" = "سنرسل رمز التحقق إلى جوالك عبر رسالة نصية";
 
+/* Class = "UITextField"; placeholder = "نوع الموقع"; ObjectID = "xq9-oH-ZIx"; */
+"xq9-oH-ZIx.placeholder" = "نوع الموقع";
+
 /* Class = "UILabel"; text = "انشئ حساب للبدء"; ObjectID = "yH5-lx-CqO"; */
 "yH5-lx-CqO.text" = "انشئ حساب للبدء";
 
+/* Class = "UIButton"; normalTitle = "متابعة"; ObjectID = "zh4-er-sMy"; */
+"zh4-er-sMy.normalTitle" = "متابعة";
+
 /* Class = "UITextField"; placeholder = "البريد الالكتروني او رقم جوالك   "; ObjectID = "zqg-Re-WhY"; */
 "zqg-Re-WhY.placeholder" = "البريد الالكتروني او رقم جوالك   ";
-
-
-
-
-
-
-
-
-
-
-/* Class = "UITextField"; placeholder = "51  234  5678"; ObjectID = "0M2-ba-Gzt"; */
-"0M2-ba-Gzt.placeholder" = "51  234  5678";
-
-/* Class = "UITextField"; placeholder = "Mobile Number"; ObjectID = "2va-5Z-wbQ"; */
-"2va-5Z-wbQ.placeholder" = "Mobile Number";
-
-/* Class = "UILabel"; text = "Create New Account"; ObjectID = "38a-S2-khf"; */
-"38a-S2-khf.text" = "Create New Account";
-
-/* Class = "UIButton"; normalTitle = "  Continue With Facebook"; ObjectID = "4BS-dl-1SS"; */
-"4BS-dl-1SS.normalTitle" = "  Continue With Facebook";
-
-/* Class = "UILabel"; text = "by creating an account, you agree to our"; ObjectID = "4Se-AW-J3J"; */
-"4Se-AW-J3J.text" = "by creating an account, you agree to our";
-
-/* Class = "UILabel"; text = "We've Sent You a Code"; ObjectID = "5xt-Z1-5im"; */
-"5xt-Z1-5im.text" = "We've Sent You a Code";
-
-/* Class = "UIButton"; normalTitle = "Enter as Guest"; ObjectID = "7Hv-1P-qF8"; */
-"7Hv-1P-qF8.normalTitle" = "Enter as Guest";
-
-/* Class = "UIButton"; normalTitle = "Sign in"; ObjectID = "9qe-w2-EQr"; */
-"9qe-w2-EQr.normalTitle" = "Sign in";
-
-/* Class = "UIButton"; normalTitle = "Set"; ObjectID = "Bpw-iI-sUx"; */
-"Bpw-iI-sUx.normalTitle" = "Set";
-
-/* Class = "UILabel"; text = "Welcome To Raghua"; ObjectID = "CiP-ya-7wJ"; */
-"CiP-ya-7wJ.text" = "Welcome To Raghua";
-
-/* Class = "UIBarButtonItem"; title = " "; ObjectID = "DOW-cw-FlP"; */
-"DOW-cw-FlP.title" = " ";
-
-/* Class = "UIButton"; normalTitle = "  Continue With Facebook"; ObjectID = "DvI-aE-GvR"; */
-"DvI-aE-GvR.normalTitle" = "  Continue With Facebook";
-
-/* Class = "UILabel"; text = "We've Sent You a Code"; ObjectID = "E9Y-Rd-Cug"; */
-"E9Y-Rd-Cug.text" = "We've Sent You a Code";
-
-/* Class = "UILabel"; text = "Didn't receive a code?"; ObjectID = "E9h-Za-X6L"; */
-"E9h-Za-X6L.text" = "Didn't receive a code?";
-
-/* Class = "UILabel"; text = "1:59"; ObjectID = "FAu-zC-TO8"; */
-"FAu-zC-TO8.text" = "1:59";
-
-/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "IMh-sA-jMM"; */
-"IMh-sA-jMM.normalTitle" = "Register";
-
-/* Class = "UITextField"; placeholder = "Name"; ObjectID = "KRJ-ha-sjL"; */
-"KRJ-ha-sjL.placeholder" = "Name";
-
-/* Class = "UIButton"; normalTitle = "Continue"; ObjectID = "LZp-ys-YyY"; */
-"LZp-ys-YyY.normalTitle" = "Continue";
-
-/* Class = "UILabel"; text = "Reset Password"; ObjectID = "M9l-4I-iiu"; */
-"M9l-4I-iiu.text" = "Reset Password";
-
-/* Class = "UIButton"; normalTitle = "  Continue With Google"; ObjectID = "MID-xt-YZr"; */
-"MID-xt-YZr.normalTitle" = "  Continue With Google";
-
-/* Class = "UILabel"; text = "+2001001234567"; ObjectID = "MXG-gq-gXn"; */
-"MXG-gq-gXn.text" = "+2001001234567";
-
-/* Class = "UILabel"; text = "Enter Associated Mobile Number"; ObjectID = "O7o-Z8-xeQ"; */
-"O7o-Z8-xeQ.text" = "Enter Associated Mobile Number";
-
-/* Class = "UITextField"; placeholder = "Rewrite New Password"; ObjectID = "Ojw-AE-mYV"; */
-"Ojw-AE-mYV.placeholder" = "Rewrite New Password";
-
-/* Class = "UILabel"; text = "Already Have Account"; ObjectID = "Qo4-Bp-Dpa"; */
-"Qo4-Bp-Dpa.text" = "Already Have Account";
-
-/* Class = "UILabel"; text = "To This Number"; ObjectID = "ZrM-xt-C54"; */
-"ZrM-xt-C54.text" = "To This Number";
-
-/* Class = "UIButton"; normalTitle = "Resend"; ObjectID = "ZrO-8x-w1o"; */
-"ZrO-8x-w1o.normalTitle" = "Resend";
-
-/* Class = "UILabel"; text = "Online Laundry Services"; ObjectID = "aaJ-DG-ngn"; */
-"aaJ-DG-ngn.text" = "Online Laundry Services";
-
-/* Class = "UILabel"; text = "Enter Mobile Number"; ObjectID = "cCX-lw-kaa"; */
-"cCX-lw-kaa.text" = "Enter Mobile Number";
-
-/* Class = "UILabel"; text = "الخاصة بنا."; ObjectID = "cij-eK-Rd4"; */
-"cij-eK-Rd4.text" = "الخاصة بنا.";
-
-/* Class = "UITextField"; placeholder = "Email"; ObjectID = "fEz-Id-iHC"; */
-"fEz-Id-iHC.placeholder" = "Email";
-
-/* Class = "UIButton"; normalTitle = "Forget Password?"; ObjectID = "iGY-Lz-TT1"; */
-"iGY-Lz-TT1.normalTitle" = "Forget Password?";
-
-/* Class = "UILabel"; text = "Welcome Back"; ObjectID = "jIp-b9-hEu"; */
-"jIp-b9-hEu.text" = "Welcome Back";
-
-/* Class = "UIButton"; normalTitle = "Resend"; ObjectID = "jZR-m1-lLx"; */
-"jZR-m1-lLx.normalTitle" = "Resend";
-
-/* Class = "UIButton"; normalTitle = "Continue"; ObjectID = "joC-yR-PYo"; */
-"joC-yR-PYo.normalTitle" = "Continue";
-
-/* Class = "UIButton"; normalTitle = "Sign in"; ObjectID = "kKz-r6-6Pw"; */
-"kKz-r6-6Pw.normalTitle" = "Sign in";
-
-/* Class = "UILabel"; text = "1:59"; ObjectID = "l5r-XX-Yrz"; */
-"l5r-XX-Yrz.text" = "1:59";
-
-/* Class = "UITextField"; placeholder = "Password"; ObjectID = "l9a-hK-1m2"; */
-"l9a-hK-1m2.placeholder" = "Password";
-
-/* Class = "UITextField"; placeholder = "Password"; ObjectID = "lcM-J3-F0U"; */
-"lcM-J3-F0U.placeholder" = "Password";
-
-/* Class = "UILabel"; text = "Didn't receive a code?"; ObjectID = "nmf-73-enh"; */
-"nmf-73-enh.text" = "Didn't receive a code?";
-
-/* Class = "UILabel"; text = "New User"; ObjectID = "qDk-Tm-B55"; */
-"qDk-Tm-B55.text" = "New User";
-
-/* Class = "UITextField"; placeholder = "Password"; ObjectID = "qXu-ad-qSF"; */
-"qXu-ad-qSF.placeholder" = "Password";
-
-/* Class = "UILabel"; text = "Forget Password?"; ObjectID = "sOk-ss-JHQ"; */
-"sOk-ss-JHQ.text" = "Forget Password?";
-
-/* Class = "UIButton"; normalTitle = "Enter as Guest"; ObjectID = "sOx-iO-kO3"; */
-"sOx-iO-kO3.normalTitle" = "Enter as Guest";
-
-/* Class = "UILabel"; text = "Check Your Phone"; ObjectID = "vdr-t9-30Y"; */
-"vdr-t9-30Y.text" = "Check Your Phone";
-
-/* Class = "UIButton"; normalTitle = "  Continue With Google"; ObjectID = "vvS-0h-UTo"; */
-"vvS-0h-UTo.normalTitle" = "  Continue With Google";
-
-/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "wAM-gC-1ks"; */
-"wAM-gC-1ks.normalTitle" = "Register";
-
-/* Class = "UILabel"; text = "We'll Text You Verification Code"; ObjectID = "xIM-Z2-xwm"; */
-"xIM-Z2-xwm.text" = "We'll Text You Verification Code";
-
-/* Class = "UILabel"; text = "Create Account to Start"; ObjectID = "yH5-lx-CqO"; */
-"yH5-lx-CqO.text" = "Create Account to Start";
-
-/* Class = "UITextField"; placeholder = "Email or Mobile Number"; ObjectID = "zqg-Re-WhY"; */
-"zqg-Re-WhY.placeholder" = "Email or Mobile Number";
-
-"Mpa-lb-xux.normalTitle" = "terms of use and our privacy policy";

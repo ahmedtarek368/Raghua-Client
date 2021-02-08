@@ -9,6 +9,8 @@ import UIKit
 
 class restPassMobNumberVerifyVC: UIViewController {
 
+    var verificationCode:Int?
+    var mobileNumber: String?
     @IBOutlet weak var firstDigit: UITextField!
     @IBOutlet weak var secondDigit: UITextField!
     @IBOutlet weak var thirdDigit: UITextField!
@@ -35,7 +37,14 @@ class restPassMobNumberVerifyVC: UIViewController {
     
     func pushToSetNewPasswordView(){
         let setNewPasswordView : setNewPasswordVC = self.storyboard?.instantiateViewController(identifier: "SNPVC") as! setNewPasswordVC
+        setNewPasswordView.mobileNumber = self.mobileNumber
         self.navigationController?.pushViewController(setNewPasswordView, animated: true)
+    }
+    
+    func setupAlert(title: String, message: String){
+            let successfulAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        successfulAlert.addAction(UIAlertAction(title: "Ok", style: .default , handler: nil))
+            self.present(successfulAlert, animated: true, completion: nil)
     }
     
 }
@@ -68,7 +77,17 @@ extension restPassMobNumberVerifyVC: UITextFieldDelegate{
                 setValueAndMoveForward()
 
                 if textField.tag == 4 {
-                    pushToSetNewPasswordView()
+                    if firstDigit.text != nil && secondDigit.text != nil && thirdDigit.text != nil && fourthDigit.text != nil {
+                        let userEnteredCode = "\(firstDigit.text!)\(secondDigit.text!)\(thirdDigit.text!)\(fourthDigit.text!)"
+                        print(userEnteredCode)
+                        if String(self.verificationCode!) == userEnteredCode {
+                            pushToSetNewPasswordView()
+                        }else{
+                            self.setupAlert(title:"failed",message:"Wrong Verfication Code")
+                        }
+                    }else{
+                        self.setupAlert(title:"failed",message:"Code is Missing Digit")
+                    }
                 }
 
                 return false

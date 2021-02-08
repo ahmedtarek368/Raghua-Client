@@ -7,3 +7,11 @@
 */
 
 "lang" = "ar";
+
+"from advertisement" = "عن طريق اعلان";
+"from social media" = "عن طريق السوشيال ميديا";
+"a friend told me" = "اخبرني صديق لي";
+"fail" = "فشل";
+"success" = "نجح";
+"Please fill in all fields" = "برجاء ملئ جميع البيانات";
+"You Must Pick Image" = "يجب ان تختار صورة";

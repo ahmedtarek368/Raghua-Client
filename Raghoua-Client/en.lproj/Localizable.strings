@@ -7,3 +7,11 @@
 */
 
 "lang" = "en";
+
+"from advertisement" = "from advertisement";
+"from social media" = "from social media";
+"a friend told me" = "a friend told me";
+"fail" = "fail";
+"success" = "success";
+"Please fill in all fields" = "Please fill in all fields";
+"You Must Pick Image" = "You Must Pick Image";

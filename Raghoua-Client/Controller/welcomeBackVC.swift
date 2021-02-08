@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Lottie
 
 class welcomeBackVC: UIViewController{
+    
+    var animationView: AnimationView?
 
     @IBOutlet weak var welcomeBackLabel: UILabel!
     @IBOutlet weak var emailOrMobileNumber: UITextField!
@@ -31,6 +34,7 @@ class welcomeBackVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpAnimation()
         alignViewBasedOnLanguage()
         makeRoundedCornerButtons()
         self.view.hideKeyBoardWhenTappedAround()
@@ -38,6 +42,14 @@ class welcomeBackVC: UIViewController{
     
     @objc func backBtnPressed(){
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func setUpAnimation(){
+        animationView = .init(name: "Loading Animation")
+        animationView?.loopMode = .loop
+        animationView?.frame.size.height = view.frame.size.height/3.5
+        animationView?.frame.size.width = view.frame.size.width/3.5
+        animationView?.center = CGPoint(x: view.frame.size.width/2, y: view.frame.size.height/2)
     }
     
     func alignViewBasedOnLanguage(){
@@ -61,6 +73,43 @@ class welcomeBackVC: UIViewController{
     }
     
     @IBAction func signInBtnPressed(_ sender: Any) {
-        
+        view.addSubview(animationView!)
+        animationView?.isHidden = false
+        animationView?.play()
+        requestUserLogin()
+    }
+    
+    func requestUserLogin(){
+        if let emailOrMobileNumber = emailOrMobileNumber.text, let password = password.text {
+            
+            let loginParam = LoginParam(user_info:emailOrMobileNumber,password:password)
+            NetworkService.shared.requestUserLogin(param: loginParam) { (response) in
+                
+                let userData : userData = response.data
+                //UserDefaults.standard.setValue(emailOrMobileNumber, forKey: "EmailOrPhone")
+                //UserDefaults.standard.setValue(password, forKey: "Password")
+                userToken = userData.apiToken
+                let user : User = User(id: userData.id, name: userData.name, email: userData.email, phone: userData.phone, img: userData.img, apiToken: userData.apiToken, points: userData.points, cartID: userData.cartID ?? 0, userAddress: userData.userAddress)
+                // userName userDefaults
+                // userEmail userDefaults
+                // 
+                self.setupAlert(title: "success".localized, message: "\(user.name!) \(user.id!)")
+                self.animationView?.stop()
+                self.animationView?.isHidden = true
+                print(response.data)
+            } onError: { (error) in
+                self.animationView?.stop()
+                self.animationView?.isHidden = true
+                self.setupAlert(title:"fail".localized, message: "\(error)")
+                print(error)
+            }
+            
+        }
+    }
+    
+    func setupAlert(title: String, message: String){
+            let successfulAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            successfulAlert.addAction(UIAlertAction(title: "Ok", style: .cancel , handler: nil))
+            self.present(successfulAlert, animated: true, completion: nil)
     }
 }

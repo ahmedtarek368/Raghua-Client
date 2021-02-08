@@ -8,7 +8,10 @@
 import UIKit
 
 class verifyRegisteredMobNumberVC: UIViewController {
-
+    
+    var verificationCode:Int?
+    var mobileNumber:String?
+    
     @IBOutlet weak var firstDigit: UITextField!
     @IBOutlet weak var secondDigit: UITextField!
     @IBOutlet weak var thirdDigit: UITextField!
@@ -34,7 +37,14 @@ class verifyRegisteredMobNumberVC: UIViewController {
     
     func pushToCreateNewAccountVC(){
         let createNewAccountVC : createNewAccountVC = self.storyboard?.instantiateViewController(identifier: "CNAVC") as! createNewAccountVC
+        createNewAccountVC.mobileNumber = self.mobileNumber
         self.navigationController?.pushViewController(createNewAccountVC, animated: true)
+    }
+    
+    func setupAlert(title: String, message: String){
+            let successfulAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        successfulAlert.addAction(UIAlertAction(title: "Ok", style: .default , handler: nil))
+            self.present(successfulAlert, animated: true, completion: nil)
     }
 
 }
@@ -67,7 +77,17 @@ extension verifyRegisteredMobNumberVC: UITextFieldDelegate{
                 setValueAndMoveForward()
 
                 if textField.tag == 4 {
-                    pushToCreateNewAccountVC()
+                    if firstDigit.text != nil && secondDigit.text != nil && thirdDigit.text != nil && fourthDigit.text != nil {
+                        let userEnteredCode = "\(firstDigit.text!)\(secondDigit.text!)\(thirdDigit.text!)\(fourthDigit.text!)"
+                        print(userEnteredCode)
+                        if String(self.verificationCode!) == userEnteredCode {
+                            pushToCreateNewAccountVC()
+                        }else{
+                            self.setupAlert(title:"failed",message:"Wrong Verfication Code")
+                        }
+                    }else{
+                        self.setupAlert(title:"failed",message:"Code is Missing Digit")
+                    }
                 }
 
                 return false

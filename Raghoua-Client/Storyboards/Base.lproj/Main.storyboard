@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0yL-hW-PIT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xn0-Th-OAa">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -74,6 +74,9 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title=" المتابعة بواسطة الفيسبوك" image="ic_facebook"/>
+                                                        <connections>
+                                                            <action selector="continueWithFacebookBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VDI-c3-vPl"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -85,6 +88,9 @@
                                                 <state key="normal" title="  المتابعة بواسطة جوجل" image="ic_google">
                                                     <color key="titleColor" red="0.16078431372549018" green="0.16078431372549018" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="continueWithGoogleBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="75E-L7-ENy"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -650,6 +656,9 @@
                                         <state key="normal" title="تعيين">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="resetPasswordBtnPressed:" destination="f4k-fq-TFI" eventType="touchUpInside" id="RQk-TK-HsM"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -678,6 +687,10 @@
                             <constraint firstItem="M9l-4I-iiu" firstAttribute="top" secondItem="aIo-xA-2Mz" secondAttribute="top" constant="85" id="zAN-tj-dWY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="password" destination="l9a-hK-1m2" id="33D-2f-TEd"/>
+                        <outlet property="rewrittenPassword" destination="Ojw-AE-mYV" id="PIc-0E-GYO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vRb-Ny-INg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -796,6 +809,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="mobileNumber" destination="0M2-ba-Gzt" id="ljC-Xa-CG7"/>
                         <outlet property="ourLbl" destination="cij-eK-Rd4" id="nZF-OC-Bze"/>
                         <outlet property="termOfUserBtn" destination="Mpa-lb-xux" id="r85-zm-Rh9"/>
                     </connections>
@@ -1065,6 +1079,9 @@
                                     <constraint firstAttribute="height" constant="26" id="9z5-6e-zdU"/>
                                 </constraints>
                                 <state key="normal" image="photo_camera"/>
+                                <connections>
+                                    <action selector="pickImageBtnPressed:" destination="aDR-Wt-Z9S" eventType="touchUpInside" id="dL0-qm-hEV"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الاسم" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KRJ-ha-sjL" customClass="basicTextField" customModule="Raghoua_Client" customModuleProvider="target">
                                 <rect key="frame" x="124" y="198" width="266" height="48"/>
@@ -1105,11 +1122,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="selectImageBtn" destination="NbS-k6-IzT" id="qKw-mY-ngf"/>
+                        <outlet property="pickImageBtn" destination="NbS-k6-IzT" id="qKw-mY-ngf"/>
                         <outlet property="userEmail" destination="fEz-Id-iHC" id="lgp-Bs-cBn"/>
-                        <outlet property="userImage" destination="21i-yR-2H9" id="dZH-PK-NJM"/>
                         <outlet property="userName" destination="KRJ-ha-sjL" id="G5C-YD-r8C"/>
                         <outlet property="userPassword" destination="qXu-ad-qSF" id="Ysg-M5-OY0"/>
+                        <outlet property="userProfileImage" destination="21i-yR-2H9" id="dZH-PK-NJM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dcn-Ro-RSv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1230,10 +1247,11 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="D6i-7c-tmZ">
                                 <rect key="frame" x="0.0" y="150" width="414" height="321"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="321" id="VY9-Kd-RXg"/>
                                 </constraints>
+                                <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CC" rowHeight="50" id="YJ7-w6-9g3" customClass="choicesCell" customModule="Raghoua_Client" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="50"/>
@@ -1269,6 +1287,7 @@
                                                 <constraint firstItem="rMQ-Sx-4Cs" firstAttribute="centerY" secondItem="GtP-Km-OXY" secondAttribute="centerY" id="vAo-OU-bgp"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="choiceText" destination="rMQ-Sx-4Cs" id="VQn-8V-550"/>
                                             <outlet property="radioButton" destination="GtP-Km-OXY" id="szS-HW-hgF"/>
@@ -1278,7 +1297,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pyg-fP-H3p"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Ipz-Nt-9je" firstAttribute="top" secondItem="1Ck-bq-Rwh" secondAttribute="top" constant="85" id="0qI-ZU-ncB"/>
                             <constraint firstItem="pyg-fP-H3p" firstAttribute="trailing" secondItem="D6i-7c-tmZ" secondAttribute="trailing" id="3zM-ku-ggr"/>
@@ -1366,7 +1385,7 @@
                                                         </label>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="6739 الملوح بن ابي عامر، الروضة،، الرياض 13213 3467، السعودية" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zxz-zf-nrg">
                                                             <rect key="frame" x="0.0" y="22" width="334" height="42"/>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="42" id="CwI-pj-HyT"/>
                                                             </constraints>
@@ -1406,6 +1425,7 @@
                                                 <constraint firstItem="NtA-wp-dTr" firstAttribute="leading" secondItem="iPD-Xr-ioM" secondAttribute="leading" id="vhk-3l-ZAa"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="address" destination="O9R-20-YMe" id="OGC-Jr-J4B"/>
@@ -1492,6 +1512,18 @@
                                     <constraint firstAttribute="height" constant="47.600000000000001" id="XdJ-hH-7yZ"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1l-M2-WyV">
+                                <rect key="frame" x="362" y="610" width="36" height="36"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="Fha-vd-ljd"/>
+                                    <constraint firstAttribute="width" constant="36" id="gyH-Iq-1A7"/>
+                                </constraints>
+                                <state key="normal" image="near_me-24px"/>
+                                <connections>
+                                    <action selector="userLocationBtnPressed:" destination="Y3U-1T-iyy" eventType="touchUpInside" id="Fzy-aD-1Z3"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h6f-la-GXF" customClass="bottomPopupView" customModule="Raghoua_Client" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="677" width="414" height="219"/>
                                 <subviews>
@@ -1506,7 +1538,7 @@
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="6739 الملوح بن ابي عامر، الروضة،، الرياض 13213 3467، السعودية" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYk-Vb-jxQ" customClass="basicTextView" customModule="Raghoua_Client" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="29" width="366" height="54"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="54" id="IeK-O7-MJX"/>
                                                 </constraints>
@@ -1526,6 +1558,9 @@
                                         <state key="normal" title="تأكيد">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="confirmBtnPressed:" destination="Y3U-1T-iyy" eventType="touchUpInside" id="Owf-ag-nKU"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.97272310439999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1539,18 +1574,6 @@
                                     <constraint firstItem="adZ-XL-IfF" firstAttribute="leading" secondItem="h6f-la-GXF" secondAttribute="leading" constant="25" id="kAT-YR-5IV"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1l-M2-WyV">
-                                <rect key="frame" x="362" y="610" width="36" height="36"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="Fha-vd-ljd"/>
-                                    <constraint firstAttribute="width" constant="36" id="gyH-Iq-1A7"/>
-                                </constraints>
-                                <state key="normal" image="near_me-24px"/>
-                                <connections>
-                                    <action selector="userLocationBtnPressed:" destination="Y3U-1T-iyy" eventType="touchUpInside" id="Fzy-aD-1Z3"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GMG-n9-6i4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1579,6 +1602,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fi7-Sm-mL7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4227.536231884058" y="786.83035714285711"/>
+        </scene>
+        <!--Tap Bar Home-->
+        <scene sceneID="THC-JN-VC2">
+            <objects>
+                <tabBarController id="Xn0-Th-OAa" customClass="tapBarHome" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uip-Tv-nFe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.14117647059999999" green="0.2274509804" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.14117647059999999" green="0.2274509804" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="O41-Dr-7g4" kind="relationship" relationship="viewControllers" id="jtO-cD-EBr"/>
+                        <segue destination="viw-Bm-w04" kind="relationship" relationship="viewControllers" id="G2x-On-hqH"/>
+                        <segue destination="IbK-DR-k0V" kind="relationship" relationship="viewControllers" id="rDY-hh-Iia"/>
+                        <segue destination="fs5-fC-XDZ" kind="relationship" relationship="viewControllers" id="Pdf-hY-nGg"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vhu-RG-E7h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5699" y="787"/>
+        </scene>
+        <!--Laundries-->
+        <scene sceneID="Vf8-p5-OO6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Laundries" id="O41-Dr-7g4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="ef6-g1-CKO"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I2C-LE-wsh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6451" y="544"/>
+        </scene>
+        <!--Reciept-->
+        <scene sceneID="Evl-Bn-n36">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Reciept" id="viw-Bm-w04" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="r3e-5c-S8v"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rNl-8X-ffA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6461" y="690"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="EXK-Hc-Gtz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Favorites" id="IbK-DR-k0V" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="XFA-sr-rI9"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YW0-Wn-xFk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6454" y="840"/>
+        </scene>
+        <!--MyAccount-->
+        <scene sceneID="raV-a2-Nxa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyAccount" id="fs5-fC-XDZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="dlH-Dn-IMg"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QSg-mY-KFO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6445" y="966"/>
         </scene>
         <!--Add AddressVC-->
         <scene sceneID="hAZ-5Z-F9Q">
@@ -1693,7 +1778,7 @@
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="6739 الملوح بن ابي عامر، الروضة،، الرياض 13213 3467، السعودية" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lP6-pn-dra" customClass="basicTextView" customModule="Raghoua_Client" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="27" width="366" height="54"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="54" id="TbI-oD-sNI"/>
                                                 </constraints>
@@ -1715,6 +1800,9 @@
                                 <state key="normal" title="حفظ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveBtnPressed:" destination="7Cv-ME-vQl" eventType="touchUpInside" id="0yx-D6-wUS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DDI-ve-BF5"/>
@@ -1736,6 +1824,7 @@
                         <outlet property="apartmentField" destination="nMH-T9-Azx" id="tzy-rS-wM2"/>
                         <outlet property="buildingField" destination="ilw-NX-S8x" id="LJf-sD-8rt"/>
                         <outlet property="floorField" destination="U7n-gn-2nk" id="gMa-Xv-1I1"/>
+                        <outlet property="locationOnMap" destination="lP6-pn-dra" id="6Pr-5i-hlu"/>
                         <outlet property="nearestLandmarkField" destination="aOM-ar-gIa" id="Q17-kT-NjH"/>
                         <outlet property="streetField" destination="FqN-OL-eVh" id="zDd-4T-ouQ"/>
                     </connections>

@@ -19,10 +19,12 @@ class spotYourLocationVC: UIViewController {
     let region : Double = 1000
     var previousLocation : CLLocation?
     var locationManager = CLLocationManager()
+    var cameraIsOnUserLocation = false
     
     override func viewWillAppear(_ animated: Bool) {
         let backButton = UIBarButtonItem(image: UIImage(named: "arrow_back_\("lang".localized)"), style: .plain, target: self, action: #selector(backBtnPressed))
         self.navigationItem.leftBarButtonItem = backButton
+        cameraIsOnUserLocation = false
     }
     
     override func viewDidLoad() {
@@ -76,7 +78,7 @@ class spotYourLocationVC: UIViewController {
         //locationManager.startUpdatingLocation()
         let location = locationManager.location
         let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, zoom: 17.0)
-
+        cameraIsOnUserLocation = true
         self.mapView?.animate(to: camera)
         previousLocation = getCenterlocation(mapView: mapView)
     }
@@ -84,6 +86,16 @@ class spotYourLocationVC: UIViewController {
     @IBAction func userLocationBtnPressed(_ sender: Any) {
         startTrackingUserLocation()
     }
+    
+    @IBAction func confirmBtnPressed(_ sender: Any) {
+        let addAddressView : addAddressVC = self.storyboard?.instantiateViewController(identifier: "AAVC") as! addAddressVC
+        addAddressView.userLocationOnMap = userPositionOnMap.text
+        let coordinates = getCenterlocation(mapView: mapView)
+        addAddressView.latitude = coordinates.coordinate.latitude
+        addAddressView.longitude = coordinates.coordinate.longitude
+        self.navigationController?.pushViewController(addAddressView, animated: true)
+    }
+    
     
 
 }
@@ -113,35 +125,35 @@ extension spotYourLocationVC: GMSMapViewDelegate{
         
         guard  let previousLocation = self.previousLocation else {return}
         
-        guard centerLocation.distance(from: previousLocation) > 100 else{return}
+        guard centerLocation.distance(from: previousLocation) > 50 else{return}
         self.previousLocation = centerLocation
-        
-        geoCoder.reverseGeocodeLocation(centerLocation) { [weak self] (placemarks, error) in
-            guard let self = self else {return}
+        if self.cameraIsOnUserLocation == true {
+            geoCoder.reverseGeocodeLocation(centerLocation) { [weak self] (placemarks, error) in
+                guard let self = self else {return}
 
-            if let error = error{
-                debugPrint(error.localizedDescription)
-            }
+                if let error = error{
+                    debugPrint(error.localizedDescription)
+                }
 
-            guard let placemark = placemarks?.first else {return}
-            
-            let country = placemark.country ?? ""
-            let streetNumber = placemark.subThoroughfare ?? ""
-            let streetName = placemark.thoroughfare ?? ""
-            let province = placemark.subLocality ?? ""
-            let city = placemark.locality ?? ""
-            
-            DispatchQueue.main.async {
-                if streetNumber == ""{
-                    self.userPositionOnMap.text = "\(streetName), \(province), \(city), \(country)"
-                }else if streetName == ""{
-                    self.userPositionOnMap.text = "\(streetNumber), \(province), \(city), \(country)"
-                }else if province == ""{
-                    self.userPositionOnMap.text = "\(streetNumber), \(streetName),  \(city), \(country)"
-                }else if city == ""{
-                    self.userPositionOnMap.text = "\(streetNumber), \(streetName), \(province), \(country)"
-                }else if country == ""{
-                    self.userPositionOnMap.text = "\(streetNumber), \(streetName), \(province), \(city)"
+                guard let placemark = placemarks?.first else {return}
+                let country = placemark.country ?? ""
+                let streetNumber = placemark.subThoroughfare ?? ""
+                let streetName = placemark.thoroughfare ?? ""
+                let province = placemark.subLocality ?? ""
+                let city = placemark.locality ?? ""
+                
+                DispatchQueue.main.async {
+                        if streetNumber == ""{
+                            self.userPositionOnMap.text = "\(streetName), \(province), \(city), \(country)"
+                        }else if streetName == ""{
+                            self.userPositionOnMap.text = "\(streetNumber), \(province), \(city), \(country)"
+                        }else if province == ""{
+                            self.userPositionOnMap.text = "\(streetNumber), \(streetName),  \(city), \(country)"
+                        }else if city == ""{
+                            self.userPositionOnMap.text = "\(streetNumber), \(streetName), \(province), \(country)"
+                        }else if country == ""{
+                            self.userPositionOnMap.text = "\(streetNumber), \(streetName), \(province), \(city)"
+                        }
                 }
             }
         }

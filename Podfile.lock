@@ -1,5 +1,16 @@
 PODS:
+  - Alamofire (5.2.2)
   - BottomPopup (0.6.0)
+  - FBSDKCoreKit (9.0.0):
+    - FBSDKCoreKit/Basics (= 9.0.0)
+    - FBSDKCoreKit/Core (= 9.0.0)
+  - FBSDKCoreKit/Basics (9.0.0)
+  - FBSDKCoreKit/Core (9.0.0):
+    - FBSDKCoreKit/Basics
+  - FBSDKLoginKit (9.0.0):
+    - FBSDKLoginKit/Login (= 9.0.0)
+  - FBSDKLoginKit/Login (9.0.0):
+    - FBSDKCoreKit (~> 9.0.0)
   - GoogleMaps (4.1.0):
     - GoogleMaps/Maps (= 4.1.0)
   - GoogleMaps/Base (4.1.0)
@@ -9,24 +20,32 @@ PODS:
   - MOLH (1.4.3)
 
 DEPENDENCIES:
+  - Alamofire
   - BottomPopup
+  - FBSDKLoginKit
   - GoogleMaps
   - lottie-ios
   - MOLH
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - BottomPopup
+    - FBSDKCoreKit
+    - FBSDKLoginKit
     - GoogleMaps
     - lottie-ios
     - MOLH
 
 SPEC CHECKSUMS:
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   BottomPopup: 1d5649a3b29396238f0e8f3c82075a7bfcf37ba7
+  FBSDKCoreKit: ac6cc500b8e104bb9a4dd20b1527b5d199123c2e
+  FBSDKLoginKit: e9b6542fdee322333502ab497f628b011dce7d78
   GoogleMaps: 008e2c80e38605b56b560e8deb73d4194ff30bef
   lottie-ios: 3a3758ef5a008e762faec9c9d50a39842f26d124
   MOLH: e45827d200aeb1310641090fd8cd03ad2b42ae72
 
-PODFILE CHECKSUM: 122dadea7193d2a468515427121a55c78a048404
+PODFILE CHECKSUM: 78e0047ff884518b9bf8d25927c2a30d4c6c1c8a
 
 COCOAPODS: 1.9.3
