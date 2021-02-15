@@ -10,6 +10,7 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import Lottie
 
+@available(iOS 13.0, *)
 class welcomeHomeVC: UIViewController {
 
     var animationView: AnimationView?
@@ -124,12 +125,19 @@ class welcomeHomeVC: UIViewController {
             print(response)
             let userData = response.data
             self.socialUser = User(id: userData.id, name: userData.name, email: userData.email, phone: userData.phone, img: userData.img, apiToken: userData.apiToken, points: userData.points, cartID: userData.cartID ?? 0, userAddress: userData.userAddress)
+            self.pushToHome()
         } onError: { (error) in
             self.animationView?.stop()
             self.animationView?.isHidden = true
             debugPrint(error)
         }
 
+    }
+    
+    func pushToHome(){
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        let tabBarHomeView : UITabBarController = self.storyboard?.instantiateViewController(identifier: "TBH") as! UITabBarController
+        self.navigationController?.pushViewController(tabBarHomeView, animated: true)
     }
 
     @IBAction func continueWithFacebookBtnPressed(_ sender: Any) {
@@ -140,6 +148,10 @@ class welcomeHomeVC: UIViewController {
     
     @IBAction func continueWithGoogleBtnPressed(_ sender: Any) {
         
+    }
+    
+    @IBAction func continueAsGuestBtnPressed(_ sender: Any) {
+        pushToHome()
     }
     
 }

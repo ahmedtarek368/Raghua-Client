@@ -8,6 +8,7 @@
 import UIKit
 import Lottie
 
+@available(iOS 13.0, *)
 class welcomeBackVC: UIViewController{
     
     var animationView: AnimationView?
@@ -21,6 +22,8 @@ class welcomeBackVC: UIViewController{
     @IBOutlet weak var continueWithGoogleBtn: UIButton!
     @IBOutlet weak var newRegisteration: UIButton!
     @IBOutlet weak var enterAsGuestBtn: UIButton!
+    
+    var user : User?
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
@@ -42,6 +45,18 @@ class welcomeBackVC: UIViewController{
     
     @objc func backBtnPressed(){
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "LGN"{
+            let homeTabBar = segue.destination as! UITabBarController
+            let laundriesNav = homeTabBar.viewControllers?.first as! UINavigationController
+            let laundriesVC = laundriesNav.viewControllers.first as! laundriesVC
+            if let user = self.user{
+                laundriesVC.initUserData(user: user)
+                laundriesVC.addressIndex = 0
+            }
+        }
     }
     
     func setUpAnimation(){
@@ -79,6 +94,10 @@ class welcomeBackVC: UIViewController{
         requestUserLogin()
     }
     
+    @IBAction func continueAsGuestBtnPressed(_ sender: Any) {
+        pushToHome()
+    }
+    
     func requestUserLogin(){
         if let emailOrMobileNumber = emailOrMobileNumber.text, let password = password.text {
             
@@ -86,17 +105,17 @@ class welcomeBackVC: UIViewController{
             NetworkService.shared.requestUserLogin(param: loginParam) { (response) in
                 
                 let userData : userData = response.data
-                //UserDefaults.standard.setValue(emailOrMobileNumber, forKey: "EmailOrPhone")
-                //UserDefaults.standard.setValue(password, forKey: "Password")
                 userToken = userData.apiToken
                 let user : User = User(id: userData.id, name: userData.name, email: userData.email, phone: userData.phone, img: userData.img, apiToken: userData.apiToken, points: userData.points, cartID: userData.cartID ?? 0, userAddress: userData.userAddress)
-                // userName userDefaults
-                // userEmail userDefaults
-                // 
-                self.setupAlert(title: "success".localized, message: "\(user.name!) \(user.id!)")
+                self.user = user
+                // userEmail -> UserDefaults.standard.setValue(emailOrMobileNumber, forKey: "EmailOrPhone")
+                // userPassword -> UserDefaults.standard.setValue(password, forKey: "Password")
+                self.performSegue(withIdentifier: "LGN", sender: self)
                 self.animationView?.stop()
                 self.animationView?.isHidden = true
                 print(response.data)
+                self.pushToHome()
+                self.setupAlert(title: "success".localized, message: "\(user.name!) \(user.id!)")
             } onError: { (error) in
                 self.animationView?.stop()
                 self.animationView?.isHidden = true
@@ -105,6 +124,12 @@ class welcomeBackVC: UIViewController{
             }
             
         }
+    }
+    
+    func pushToHome(){
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        let tabBarHomeView : UITabBarController = self.storyboard?.instantiateViewController(identifier: "TBH") as! UITabBarController
+        self.navigationController?.pushViewController(tabBarHomeView, animated: true)
     }
     
     func setupAlert(title: String, message: String){

@@ -8,6 +8,7 @@
 import UIKit
 import GoogleMaps
 
+@available(iOS 13.0, *)
 class spotYourLocationVC: UIViewController {
 
     @IBOutlet weak var mapView: GMSMapView!
@@ -56,7 +57,8 @@ class spotYourLocationVC: UIViewController {
     }
     
     func checkLocationAuthorization(){
-        switch locationManager.authorizationStatus {
+        let status = CLLocationManager.authorizationStatus()
+        switch status {
         case .authorizedWhenInUse:
             startTrackingUserLocation()
             break
@@ -100,6 +102,7 @@ class spotYourLocationVC: UIViewController {
 
 }
 
+@available(iOS 13.0, *)
 extension spotYourLocationVC: CLLocationManagerDelegate{
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
@@ -117,6 +120,7 @@ extension spotYourLocationVC: CLLocationManagerDelegate{
     }
 }
 
+@available(iOS 13.0, *)
 extension spotYourLocationVC: GMSMapViewDelegate{
     
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {

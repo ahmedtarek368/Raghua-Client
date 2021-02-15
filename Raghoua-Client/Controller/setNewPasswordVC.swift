@@ -40,6 +40,7 @@ class setNewPasswordVC: UIViewController {
     }
     
     @IBAction func resetPasswordBtnPressed(_ sender: Any) {
+        view.addSubview(animationView!)
         animationView?.play()
         animationView?.isHidden = false
         requestResetPassword()
@@ -54,12 +55,12 @@ class setNewPasswordVC: UIViewController {
             NetworkService.shared.requestResetPassword(param: parameters) { [self] (response) in
                 animationView?.stop()
                 animationView?.isHidden = true
+                self.popBack(4)
                 setupAlert(title: "success".localized, message: response.msg)
-                self.popBack(3)
             } onError: { [self] (error) in
                 animationView?.stop()
                 animationView?.isHidden = true
-                setupAlert(title: "fail".localized, message: error.msg)
+                setupAlert(title: "fail".localized, message: error)
             }
         }
     }

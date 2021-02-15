@@ -7,7 +7,7 @@
 
 import UIKit
 
-class basicBlueShadowedBtn: UIButton {
+class basicShadowedBtn: UIButton {
     
     override func awakeFromNib(){
         super.awakeFromNib()
@@ -35,6 +35,15 @@ class basicBlueShadowedBtn: UIButton {
     
     func isCircleButton(){
         layer.cornerRadius = layer.frame.size.height/2
+    }
+    
+    func isWhiteCircleButton(){
+        layer.cornerRadius = layer.frame.size.height/2
+        layer.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
+        layer.shadowRadius = 3
+        layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.12)
+        layer.shadowOpacity = 0.8
+        layer.shadowOffset = CGSize(width: 0, height: 0)
     }
 
 }

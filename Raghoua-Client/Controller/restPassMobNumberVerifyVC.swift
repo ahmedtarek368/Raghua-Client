@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 13.0, *)
 class restPassMobNumberVerifyVC: UIViewController {
 
     var verificationCode:Int?
@@ -15,10 +16,12 @@ class restPassMobNumberVerifyVC: UIViewController {
     @IBOutlet weak var secondDigit: UITextField!
     @IBOutlet weak var thirdDigit: UITextField!
     @IBOutlet weak var fourthDigit: UITextField!
+    @IBOutlet weak var digitsStack: UIStackView!
     
     override func viewWillAppear(_ animated: Bool) {
         let backButton = UIBarButtonItem(image: UIImage(named: "arrow_back_\("lang".localized)"), style: .plain, target: self, action: #selector(backBtnPressed))
         self.navigationItem.leftBarButtonItem = backButton
+        digitsStack.semanticContentAttribute = .forceLeftToRight
     }
     
     override func viewDidLoad() {
@@ -49,6 +52,7 @@ class restPassMobNumberVerifyVC: UIViewController {
     
 }
 
+@available(iOS 13.0, *)
 extension restPassMobNumberVerifyVC: UITextFieldDelegate{
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

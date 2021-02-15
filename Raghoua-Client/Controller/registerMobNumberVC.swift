@@ -8,6 +8,7 @@
 import UIKit
 import Lottie
 
+@available(iOS 13.0, *)
 class registerMobNumberVC: UIViewController {
 
     var animationView: AnimationView?
@@ -77,6 +78,7 @@ class registerMobNumberVC: UIViewController {
     
 }
 
+@available(iOS 13.0, *)
 extension registerMobNumberVC: UITextFieldDelegate{
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

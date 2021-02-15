@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 13.0, *)
 class verifyRegisteredMobNumberVC: UIViewController {
     
     var verificationCode:Int?
@@ -16,10 +17,12 @@ class verifyRegisteredMobNumberVC: UIViewController {
     @IBOutlet weak var secondDigit: UITextField!
     @IBOutlet weak var thirdDigit: UITextField!
     @IBOutlet weak var fourthDigit: UITextField!
+    @IBOutlet weak var digitsStack: UIStackView!
     
     override func viewWillAppear(_ animated: Bool) {
         let backButton = UIBarButtonItem(image: UIImage(named: "arrow_back_\("lang".localized)"), style: .plain, target: self, action: #selector(backBtnPressed))
         self.navigationItem.leftBarButtonItem = backButton
+        digitsStack.semanticContentAttribute = .forceLeftToRight
     }
     
     override func viewDidLoad() {
@@ -49,6 +52,7 @@ class verifyRegisteredMobNumberVC: UIViewController {
 
 }
 
+@available(iOS 13.0, *)
 extension verifyRegisteredMobNumberVC: UITextFieldDelegate{
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -57,7 +61,9 @@ extension verifyRegisteredMobNumberVC: UITextFieldDelegate{
             // Сlosure
             let setValueAndMoveForward = {
                 textField.text = string
+                
                 let nextTag = textField.tag + 1
+                print("add\(nextTag)")
                 if let nextResponder = textField.superview?.viewWithTag(nextTag) {
                     nextResponder.becomeFirstResponder()
                 }
@@ -66,7 +72,9 @@ extension verifyRegisteredMobNumberVC: UITextFieldDelegate{
             // Сlosure
             let clearValueAndMoveBack = {
                 textField.text = ""
+                
                 let previousTag = textField.tag - 1
+                print("clear\(previousTag)")
                 if let previousResponder = textField.superview?.viewWithTag(previousTag) {
                     previousResponder.becomeFirstResponder()
                 }
@@ -95,11 +103,14 @@ extension verifyRegisteredMobNumberVC: UITextFieldDelegate{
             } else if textFieldCount >= 1 && string.count == 0 {
 
                 clearValueAndMoveBack()
+                print("==")
                 return false
 
             } else if textFieldCount >= 1 && string.count > 0 {
-
+                
                 let nextTag = textField.tag + 1
+                print(">=\(nextTag)")
+                
                 if let previousResponder = textField.superview?.viewWithTag(nextTag) {
                     previousResponder.becomeFirstResponder()
 

@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import MobileCoreServices
 
 class NetworkService{
     static let shared = NetworkService()
@@ -79,7 +80,7 @@ class NetworkService{
             AF.upload(multipartFormData: { (multipartFormData) in
                 
                 if let imageData = image.jpegData(compressionQuality: 0.2) {
-                    multipartFormData.append(imageData, withName: "img",fileName: "image", mimeType: "image/jpg")
+                    multipartFormData.append(imageData, withName: "img",fileName: "image.jpg", mimeType: "image/jpg")
                 }
                 
                 for (key, value) in param {
@@ -197,7 +198,7 @@ class NetworkService{
         
     }
     
-    func requestResetPassword(param: [String:String], onSuccess: @escaping (basicResponse) -> Void, onError: @escaping (basicResponse) -> Void){
+    func requestResetPassword(param: [String:String], onSuccess: @escaping (basicResponse) -> Void, onError: @escaping (String) -> Void){
         
         let url = URL(string: URLs.resetPassword)!
         let header = HTTPHeaders(["lang":"lang".localized])
@@ -212,16 +213,101 @@ class NetworkService{
                         onSuccess(successResponse)
                     }else{
                         let failedResponse = try JSONDecoder().decode(basicResponse.self, from: response.data!)
-                        onError(failedResponse)
+                        onError(failedResponse.msg)
                     }
                     break
                 case .failure(_):
                     let failedResponse = try JSONDecoder().decode(basicResponse.self, from: response.data!)
-                    onError(failedResponse)
+                    onError(failedResponse.msg)
                     break
                 }
             }catch(let err){
-                debugPrint(err.localizedDescription)
+                onError(err.localizedDescription)
+            }
+        }
+    }
+    
+    func requestLaundries(param: [String:String], onSuccess: @escaping (successfulGetLaundriesResponse) -> Void, onError: @escaping (String) -> Void){
+        
+        let url = URL(string: URLs.getLaundries)!
+        let header = HTTPHeaders(["lang":"lang".localized])
+        
+        AF.request(url, method: .post, parameters: param, encoding: JSONEncoding.default, headers: header, interceptor: nil, requestModifier: nil).responseJSON { (response) in
+            do{
+                switch response.result{
+                case .success(_):
+                    let status = try JSONDecoder().decode(responseStatus.self, from: response.data!)
+                    if status.status == true {
+                        let successResponse = try JSONDecoder().decode(successfulGetLaundriesResponse.self, from: response.data!)
+                        onSuccess(successResponse)
+                    }else{
+                        let failedResponse = try JSONDecoder().decode(basicResponse.self, from: response.data!)
+                        onError(failedResponse.msg)
+                    }
+                    break
+                case .failure(let error):
+                    onError(error.localizedDescription)
+                    break
+                }
+            }catch(let err){
+                onError(err.localizedDescription)
+            }
+        }
+    }
+    
+    func requestLaundryDetails(param: [String:String], onSuccess: @escaping (successfulGetLaundryResponse) -> Void, onError: @escaping (String) -> Void){
+        
+        let url = URL(string: URLs.laundryDetails)!
+        //let header = HTTPHeaders(["lang":"lang".localized])
+        let header = HTTPHeaders(["Authorization":"Bearer \(userToken!)", "lang":"lang".localized])
+        
+        AF.request(url, method: .post, parameters: param, encoding: JSONEncoding.default, headers: header, interceptor: nil, requestModifier: nil).responseJSON { (response) in
+            do{
+                switch response.result{
+                case .success(_):
+                    let status = try JSONDecoder().decode(responseStatus.self, from: response.data!)
+                    if status.status == true {
+                        let successResponse = try JSONDecoder().decode(successfulGetLaundryResponse.self, from: response.data!)
+                        onSuccess(successResponse)
+                    }else{
+                        let failedResponse = try JSONDecoder().decode(basicResponse.self, from: response.data!)
+                        onError(failedResponse.msg)
+                    }
+                    break
+                case .failure(let error):
+                    onError(error.localizedDescription)
+                    break
+                }
+            }catch(let err){
+                onError(err.localizedDescription)
+            }
+        }
+    }
+    
+    func requestReviewsData(param: [String:String], onSuccess: @escaping (successfulGetReviewsResponse) -> Void, onError: @escaping (String) -> Void){
+        
+        let url = URL(string: URLs.laundryReviews)!
+        let header = HTTPHeaders(["lang":"lang".localized])
+        
+        AF.request(url, method: .post, parameters: param, encoding: JSONEncoding.default, headers: header, interceptor: nil, requestModifier: nil).responseJSON { (response) in
+            do{
+                switch response.result{
+                case .success(_):
+                    let status = try JSONDecoder().decode(responseStatus.self, from: response.data!)
+                    if status.status == true {
+                        let successResponse = try JSONDecoder().decode(successfulGetReviewsResponse.self, from: response.data!)
+                        onSuccess(successResponse)
+                    }else{
+                        let failedResponse = try JSONDecoder().decode(basicResponse.self, from: response.data!)
+                        onError(failedResponse.msg)
+                    }
+                    break
+                case .failure(let error):
+                    onError(error.localizedDescription)
+                    break
+                }
+            }catch(let err){
+                onError(err.localizedDescription)
             }
         }
     }

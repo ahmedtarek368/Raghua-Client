@@ -10,3 +10,13 @@ import Foundation
 protocol dismissPopup {
     func didDismissPopup()
 }
+
+protocol orderQuantity {
+    func increaseQuantity()
+    func decreaseQuantity()
+}
+
+protocol orderSize {
+    func increaseSize()
+    func decreaseSize()
+}

@@ -8,12 +8,13 @@
 import UIKit
 import Lottie
 
+@available(iOS 13.0, *)
 class forgetPasswordVC: UIViewController {
 
     var animationView: AnimationView?
     
     @IBOutlet weak var mobileNumber: basicTextField!
-    @IBOutlet weak var continueBtn: basicBlueShadowedBtn!
+    @IBOutlet weak var continueBtn: basicShadowedBtn!
     
     override func viewWillAppear(_ animated: Bool) {
         let backButton = UIBarButtonItem(image: UIImage(named: "arrow_back_\("lang".localized)"), style: .plain, target: self, action: #selector(backBtnPressed))
@@ -39,6 +40,7 @@ class forgetPasswordVC: UIViewController {
     }
     
     @IBAction func continueBtnPressed(_ sender: Any) {
+        view.addSubview(animationView!)
         self.animationView?.play()
         self.animationView?.isHidden = false
         requestVerficationCode()

@@ -9,6 +9,7 @@ import UIKit
 import BottomPopup
 
 
+@available(iOS 13.0, *)
 class howDidYouKnowAboutUsVC: UIViewController {
     
     var user: User = User()
@@ -45,6 +46,7 @@ class howDidYouKnowAboutUsVC: UIViewController {
     }
 }
 
+@available(iOS 13.0, *)
 extension howDidYouKnowAboutUsVC: UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {

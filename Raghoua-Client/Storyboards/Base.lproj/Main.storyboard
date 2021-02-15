@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xn0-Th-OAa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0yL-hW-PIT">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -99,7 +100,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Hv-1P-qF8">
+                            <button opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Hv-1P-qF8">
                                 <rect key="frame" x="97" y="736" width="220" height="40"/>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="0.96599422089041098" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <constraints>
@@ -109,6 +110,9 @@
                                 <state key="normal" title="الدخول كزائر">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="continueAsGuestBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hc9-mr-9GL"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ak5-Eh-Ars">
                                 <rect key="frame" x="93.5" y="398.5" width="227" height="27"/>
@@ -267,7 +271,7 @@
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKz-r6-6Pw" customClass="basicBlueShadowedBtn" customModule="Raghoua_Client" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKz-r6-6Pw" customClass="basicShadowedBtn" customModule="Raghoua_Client" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="199" width="364" height="48"/>
                                                         <color key="backgroundColor" red="0.14117647058823529" green="0.22745098039215686" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
@@ -327,7 +331,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" userInteractionEnabled="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOx-iO-kO3">
+                            <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOx-iO-kO3">
                                 <rect key="frame" x="97" y="824" width="220" height="40"/>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="0.96599422089999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <constraints>
@@ -337,6 +341,9 @@
                                 <state key="normal" title="الدخول كزائر">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="continueAsGuestBtnPressed:" destination="5k2-c0-suf" eventType="touchUpInside" id="tW7-yA-Je9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="u9V-5f-bai"/>
@@ -368,6 +375,7 @@
                         <outlet property="password" destination="lcM-J3-F0U" id="GEY-7J-1EC"/>
                         <outlet property="signInBtn" destination="kKz-r6-6Pw" id="1vB-rz-PLx"/>
                         <outlet property="welcomeBackLabel" destination="jIp-b9-hEu" id="BO5-iG-j0E"/>
+                        <segue destination="Xn0-Th-OAa" kind="presentation" identifier="LGN" modalPresentationStyle="fullScreen" id="AX7-wL-4bB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lTw-ML-zbL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -398,7 +406,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" keyboardType="ASCIICapableNumberPad"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZp-ys-YyY" customClass="basicBlueShadowedBtn" customModule="Raghoua_Client" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZp-ys-YyY" customClass="basicShadowedBtn" customModule="Raghoua_Client" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="99" width="364" height="48"/>
                                         <color key="backgroundColor" red="0.14117647059999999" green="0.2274509804" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -596,6 +604,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="digitsStack" destination="hDq-5Q-nck" id="dk1-2P-Glp"/>
                         <outlet property="firstDigit" destination="tBu-E9-yWP" id="Rae-fx-77S"/>
                         <outlet property="fourthDigit" destination="MYC-Us-w0d" id="9wG-Do-obE"/>
                         <outlet property="secondDigit" destination="ggD-FE-duY" id="0xm-uv-7gu"/>
@@ -646,7 +655,7 @@
                                             <constraint firstItem="Ojw-AE-mYV" firstAttribute="height" secondItem="l9a-hK-1m2" secondAttribute="height" id="dGM-tI-9KM"/>
                                         </constraints>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bpw-iI-sUx" customClass="basicBlueShadowedBtn" customModule="Raghoua_Client" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bpw-iI-sUx" customClass="basicShadowedBtn" customModule="Raghoua_Client" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="169" width="366" height="48"/>
                                         <color key="backgroundColor" red="0.14117647059999999" green="0.2274509804" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -748,7 +757,7 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="joC-yR-PYo" customClass="basicBlueShadowedBtn" customModule="Raghoua_Client" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="joC-yR-PYo" customClass="basicShadowedBtn" customModule="Raghoua_Client" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="169" width="366" height="48"/>
                                         <color key="backgroundColor" red="0.14117647059999999" green="0.2274509804" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -958,14 +967,15 @@
                             <constraint firstItem="IC2-fC-Dx7" firstAttribute="leading" secondItem="rXR-ZL-YH1" secondAttribute="leading" id="HN0-4h-E1x"/>
                             <constraint firstAttribute="bottom" secondItem="IC2-fC-Dx7" secondAttribute="bottom" id="I54-af-0ez"/>
                             <constraint firstItem="rPy-N5-sxS" firstAttribute="top" secondItem="GRM-6n-Tlm" secondAttribute="top" constant="85" id="J4b-vx-xdP"/>
+                            <constraint firstItem="2PT-mx-IfP" firstAttribute="centerX" secondItem="GRM-6n-Tlm" secondAttribute="centerX" id="JiH-fz-Fha"/>
                             <constraint firstItem="IC2-fC-Dx7" firstAttribute="top" secondItem="GRM-6n-Tlm" secondAttribute="top" id="Sk6-DS-dXh"/>
-                            <constraint firstItem="2PT-mx-IfP" firstAttribute="centerX" secondItem="GRM-6n-Tlm" secondAttribute="centerX" id="cW0-8x-FIC"/>
                             <constraint firstItem="rXR-ZL-YH1" firstAttribute="trailing" secondItem="rPy-N5-sxS" secondAttribute="trailing" constant="24" id="kos-IZ-Tyj"/>
                             <constraint firstItem="IC2-fC-Dx7" firstAttribute="trailing" secondItem="rXR-ZL-YH1" secondAttribute="trailing" id="zQv-Pc-4lG"/>
                             <constraint firstItem="2PT-mx-IfP" firstAttribute="top" secondItem="rPy-N5-sxS" secondAttribute="bottom" constant="31" id="zzh-8y-52M"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="digitsStack" destination="2PT-mx-IfP" id="yxs-Ce-Xlu"/>
                         <outlet property="firstDigit" destination="Zy7-i0-TAB" id="bvC-Fj-HZJ"/>
                         <outlet property="fourthDigit" destination="had-It-JaW" id="fPl-pd-A4P"/>
                         <outlet property="secondDigit" destination="FZ1-Dz-S7d" id="SYm-7T-abx"/>
@@ -1025,7 +1035,7 @@
                                             <constraint firstItem="qXu-ad-qSF" firstAttribute="height" secondItem="fEz-Id-iHC" secondAttribute="height" id="sK4-1U-nkk"/>
                                         </constraints>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wAM-gC-1ks" customClass="basicBlueShadowedBtn" customModule="Raghoua_Client" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wAM-gC-1ks" customClass="basicShadowedBtn" customModule="Raghoua_Client" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="144" width="366" height="48"/>
                                         <color key="backgroundColor" red="0.14117647059999999" green="0.2274509804" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -1157,7 +1167,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zh4-er-sMy" customClass="basicBlueShadowedBtn" customModule="Raghoua_Client" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zh4-er-sMy" customClass="basicShadowedBtn" customModule="Raghoua_Client" customModuleProvider="target">
                                 <rect key="frame" x="25" y="301" width="364" height="48"/>
                                 <color key="backgroundColor" red="0.14117647059999999" green="0.2274509804" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1210,7 +1220,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKe-rE-hfp" customClass="bottomPopupView" customModule="Raghoua_Client" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="733" width="414" height="163"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dC-ic-BxD" customClass="basicBlueShadowedBtn" customModule="Raghoua_Client" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dC-ic-BxD" customClass="basicShadowedBtn" customModule="Raghoua_Client" customModuleProvider="target">
                                         <rect key="frame" x="25" y="32" width="364" height="48"/>
                                         <color key="backgroundColor" red="0.14117647059999999" green="0.2274509804" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -1436,7 +1446,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v58-as-Gmh" customClass="basicBlueShadowedBtn" customModule="Raghoua_Client" customModuleProvider="target">
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v58-as-Gmh" customClass="basicShadowedBtn" customModule="Raghoua_Client" customModuleProvider="target">
                                 <rect key="frame" x="24" y="808" width="366" height="48"/>
                                 <color key="backgroundColor" red="0.85882352941176465" green="0.85882352941176465" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1451,7 +1461,7 @@
                                     <action selector="continueBtnPressed:" destination="NfM-ia-ctO" eventType="touchUpInside" id="akK-Ba-LsB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ff9-5w-u71" customClass="basicBlueShadowedBtn" customModule="Raghoua_Client" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ff9-5w-u71" customClass="basicShadowedBtn" customModule="Raghoua_Client" customModuleProvider="target">
                                 <rect key="frame" x="336" y="706" width="54" height="54"/>
                                 <color key="backgroundColor" red="0.14117647059999999" green="0.2274509804" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1487,6 +1497,7 @@
                         <outlet property="addAddressBtn" destination="Ff9-5w-u71" id="bL6-6T-mYf"/>
                         <outlet property="addressesListTV" destination="RbY-2l-zoJ" id="MUu-He-BCE"/>
                         <outlet property="continueBtn" destination="v58-as-Gmh" id="Sp8-Ej-mtd"/>
+                        <segue destination="Xn0-Th-OAa" kind="presentation" identifier="SGN" modalPresentationStyle="fullScreen" id="rqT-zI-nHl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nzz-rA-ean" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1548,7 +1559,7 @@
                                             </textView>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adZ-XL-IfF" customClass="basicBlueShadowedBtn" customModule="Raghoua_Client" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adZ-XL-IfF" customClass="basicShadowedBtn" customModule="Raghoua_Client" customModuleProvider="target">
                                         <rect key="frame" x="25" y="120" width="364" height="48"/>
                                         <color key="backgroundColor" red="0.14117647059999999" green="0.2274509804" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -1603,10 +1614,11 @@
             </objects>
             <point key="canvasLocation" x="4227.536231884058" y="786.83035714285711"/>
         </scene>
-        <!--Tap Bar Home-->
+        <!--Tab Bar Controller-->
         <scene sceneID="THC-JN-VC2">
             <objects>
-                <tabBarController id="Xn0-Th-OAa" customClass="tapBarHome" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TBH" id="Xn0-Th-OAa" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uip-Tv-nFe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1790,7 +1802,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9S-9B-SHf" customClass="basicBlueShadowedBtn" customModule="Raghoua_Client" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9S-9B-SHf" customClass="basicShadowedBtn" customModule="Raghoua_Client" customModuleProvider="target">
                                 <rect key="frame" x="25" y="694" width="364" height="48"/>
                                 <color key="backgroundColor" red="0.14117647059999999" green="0.2274509804" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1856,6 +1868,9 @@
             <point key="canvasLocation" x="140.57971014492756" y="84.375"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="rqT-zI-nHl"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="(87)logo" width="87" height="88"/>
         <image name="add-24" width="24" height="24"/>

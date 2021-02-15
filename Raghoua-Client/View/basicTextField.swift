@@ -46,6 +46,16 @@ class basicTextField: UITextField, UITextFieldDelegate {
         autocapitalizationType = .none
     }
     
+    func isTransparentTextField(){
+        layer.borderWidth = 0
+        self.borderStyle = .none
+        font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        if let placeHolder = placeholder{
+            let attributedPlaceHolder = NSAttributedString(string: placeHolder, attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.6274509804, green: 0.6392156863, blue: 0.6549019608, alpha: 1), NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .regular)])
+            attributedPlaceholder = attributedPlaceHolder
+        }
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.endEditing(true)
         return true

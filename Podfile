@@ -12,5 +12,6 @@ target 'Raghoua-Client' do
   pod 'MOLH'
   pod 'Alamofire'
   pod 'FBSDKLoginKit'
+  pod 'SwiftyStarRatingView'
   
 end

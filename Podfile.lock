@@ -18,6 +18,7 @@ PODS:
     - GoogleMaps/Base
   - lottie-ios (3.1.9)
   - MOLH (1.4.3)
+  - SwiftyStarRatingView (1.0.4)
 
 DEPENDENCIES:
   - Alamofire
@@ -26,6 +27,7 @@ DEPENDENCIES:
   - GoogleMaps
   - lottie-ios
   - MOLH
+  - SwiftyStarRatingView
 
 SPEC REPOS:
   trunk:
@@ -36,6 +38,7 @@ SPEC REPOS:
     - GoogleMaps
     - lottie-ios
     - MOLH
+    - SwiftyStarRatingView
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
@@ -45,7 +48,8 @@ SPEC CHECKSUMS:
   GoogleMaps: 008e2c80e38605b56b560e8deb73d4194ff30bef
   lottie-ios: 3a3758ef5a008e762faec9c9d50a39842f26d124
   MOLH: e45827d200aeb1310641090fd8cd03ad2b42ae72
+  SwiftyStarRatingView: a2b0057700e0adeb8e7442c55d99cb53b531d2f4
 
-PODFILE CHECKSUM: 78e0047ff884518b9bf8d25927c2a30d4c6c1c8a
+PODFILE CHECKSUM: 18e79a36a58c0e36c3d04198889f24214d945618
 
 COCOAPODS: 1.9.3

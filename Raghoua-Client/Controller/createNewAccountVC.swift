@@ -9,6 +9,7 @@ import UIKit
 import BottomPopup
 import Lottie
 
+@available(iOS 13.0, *)
 class createNewAccountVC: UIViewController {
 
     var user = User()
@@ -109,6 +110,7 @@ class createNewAccountVC: UIViewController {
     
 }
 
+@available(iOS 13.0, *)
 extension createNewAccountVC: dismissPopup{
     func didDismissPopup() {
         let howDidYouKnowAboutUs : howDidYouKnowAboutUsVC = self.storyboard?.instantiateViewController(identifier: "HDYKAUVC") as! howDidYouKnowAboutUsVC
@@ -117,6 +119,7 @@ extension createNewAccountVC: dismissPopup{
     }
 }
 
+@available(iOS 13.0, *)
 extension createNewAccountVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     func showImagePickerControllerActionSheet(){

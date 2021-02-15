@@ -7,14 +7,15 @@
 
 import UIKit
 
+@available(iOS 13.0, *)
 class addressesListVC: UIViewController {
 
     var userAddresses: [Address] = [Address]()
-    var user: User = User()
+    var user: User?
     var addressIndex: Int = 0
     @IBOutlet weak var addressesListTV: UITableView!
-    @IBOutlet weak var continueBtn: basicBlueShadowedBtn!
-    @IBOutlet weak var addAddressBtn: basicBlueShadowedBtn!
+    @IBOutlet weak var continueBtn: basicShadowedBtn!
+    @IBOutlet weak var addAddressBtn: basicShadowedBtn!
     
     override func viewWillAppear(_ animated: Bool) {
         let backButton = UIBarButtonItem(image: UIImage(named: "arrow_back_\("lang".localized)"), style: .plain, target: self, action: #selector(backBtnPressed))
@@ -40,6 +41,7 @@ class addressesListVC: UIViewController {
         //userMail userDefaults
         //userAddressindex userDefaults
         //Enter App
+        performSegue(withIdentifier: "SGN", sender: self)
     }
     
     @IBAction func addAddressBtnPressed(_ sender: Any) {
@@ -50,6 +52,7 @@ class addressesListVC: UIViewController {
     func getUserAddresses(){
         NetworkService.shared.requestGetUserAddresses { (response) in
             let addressesData = response.data
+            self.user?.setAddresses(addresses: addressesData)
             for i in 0..<addressesData.count{
                 let addressData = Address(latitude: addressesData[i].lat, longitude: addressesData[i].long, address: addressesData[i].address, street: addressesData[i].street, realStateNumber: addressesData[i].realstateNumber, floorNumber: addressesData[i].floorNumber, apartmentNumber: addressesData[i].departNumber, nearestPlace: addressesData[i].nearstPlace, addressType: addressesData[i].addressType)
                 self.userAddresses.append(addressData)
@@ -61,10 +64,23 @@ class addressesListVC: UIViewController {
         }
 
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SGN"{
+            let homeTabBar = segue.destination as! UITabBarController
+            let laundriesNav = homeTabBar.viewControllers?.first as! UINavigationController
+            let laundriesVC = laundriesNav.viewControllers.first as! laundriesVC
+            if let user = self.user{
+                laundriesVC.initUserData(user: user)
+                laundriesVC.addressIndex = self.addressIndex
+            }
+        }
+    }
     
 }
 
 
+@available(iOS 13.0, *)
 extension addressesListVC: UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
