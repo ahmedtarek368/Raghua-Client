@@ -9,7 +9,6 @@ import UIKit
 import BottomPopup
 import Lottie
 
-@available(iOS 13.0, *)
 class createNewAccountVC: UIViewController {
 
     var user = User()
@@ -103,23 +102,33 @@ class createNewAccountVC: UIViewController {
     }
     
     func presentBottomPopup(){
-        let bottomPopupView : successfulRegistrationVC = self.storyboard?.instantiateViewController(identifier: "SRVC") as! successfulRegistrationVC
-        bottomPopupView.delegate = self
-        self.present(bottomPopupView, animated: true, completion: nil)
+        if #available(iOS 13.0, *) {
+            let bottomPopupView : successfulRegistrationVC = self.storyboard?.instantiateViewController(identifier: "SRVC") as! successfulRegistrationVC
+            bottomPopupView.delegate = self
+            self.present(bottomPopupView, animated: true, completion: nil)
+        } else {
+            let bottomPopupView : successfulRegistrationVC = self.storyboard?.instantiateViewController(withIdentifier: "SRVC") as! successfulRegistrationVC
+            bottomPopupView.delegate = self
+            self.present(bottomPopupView, animated: true, completion: nil)
+        }
     }
     
 }
 
-@available(iOS 13.0, *)
 extension createNewAccountVC: dismissPopup{
     func didDismissPopup() {
-        let howDidYouKnowAboutUs : howDidYouKnowAboutUsVC = self.storyboard?.instantiateViewController(identifier: "HDYKAUVC") as! howDidYouKnowAboutUsVC
-        howDidYouKnowAboutUs.user = self.user
-        self.navigationController?.pushViewController(howDidYouKnowAboutUs, animated: true)
+        if #available(iOS 13.0, *) {
+            let howDidYouKnowAboutUs : howDidYouKnowAboutUsVC = self.storyboard?.instantiateViewController(identifier: "HDYKAUVC") as! howDidYouKnowAboutUsVC
+            howDidYouKnowAboutUs.user = self.user
+            self.navigationController?.pushViewController(howDidYouKnowAboutUs, animated: true)
+        } else {
+            let howDidYouKnowAboutUs : howDidYouKnowAboutUsVC = self.storyboard?.instantiateViewController(withIdentifier: "HDYKAUVC") as! howDidYouKnowAboutUsVC
+            howDidYouKnowAboutUs.user = self.user
+            self.navigationController?.pushViewController(howDidYouKnowAboutUs, animated: true)
+        }
     }
 }
 
-@available(iOS 13.0, *)
 extension createNewAccountVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     func showImagePickerControllerActionSheet(){

@@ -7,7 +7,6 @@
 
 import UIKit
 
-@available(iOS 13.0, *)
 class addressesListVC: UIViewController {
 
     var userAddresses: [Address] = [Address]()
@@ -45,8 +44,13 @@ class addressesListVC: UIViewController {
     }
     
     @IBAction func addAddressBtnPressed(_ sender: Any) {
-        let spotYourLocationView : spotYourLocationVC = self.storyboard?.instantiateViewController(identifier: "SYLVC") as! spotYourLocationVC
-        self.navigationController?.pushViewController(spotYourLocationView, animated: true)
+        if #available(iOS 13.0, *) {
+            let spotYourLocationView : spotYourLocationVC = self.storyboard?.instantiateViewController(identifier: "SYLVC") as! spotYourLocationVC
+            self.navigationController?.pushViewController(spotYourLocationView, animated: true)
+        } else {
+            let spotYourLocationView : spotYourLocationVC = self.storyboard?.instantiateViewController(withIdentifier: "SYLVC") as! spotYourLocationVC
+            self.navigationController?.pushViewController(spotYourLocationView, animated: true)
+        }
     }
     
     func getUserAddresses(){
@@ -80,7 +84,6 @@ class addressesListVC: UIViewController {
 }
 
 
-@available(iOS 13.0, *)
 extension addressesListVC: UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {

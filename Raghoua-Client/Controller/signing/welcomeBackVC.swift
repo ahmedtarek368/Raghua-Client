@@ -8,7 +8,6 @@
 import UIKit
 import Lottie
 
-@available(iOS 13.0, *)
 class welcomeBackVC: UIViewController{
     
     var animationView: AnimationView?
@@ -54,7 +53,6 @@ class welcomeBackVC: UIViewController{
             let laundriesVC = laundriesNav.viewControllers.first as! laundriesVC
             if let user = self.user{
                 laundriesVC.initUserData(user: user)
-                laundriesVC.addressIndex = 0
             }
         }
     }
@@ -79,12 +77,23 @@ class welcomeBackVC: UIViewController{
     }
     
     @IBAction func forgetPasswordBtnPressed(_ sender: Any) {
-        let forgetPasswordView : forgetPasswordVC  = self.storyboard?.instantiateViewController(identifier: "FPVC") as! forgetPasswordVC
-        self.navigationController?.pushViewController(forgetPasswordView, animated: true)
+        if #available(iOS 13.0, *) {
+            let forgetPasswordView : forgetPasswordVC  = self.storyboard?.instantiateViewController(identifier: "FPVC") as! forgetPasswordVC
+            self.navigationController?.pushViewController(forgetPasswordView, animated: true)
+        } else {
+            let forgetPasswordView : forgetPasswordVC  = self.storyboard?.instantiateViewController(withIdentifier: "FPVC") as! forgetPasswordVC
+            self.navigationController?.pushViewController(forgetPasswordView, animated: true)
+        }
     }
+    
     @IBAction func registerBtnPressed(_ sender: Any) {
-        let registerMobNumberVerifyView = self.storyboard?.instantiateViewController(identifier: "RMNVVC") as! registerMobNumberVC
-        self.navigationController?.pushViewController(registerMobNumberVerifyView, animated: true)
+        if #available(iOS 13.0, *) {
+            let registerMobNumberVerifyView = self.storyboard?.instantiateViewController(identifier: "RMNVVC") as! registerMobNumberVC
+            self.navigationController?.pushViewController(registerMobNumberVerifyView, animated: true)
+        } else {
+            let registerMobNumberVerifyView = self.storyboard?.instantiateViewController(withIdentifier: "RMNVVC") as! registerMobNumberVC
+            self.navigationController?.pushViewController(registerMobNumberVerifyView, animated: true)
+        }
     }
     
     @IBAction func signInBtnPressed(_ sender: Any) {
@@ -128,8 +137,13 @@ class welcomeBackVC: UIViewController{
     
     func pushToHome(){
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        let tabBarHomeView : UITabBarController = self.storyboard?.instantiateViewController(identifier: "TBH") as! UITabBarController
-        self.navigationController?.pushViewController(tabBarHomeView, animated: true)
+        if #available(iOS 13.0, *) {
+            let tabBarHomeView : UITabBarController = self.storyboard?.instantiateViewController(identifier: "TBH") as! UITabBarController
+            self.navigationController?.pushViewController(tabBarHomeView, animated: true)
+        } else {
+            let tabBarHomeView : UITabBarController = self.storyboard?.instantiateViewController(withIdentifier: "TBH") as! UITabBarController
+            self.navigationController?.pushViewController(tabBarHomeView, animated: true)
+        }
     }
     
     func setupAlert(title: String, message: String){

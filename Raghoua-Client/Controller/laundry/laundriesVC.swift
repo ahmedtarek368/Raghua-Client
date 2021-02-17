@@ -8,7 +8,6 @@
 import UIKit
 import Lottie
 
-@available(iOS 13.0, *)
 class laundriesVC: UIViewController {
 
     @IBOutlet weak var laundriesTVC: UITableView!
@@ -19,7 +18,10 @@ class laundriesVC: UIViewController {
     var addressIndex : Int?
     var laundriesData : [Laundry]?
     var animationView: AnimationView?
-
+    var guestFlag : Bool = false
+    var longitude: String?
+    var latitude : String?
+    
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.layer.shadowOffset = CGSize(width: 0, height: 7)
         self.tabBarController?.tabBar.layer.shadowRadius = 9
@@ -31,7 +33,7 @@ class laundriesVC: UIViewController {
         self.tabBarController?.tabBar.shadowImage = UIImage()
         self.tabBarController?.tabBar.isTranslucent = true
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        requestLaundries()
+        prepareRequestLaundries()
     }
     
     override func viewDidLoad() {
@@ -51,18 +53,28 @@ class laundriesVC: UIViewController {
         self.user = user
     }
     
-    func requestLaundries(){
+    func prepareRequestLaundries(){
         view.addSubview(animationView!)
         animationView?.isHidden = false
         animationView?.play()
-        guard let index = self.addressIndex else{return}
-        let userAddress = user?.userAddress[index]
-        let addressID = userAddress?.id
-        let parameter = [
-            "address_id":"\(addressID!)",
-            "lat":"\(userAddress!.lat)",
-            "long":"\(userAddress!.long)"
-        ]
+        if guestFlag == false{
+            guard let index = self.addressIndex else{return}
+            let userAddress = user?.userAddress[index]
+            let parameter = [
+                "lat":"\(userAddress!.lat)",
+                "long":"\(userAddress!.long)"
+            ]
+            requestLaundries(parameter: parameter)
+        }else{
+            let parameter = [
+                "lat":"\(self.latitude!)",
+                "long":"\(self.longitude!)"
+            ]
+            requestLaundries(parameter: parameter)
+        }
+    }
+    
+    func requestLaundries(parameter: [String:String]){
         NetworkService.shared.requestLaundries(param: parameter) { (response) in
             let laundriesData = response.dataa.data
             self.laundriesCount.text = "\(laundriesData.count) مغسلة"
@@ -91,15 +103,35 @@ class laundriesVC: UIViewController {
             successfulAlert.addAction(UIAlertAction(title: "Ok", style: .cancel , handler: nil))
             self.present(successfulAlert, animated: true, completion: nil)
     }
+    func setupSignupAlert(title: String, message: String){
+            let successfulAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            successfulAlert.addAction(UIAlertAction(title: "Signup", style: .default , handler: transitionToHome(alert:)))
+            successfulAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel , handler: nil))
+            self.present(successfulAlert, animated: true, completion: nil)
+    }
+    
+    func transitionToHome(alert: UIAlertAction) {
+        self.performSegue(withIdentifier: "GH", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GH"{
+            let _ = segue.destination as! UINavigationController
+        }
+    }
     
     @IBAction func reorderBtnPressed(_ sender: Any) {
-        let reorderingLaundriesPopup : reorderingLaundriesPopupVC = self.storyboard?.instantiateViewController(identifier: "RLPVC") as! reorderingLaundriesPopupVC
-        self.present(reorderingLaundriesPopup, animated: true)
+        if #available(iOS 13.0, *) {
+            let reorderingLaundriesPopup : reorderingLaundriesPopupVC = self.storyboard?.instantiateViewController(identifier: "RLPVC") as! reorderingLaundriesPopupVC
+            self.present(reorderingLaundriesPopup, animated: true)
+        } else {
+            let reorderingLaundriesPopup : reorderingLaundriesPopupVC = self.storyboard?.instantiateViewController(withIdentifier: "RLPVC") as! reorderingLaundriesPopupVC
+            self.present(reorderingLaundriesPopup, animated: true)
+        }
     }
     
 }
 
-@available(iOS 13.0, *)
 extension laundriesVC: UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -126,21 +158,45 @@ extension laundriesVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let laundryData = self.laundriesData?[indexPath.row]{
-            animationView?.play()
-            animationView?.isHidden = false
-        let laundryDetailsVC : laundryDetailsVC = self.storyboard?.instantiateViewController(identifier: "LDVC") as! laundryDetailsVC
-            let parameter = ["laundary_id":"\(laundryData.id)"]
-            NetworkService.shared.requestLaundryDetails(param: parameter) { (response) in
-                laundryDetailsVC.laundryDetails = response.data
-                self.animationView?.isHidden = true
-                self.animationView?.stop()
-                self.navigationController?.pushViewController(laundryDetailsVC, animated: true)
-                
-            } onError: { (error) in
-                debugPrint(error)
+        if guestFlag == false{
+            if let laundryData = self.laundriesData?[indexPath.row]{
+                animationView?.play()
+                animationView?.isHidden = false
+                if #available(iOS 13.0, *) {
+                    let laundryDetailsVC : laundryDetailsVC = self.storyboard?.instantiateViewController(identifier: "LDVC") as! laundryDetailsVC
+                    let parameter = ["laundary_id":"\(laundryData.id)"]
+                    NetworkService.shared.requestLaundryDetails(param: parameter) { (response) in
+                        laundryDetailsVC.laundryDetails = response.data
+                        laundryDetailsVC.userCartID = self.user!.cartID
+                        if self.guestFlag == true{
+                            laundryDetailsVC.guestFlag = true
+                        }
+                        self.animationView?.isHidden = true
+                        self.animationView?.stop()
+                        self.navigationController?.pushViewController(laundryDetailsVC, animated: true)
+                    } onError: { (error) in
+                        debugPrint(error)
+                    }
+                } else {
+                    let laundryDetailsVC : laundryDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "LDVC") as! laundryDetailsVC
+                    let parameter = ["laundary_id":"\(laundryData.id)"]
+                    NetworkService.shared.requestLaundryDetails(param: parameter) { (response) in
+                        laundryDetailsVC.laundryDetails = response.data
+                        laundryDetailsVC.userCartID = self.user!.cartID
+                        if self.guestFlag == true{
+                            laundryDetailsVC.guestFlag = true
+                        }
+                        self.animationView?.isHidden = true
+                        self.animationView?.stop()
+                        self.navigationController?.pushViewController(laundryDetailsVC, animated: true)
+                    } onError: { (error) in
+                        debugPrint(error)
+                    }
+                }
+            //self.navigationController?.pushViewController(laundryDetailsVC, animated: true)
             }
-        //self.navigationController?.pushViewController(laundryDetailsVC, animated: true)
+        }else{
+            setupSignupAlert(title: "fail".localized, message: "Signup Required To Proceed")
         }
     }
     

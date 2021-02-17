@@ -7,7 +7,6 @@
 
 import UIKit
 
-@available(iOS 13.0, *)
 class verifyRegisteredMobNumberVC: UIViewController {
     
     var verificationCode:Int?
@@ -39,9 +38,15 @@ class verifyRegisteredMobNumberVC: UIViewController {
     }
     
     func pushToCreateNewAccountVC(){
-        let createNewAccountVC : createNewAccountVC = self.storyboard?.instantiateViewController(identifier: "CNAVC") as! createNewAccountVC
-        createNewAccountVC.mobileNumber = self.mobileNumber
-        self.navigationController?.pushViewController(createNewAccountVC, animated: true)
+        if #available(iOS 13.0, *) {
+            let createNewAccountVC : createNewAccountVC = self.storyboard?.instantiateViewController(identifier: "CNAVC") as! createNewAccountVC
+            createNewAccountVC.mobileNumber = self.mobileNumber
+            self.navigationController?.pushViewController(createNewAccountVC, animated: true)
+        } else {
+            let createNewAccountVC : createNewAccountVC = self.storyboard?.instantiateViewController(withIdentifier: "CNAVC") as! createNewAccountVC
+            createNewAccountVC.mobileNumber = self.mobileNumber
+            self.navigationController?.pushViewController(createNewAccountVC, animated: true)
+        }
     }
     
     func setupAlert(title: String, message: String){
@@ -52,7 +57,6 @@ class verifyRegisteredMobNumberVC: UIViewController {
 
 }
 
-@available(iOS 13.0, *)
 extension verifyRegisteredMobNumberVC: UITextFieldDelegate{
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

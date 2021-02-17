@@ -8,7 +8,6 @@
 import UIKit
 import GoogleMaps
 
-@available(iOS 13.0, *)
 class spotYourLocationVC: UIViewController {
 
     @IBOutlet weak var mapView: GMSMapView!
@@ -17,6 +16,7 @@ class spotYourLocationVC: UIViewController {
     @IBOutlet weak var userLocationBtn: UIButton!
     @IBOutlet weak var userPositionOnMap: basicTextView!
     
+    var guestFlag: Bool = false
     let region : Double = 1000
     var previousLocation : CLLocation?
     var locationManager = CLLocationManager()
@@ -90,19 +90,42 @@ class spotYourLocationVC: UIViewController {
     }
     
     @IBAction func confirmBtnPressed(_ sender: Any) {
-        let addAddressView : addAddressVC = self.storyboard?.instantiateViewController(identifier: "AAVC") as! addAddressVC
-        addAddressView.userLocationOnMap = userPositionOnMap.text
-        let coordinates = getCenterlocation(mapView: mapView)
-        addAddressView.latitude = coordinates.coordinate.latitude
-        addAddressView.longitude = coordinates.coordinate.longitude
-        self.navigationController?.pushViewController(addAddressView, animated: true)
+        if guestFlag == false {
+            if #available(iOS 13.0, *) {
+                let addAddressView : addAddressVC = self.storyboard?.instantiateViewController(identifier: "AAVC") as! addAddressVC
+                addAddressView.userLocationOnMap = userPositionOnMap.text
+                let coordinates = getCenterlocation(mapView: mapView)
+                addAddressView.latitude = coordinates.coordinate.latitude
+                addAddressView.longitude = coordinates.coordinate.longitude
+                self.navigationController?.pushViewController(addAddressView, animated: true)
+            } else {
+                let addAddressView : addAddressVC = self.storyboard?.instantiateViewController(withIdentifier: "AAVC") as! addAddressVC
+                addAddressView.userLocationOnMap = userPositionOnMap.text
+                let coordinates = getCenterlocation(mapView: mapView)
+                addAddressView.latitude = coordinates.coordinate.latitude
+                addAddressView.longitude = coordinates.coordinate.longitude
+                self.navigationController?.pushViewController(addAddressView, animated: true)
+            }
+        }else{
+            performSegue(withIdentifier: "GLGN", sender: self)
+        }
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GLGN"{
+            let homeTabBar = segue.destination as! UITabBarController
+            let laundriesNav = homeTabBar.viewControllers?.first as! UINavigationController
+            let laundriesVC = laundriesNav.viewControllers.first as! laundriesVC
+            let coordinates = getCenterlocation(mapView: mapView)
+            laundriesVC.guestFlag = true
+            laundriesVC.latitude = "\(coordinates.coordinate.latitude)"
+            laundriesVC.longitude = "\(coordinates.coordinate.longitude)"
+            
+        }
+    }
 
 }
 
-@available(iOS 13.0, *)
 extension spotYourLocationVC: CLLocationManagerDelegate{
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
@@ -120,7 +143,6 @@ extension spotYourLocationVC: CLLocationManagerDelegate{
     }
 }
 
-@available(iOS 13.0, *)
 extension spotYourLocationVC: GMSMapViewDelegate{
     
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {

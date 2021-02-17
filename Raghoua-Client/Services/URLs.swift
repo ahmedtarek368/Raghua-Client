@@ -21,6 +21,8 @@ class URLs{
     static let getLaundries = baseUrl + "laundries"
     static let laundryDetails = baseUrl + "singleLaundary"
     static let laundryReviews = baseUrl + "laundaryRatereview"
-    
+    static let addToCart = baseUrl + "addtocart"
+    static let getCart = baseUrl + "cartindex"
+    static let removeItem = baseUrl + "deletefromcart"
     
 }

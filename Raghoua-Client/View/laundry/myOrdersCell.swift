@@ -7,11 +7,12 @@
 
 import UIKit
 
-class myOrdersCell: UITableViewCell {
+class myOrdersCell: UITableViewCell{
 
     @IBOutlet weak var ordersTV: UITableView!
     
-    var title = [String]()
+    var userCart: UserCart?
+    var delegate: updateCellHeight?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,8 +25,9 @@ class myOrdersCell: UITableViewCell {
 
     }
     
-    func setSectionHeaderTitle(title: [String]){
-        self.title = title
+    func updateCell(userCart: UserCart){
+        self.userCart = userCart
+        ordersTV.reloadData()
     }
 
 }
@@ -33,7 +35,10 @@ class myOrdersCell: UITableViewCell {
 extension myOrdersCell : UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        if let itemsCount = self.userCart?.items.count{
+            return itemsCount
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -47,18 +52,37 @@ extension myOrdersCell : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableCell(withIdentifier: "OTC")
         let headerTitle : UILabel = header?.viewWithTag(3) as! UILabel
-        headerTitle.text = self.title[section]
+        if let item = self.userCart?.items[section]{
+            headerTitle.text = item.name
+        }
         return header
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        if let item = self.userCart?.items[section]{
+            return item.services.count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let orderDetailsCell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "ODC", for: indexPath)
+        let orderDetailsCell : cartUserItemCell = tableView.dequeueReusableCell(withIdentifier: "ODC", for: indexPath) as! cartUserItemCell
+        orderDetailsCell.delegate = self
+        orderDetailsCell.updateCell(userCart: userCart!, itemIndex: indexPath.section, serviceIndex: indexPath.row)
         return orderDetailsCell
     }
     
-    
+}
+
+extension myOrdersCell: removeItem{
+    func removeAndReloadTable() {
+        NetworkService.shared.requestUserCartData { (response) in
+            self.userCart = response.data
+            self.ordersTV.reloadData()
+            self.delegate?.updateCellHeight(userCart: response.data)
+        } onError: { (error) in
+            debugPrint(error)
+        }
+
+    }
 }

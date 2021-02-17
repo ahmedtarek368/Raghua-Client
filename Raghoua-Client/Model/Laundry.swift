@@ -212,3 +212,48 @@ struct AllReview: Codable {
         case comment
     }
 }
+
+struct successfulUserCartResponse: Codable {
+    let status: Bool
+    let errNum, msg: String
+    let data: UserCart
+}
+
+// MARK: - DataClass
+struct UserCart: Codable {
+    let cartID, userID: Int
+    let items: [UserItem]
+
+    enum CodingKeys: String, CodingKey {
+        case cartID = "cart_id"
+        case userID = "user_id"
+        case items
+    }
+}
+
+// MARK: - Item
+struct UserItem: Codable {
+    let id: Int
+    let name: String
+    let laumdryID, priceMethod: Int
+    let services: [Service]
+
+    enum CodingKeys: String, CodingKey {
+        case id, name
+        case laumdryID = "laumdry_id"
+        case priceMethod = "price_method"
+        case services
+    }
+}
+
+// MARK: - Service
+struct Service: Codable {
+    let id: Int
+    let name: String
+    let quantity, price, priceMethod: Int
+
+    enum CodingKeys: String, CodingKey {
+        case id, name, quantity, price
+        case priceMethod = "price_method"
+    }
+}

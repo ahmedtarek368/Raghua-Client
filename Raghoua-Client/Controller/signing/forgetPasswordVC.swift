@@ -8,7 +8,6 @@
 import UIKit
 import Lottie
 
-@available(iOS 13.0, *)
 class forgetPasswordVC: UIViewController {
 
     var animationView: AnimationView?
@@ -62,10 +61,17 @@ class forgetPasswordVC: UIViewController {
     }
     
     func pushToMobileNumberVerifyView(code: Int){
-        let mobileNumberVerifyView = self.storyboard?.instantiateViewController(identifier: "MNVVC") as! restPassMobNumberVerifyVC
-        mobileNumberVerifyView.verificationCode = code
-        mobileNumberVerifyView.mobileNumber = self.mobileNumber.text
-        self.navigationController?.pushViewController(mobileNumberVerifyView, animated: true)
+        if #available(iOS 13.0, *) {
+            let mobileNumberVerifyView : restPassMobNumberVerifyVC = self.storyboard?.instantiateViewController(identifier: "MNVVC") as! restPassMobNumberVerifyVC
+            mobileNumberVerifyView.verificationCode = code
+            mobileNumberVerifyView.mobileNumber = self.mobileNumber.text
+            self.navigationController?.pushViewController(mobileNumberVerifyView, animated: true)
+        } else {
+            let mobileNumberVerifyView : restPassMobNumberVerifyVC = self.storyboard?.instantiateViewController(withIdentifier: "MNVVC") as! restPassMobNumberVerifyVC
+            mobileNumberVerifyView.verificationCode = code
+            mobileNumberVerifyView.mobileNumber = self.mobileNumber.text
+            self.navigationController?.pushViewController(mobileNumberVerifyView, animated: true)
+        }
     }
     
     func setupAlert(title: String, message: String){

@@ -34,6 +34,18 @@ class paymentMethodVC: UIViewController {
     @IBAction func backBtnPressed(_ sender: Any) {
         self.popBack(2)
     }
+    
+    @IBAction func continueBtnPressed(_ sender: Any) {
+        if #available(iOS 13.0, *) {
+            let outOfWorkingHoursWarning = self.storyboard?.instantiateViewController(identifier: "OOWHWVC") as! outOfWorkingHoursWarningVC
+            self.present(outOfWorkingHoursWarning, animated: true, completion: nil)
+        } else {
+            let outOfWorkingHoursWarning = self.storyboard?.instantiateViewController(withIdentifier: "OOWHWVC") as! outOfWorkingHoursWarningVC
+            self.present(outOfWorkingHoursWarning, animated: true, completion: nil)
+        }
+        
+    }
+    
 }
 
 extension paymentMethodVC: UITableViewDelegate, UITableViewDataSource{

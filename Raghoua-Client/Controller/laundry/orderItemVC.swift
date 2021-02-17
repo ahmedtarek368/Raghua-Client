@@ -7,7 +7,6 @@
 
 import UIKit
 
-@available(iOS 13.0, *)
 class orderItemVC: UIViewController {
     
     @IBOutlet weak var orderServicesTV: UITableView!
@@ -17,9 +16,11 @@ class orderItemVC: UIViewController {
     @IBOutlet weak var bottomPopupView: bottomPopupView!
     @IBOutlet weak var showBasketBtn: basicShadowedBtn!
     @IBOutlet weak var itemsInBasket: UILabel!
-
+    @IBOutlet weak var totalOrderPrice: UILabel!
     
     var item: Item?
+    var order: [String:String]?
+    var userCartID: Int?
     
     override func viewDidLayoutSubviews() {
         bottomPopupView.setBottomPopupHeight(height: Float(UIScreen.main.bounds.size.height/1.4))
@@ -57,13 +58,50 @@ class orderItemVC: UIViewController {
     }
     
     @IBAction func showBasketBtnPressed(_ sender: Any) {
-        let shoppingBasketView : shoppingBasketVC = self.storyboard?.instantiateViewController(identifier: "SBVC") as! shoppingBasketVC
-        self.navigationController?.pushViewController(shoppingBasketView, animated: true)
+        requestUserCart()
+    }
+    
+    func requestUserCart(){
+        NetworkService.shared.requestUserCartData { (response) in
+            self.pushToCartVC(userCart: response.data)
+        } onError: { (error) in
+            debugPrint(error)
+        }
+    }
+    
+    func pushToCartVC(userCart: UserCart){
+        if #available(iOS 13.0, *) {
+            let shoppingBasketView : shoppingBasketVC = self.storyboard?.instantiateViewController(identifier: "SBVC") as! shoppingBasketVC
+            let cellHeight = calculateItemsServicesNumber(userCart: userCart)
+            shoppingBasketView.userCart = userCart
+            shoppingBasketView.ordersCellHeight = cellHeight
+            self.navigationController?.pushViewController(shoppingBasketView, animated: true)
+        } else {
+            let shoppingBasketView : shoppingBasketVC = self.storyboard?.instantiateViewController(withIdentifier: "SBVC") as! shoppingBasketVC
+            let cellHeight = calculateItemsServicesNumber(userCart: userCart)
+            shoppingBasketView.userCart = userCart
+            shoppingBasketView.ordersCellHeight = cellHeight
+            self.navigationController?.pushViewController(shoppingBasketView, animated: true)
+        }
+    }
+    
+    func calculateItemsServicesNumber(userCart: UserCart) -> Int {
+        let itemsCount : Int = userCart.items.count
+        var cellHeight : Int = 0
+        let itemHeight : Int = 51
+        let serviceHeight : Int = 82
+        for i in 0..<itemsCount{
+            cellHeight = cellHeight + itemHeight
+            let servicesCount : Int = userCart.items[i].services.count
+            for _ in 0..<servicesCount {
+                cellHeight = cellHeight + serviceHeight
+            }
+        }
+        return cellHeight
     }
     
 }
 
-@available(iOS 13.0, *)
 extension orderItemVC: UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -84,37 +122,38 @@ extension orderItemVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if self.item!.priceMethod == 2 {
             let itemSizeCell : itemSizeCell = tableView.dequeueReusableCell(withIdentifier: "SOC2") as! itemSizeCell
-        itemSizeCell.delegate = self
-        itemSizeCell.sizeDelegate = self
-            let service = item!.services[indexPath.row]
-        itemSizeCell.updateCell(serviceName: service.name, servicePrice: service.price!)
+            itemSizeCell.delegate = self
+            itemSizeCell.sizeDelegate = self
+            itemSizeCell.updateCell(item: item!, serviceIndex: indexPath.row, userCartID: userCartID!)
             return itemSizeCell
         }else{
             let serviceOrderCell : serviceOrderCell = tableView.dequeueReusableCell(withIdentifier: "SOC") as! serviceOrderCell
-            let service = item!.services[indexPath.row]
             serviceOrderCell.delegate = self
-            serviceOrderCell.updateCell(serviceName: service.name, servicePrice: service.price!)
+            serviceOrderCell.updateCell(item: item!, serviceIndex: indexPath.row, userCartID: userCartID!)
             return serviceOrderCell
         }
     }
 }
 
-@available(iOS 13.0, *)
 extension orderItemVC: orderQuantity{
-    func increaseQuantity() {
+    func increaseQuantity(serviceIndex: Int) {
         let quantity : Int = Int(itemsInBasket.text!)!
-        itemsInBasket.text = "\(quantity+1)"
+        self.itemsInBasket.text = "\(quantity+1)"
+        let price = Int((self.item?.services[serviceIndex].price)!)
+        self.totalOrderPrice.text = "\(price!*(quantity+1)) ريال"
+        
     }
     
-    func decreaseQuantity() {
+    func decreaseQuantity(serviceIndex: Int) {
         let quantity : Int = Int(itemsInBasket.text!)!
         if quantity != 0 {
             itemsInBasket.text = "\(quantity-1)"
+            let price = Int((self.item?.services[serviceIndex].price)!)
+            totalOrderPrice.text = "\(price!*(quantity-1)) ريال"
         }
     }
 }
 
-@available(iOS 13.0, *)
 extension orderItemVC: orderSize{
     func increaseSize() {
     }

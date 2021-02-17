@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0yL-hW-PIT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xn0-Th-OAa">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -168,6 +168,7 @@
                         <outlet property="continueWithGoogleBtn" destination="MID-xt-YZr" id="eZ4-3m-mkj"/>
                         <outlet property="enterAsGuestBtn" destination="7Hv-1P-qF8" id="m91-lB-yKn"/>
                         <outlet property="signInBtn" destination="9qe-w2-EQr" id="o1k-al-YYp"/>
+                        <segue destination="Xn0-Th-OAa" kind="presentation" identifier="FBLGN" modalPresentationStyle="fullScreen" id="Wz8-aN-Kjr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1608,6 +1609,7 @@
                         <outlet property="pinImage" destination="0UG-xs-3cE" id="Yi2-8L-Nhi"/>
                         <outlet property="userLocationBtn" destination="D1l-M2-WyV" id="yKb-P8-MbL"/>
                         <outlet property="userPositionOnMap" destination="mYk-Vb-jxQ" id="S6a-fk-KQc"/>
+                        <segue destination="Xn0-Th-OAa" kind="presentation" identifier="GLGN" modalPresentationStyle="fullScreen" id="SC8-or-xk4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fi7-Sm-mL7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1848,7 +1850,7 @@
         <!--Navigation Controller-->
         <scene sceneID="cjQ-Fd-dkZ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0yL-hW-PIT" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HOME" automaticallyAdjustsScrollViewInsets="NO" id="0yL-hW-PIT" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="KNk-MB-tMA">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1869,7 +1871,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rqT-zI-nHl"/>
+        <segue reference="Wz8-aN-Kjr"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="(87)logo" width="87" height="88"/>

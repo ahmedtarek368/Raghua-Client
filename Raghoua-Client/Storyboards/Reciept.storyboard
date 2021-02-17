@@ -2,21 +2,49 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3S9-5c-nHR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--My OrdersVC-->
         <scene sceneID="MQ4-Ey-0zs">
             <objects>
-                <viewController id="VcE-pl-NMY" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MOVC" id="VcE-pl-NMY" customClass="myOrdersVC" customModule="Raghoua_Client" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qRc-I5-3tG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VFR-4o-PUm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سلة مشترياتك" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlT-rQ-vjf">
+                                        <rect key="frame" x="151" y="47" width="112.5" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="hCB-lz-Ffg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.14117647059999999" green="0.2274509804" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="dlT-rQ-vjf" secondAttribute="bottom" constant="7" id="7sa-Ts-dmQ"/>
+                                    <constraint firstItem="dlT-rQ-vjf" firstAttribute="centerX" secondItem="VFR-4o-PUm" secondAttribute="centerX" id="L9H-IZ-iuf"/>
+                                    <constraint firstAttribute="height" constant="88" id="QCt-u7-5jm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="J50-QN-boF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VFR-4o-PUm" firstAttribute="leading" secondItem="J50-QN-boF" secondAttribute="leading" id="Ztp-Z3-YsP"/>
+                            <constraint firstItem="VFR-4o-PUm" firstAttribute="top" secondItem="qRc-I5-3tG" secondAttribute="top" id="ig4-gf-n8I"/>
+                            <constraint firstItem="VFR-4o-PUm" firstAttribute="trailing" secondItem="J50-QN-boF" secondAttribute="trailing" id="niL-e9-4Mv"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4jP-Fg-RzA"/>
                 </viewController>
@@ -30,8 +58,6 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="3S9-5c-nHR" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="طلباتي" image="receipt-24px" id="kiv-hj-c9y"/>
                     <toolbarItems/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7o4-g6-kvv">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

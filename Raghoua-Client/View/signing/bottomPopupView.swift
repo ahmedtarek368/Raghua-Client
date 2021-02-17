@@ -27,5 +27,8 @@ class bottomPopupView: UIView {
     func setBottomPopupHeight(height: Float){
         layer.bounds.size.height = CGFloat(height)
     }
+    func setBottomPopupWidth(width: Float){
+        layer.bounds.size.width = CGFloat(width)
+    }
 
 }

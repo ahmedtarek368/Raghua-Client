@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mb1-rQ-8jd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FOX-gO-c0Q">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -10,6 +10,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Main-->
+        <scene sceneID="IZG-N9-8XR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="YtZ-1x-Dh7" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rCb-sa-6QB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1435" y="-244"/>
+        </scene>
         <!--LaundriesVC-->
         <scene sceneID="FBn-Hn-dCx">
             <objects>
@@ -273,6 +281,7 @@
                         <outlet property="laundriesCount" destination="CBp-Rl-JUK" id="iTz-Iv-53G"/>
                         <outlet property="laundriesTVC" destination="tef-8G-bdt" id="Xv9-eV-r8K"/>
                         <outlet property="reorderBtn" destination="fuV-fg-V1B" id="6KI-oO-R7E"/>
+                        <segue destination="YtZ-1x-Dh7" kind="presentation" identifier="GH" modalPresentationStyle="fullScreen" id="fbs-AL-xtf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ynb-1Z-t60" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1565,6 +1574,7 @@
                         <outlet property="itemsInBasket" destination="eBg-2U-weF" id="us0-Rr-jLm"/>
                         <outlet property="orderServicesTV" destination="n1A-um-0A5" id="HwJ-5y-AcR"/>
                         <outlet property="showBasketBtn" destination="z8s-GN-69E" id="fJ3-T9-ePR"/>
+                        <outlet property="totalOrderPrice" destination="WvX-2U-VUt" id="1Uh-eD-jR3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hS5-k4-CqQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1902,14 +1912,14 @@
                                 <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TH" id="1Ul-Px-UF1">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="57.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Ul-Px-UF1" id="oY0-qL-uLT">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="57.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="طلبك" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KmC-9d-oLv" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
-                                                    <rect key="frame" x="16" y="16" width="382" height="12"/>
+                                                    <rect key="frame" x="16" y="16" width="382" height="25.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1925,7 +1935,7 @@
                                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OC" rowHeight="370" id="S1d-5a-dfu" customClass="myOrdersCell" customModule="Raghoua_Client" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="99.5" width="414" height="370"/>
+                                        <rect key="frame" x="0.0" y="113" width="414" height="370"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S1d-5a-dfu" id="3Ug-DW-fkR">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="370"/>
@@ -1965,7 +1975,7 @@
                                                             </tableViewCellContentView>
                                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         </tableViewCell>
-                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ODC" rowHeight="85.5" id="G5k-3D-m6X">
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ODC" rowHeight="85.5" id="G5k-3D-m6X" customClass="cartUserItemCell" customModule="Raghoua_Client" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="106.5" width="414" height="85.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G5k-3D-m6X" id="DoT-Tp-YA6">
@@ -2010,7 +2020,7 @@
                                                                                 </constraints>
                                                                                 <state key="normal" image="minimize"/>
                                                                                 <connections>
-                                                                                    <action selector="removeWashIronItemBtnPressed:" destination="J47-rK-HZp" eventType="touchUpInside" id="l9x-aB-8e4"/>
+                                                                                    <action selector="decreaseQuantityBtnPressed:" destination="G5k-3D-m6X" eventType="touchUpInside" id="Ihq-fm-AiT"/>
                                                                                 </connections>
                                                                             </button>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q76-me-pAe">
@@ -2021,7 +2031,7 @@
                                                                                 </constraints>
                                                                                 <state key="normal" image="add"/>
                                                                                 <connections>
-                                                                                    <action selector="addWashIronItemBtnPressed:" destination="J47-rK-HZp" eventType="touchUpInside" id="zfg-hu-CUi"/>
+                                                                                    <action selector="increaseQuantityBtnPressed:" destination="G5k-3D-m6X" eventType="touchUpInside" id="PWn-aq-4cw"/>
                                                                                 </connections>
                                                                             </button>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjg-Fu-QQK">
@@ -2054,6 +2064,9 @@
                                                                         </constraints>
                                                                         <color key="tintColor" red="0.72549019607843135" green="0.72941176470588232" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <state key="normal" image="minus.circle.fill" catalog="system"/>
+                                                                        <connections>
+                                                                            <action selector="removeServiceBtnPressed:" destination="G5k-3D-m6X" eventType="touchUpInside" id="b5Z-bH-ZhA"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>
@@ -2073,6 +2086,11 @@
                                                                 </constraints>
                                                             </tableViewCellContentView>
                                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <connections>
+                                                                <outlet property="serviceName" destination="xsl-CC-LUR" id="a1o-KD-fao"/>
+                                                                <outlet property="servicePrice" destination="wVh-s3-ssu" id="e5u-c2-jkV"/>
+                                                                <outlet property="serviceQuantity" destination="Gjg-Fu-QQK" id="dQ9-Vc-NwJ"/>
+                                                            </connections>
                                                         </tableViewCell>
                                                     </prototypes>
                                                 </tableView>
@@ -2090,7 +2108,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DC" rowHeight="60" id="QlJ-A0-pNq">
-                                        <rect key="frame" x="0.0" y="469.5" width="414" height="60"/>
+                                        <rect key="frame" x="0.0" y="483" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QlJ-A0-pNq" id="gox-Ef-QM0">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -2147,7 +2165,7 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PVC" rowHeight="60" id="lDt-E3-QIP" customClass="purchaseVoucherCell" customModule="Raghoua_Client" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="529.5" width="414" height="60"/>
+                                        <rect key="frame" x="0.0" y="543" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lDt-E3-QIP" id="7iu-Dg-eio">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -2194,7 +2212,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PBC" rowHeight="190" id="rrM-O4-UJv">
-                                        <rect key="frame" x="0.0" y="589.5" width="414" height="190"/>
+                                        <rect key="frame" x="0.0" y="603" width="414" height="190"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rrM-O4-UJv" id="rmo-By-2IF">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
@@ -2520,6 +2538,9 @@
                                 <state key="normal" title="متابعة">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="continueBtnPressed:" destination="FOX-gO-c0Q" eventType="touchUpInside" id="Vt4-Zr-Pna"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sFu-vt-3qK"/>
@@ -2642,6 +2663,46 @@
             </objects>
             <point key="canvasLocation" x="3819" y="796"/>
         </scene>
+        <!--Out Of Working Hours WarningVC-->
+        <scene sceneID="UO3-Xc-GIZ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d95-tL-mCQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="OOWHWVC" id="I2V-3j-dds" customClass="outOfWorkingHoursWarningVC" customModule="Raghoua_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kag-FG-WNE" customClass="bottomPopupView" customModule="Raghoua_Client" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="10I-oB-cOF">
+                                <rect key="frame" x="177" y="48" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Qgb-2q-uwu"/>
+                                    <constraint firstAttribute="width" constant="60" id="hva-36-6cR"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عفو ًا لقد أرسلت طلبك خارج أوقات عملنا وسنرد عليك ما أن نعود" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXc-oS-LMX">
+                                <rect key="frame" x="35" y="124" width="344" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="z8u-l4-WQK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="10I-oB-cOF" firstAttribute="top" secondItem="z8u-l4-WQK" secondAttribute="top" constant="4" id="8u6-ZI-Y8l"/>
+                            <constraint firstItem="aXc-oS-LMX" firstAttribute="leading" secondItem="z8u-l4-WQK" secondAttribute="leading" constant="35" id="AAz-0D-ajj"/>
+                            <constraint firstItem="aXc-oS-LMX" firstAttribute="top" secondItem="10I-oB-cOF" secondAttribute="bottom" constant="16" id="EFj-bt-l1j"/>
+                            <constraint firstItem="10I-oB-cOF" firstAttribute="centerX" secondItem="kag-FG-WNE" secondAttribute="centerX" id="F4A-8t-jh1"/>
+                            <constraint firstItem="z8u-l4-WQK" firstAttribute="trailing" secondItem="aXc-oS-LMX" secondAttribute="trailing" constant="35" id="aTi-PN-pQS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="popup" destination="kag-FG-WNE" id="hyG-La-daH"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="4543" y="796"/>
+        </scene>
         <!--Reordering Laundries PopupVC-->
         <scene sceneID="F4k-c7-88J">
             <objects>
@@ -2748,6 +2809,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g2D-ee-PXx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="289.85507246376812" y="146.65178571428569"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="mfA-o0-tHN">
+            <objects>
+                <viewControllerPlaceholder id="bx7-xl-6gV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ohx-sJ-97H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3724" y="-215"/>
         </scene>
     </scenes>
     <designables>

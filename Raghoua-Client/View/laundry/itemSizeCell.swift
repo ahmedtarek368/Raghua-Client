@@ -11,6 +11,9 @@ class itemSizeCell: UITableViewCell {
 
     var sizeDelegate: orderSize?
     var delegate: orderQuantity?
+    var item: Item?
+    var serviceIndex: Int?
+    var userCartID: Int?
     
     @IBOutlet weak var serviceName: UILabel!
     @IBOutlet weak var servicePrice: UILabel!
@@ -31,22 +34,29 @@ class itemSizeCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func updateCell(serviceName: String, servicePrice: String){
-        self.serviceName.text = serviceName
-        self.servicePrice.text = servicePrice
+//    func updateCell(serviceName: String, servicePrice: String){
+//        self.serviceName.text = serviceName
+//        self.servicePrice.text = servicePrice
+//    }
+    func updateCell(item: Item, serviceIndex: Int, userCartID: Int){
+        self.item = item
+        self.serviceIndex = serviceIndex
+        self.serviceName.text = item.services[serviceIndex].name
+        self.servicePrice.text = item.services[serviceIndex].price
+        self.userCartID = userCartID
     }
 
     @IBAction func increaseQuantityBtnPressed(_ sender: UIButton) {
         let quantity : Int = Int(orderQuantity.text!)!
         orderQuantity.text = "\(quantity+1)"
-        delegate?.increaseQuantity()
+        delegate?.increaseQuantity(serviceIndex: serviceIndex!)
     }
     
     @IBAction func decreaseQuantityBtnPressed(_ sender: UIButton) {
         let quantity : Int = Int(orderQuantity.text!)!
         if quantity != 0 {
             orderQuantity.text = "\(quantity-1)"
-            delegate?.decreaseQuantity()
+            delegate?.decreaseQuantity(serviceIndex: serviceIndex!)
         }
     }
     

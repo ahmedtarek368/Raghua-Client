@@ -8,7 +8,6 @@
 import UIKit
 import Lottie
 
-@available(iOS 13.0, *)
 class registerMobNumberVC: UIViewController {
 
     var animationView: AnimationView?
@@ -70,15 +69,21 @@ class registerMobNumberVC: UIViewController {
             self.present(successfulAlert, animated: true, completion: nil)
     }
     func pushToVerifyRegisteredMobNumberView(code: Int) {
-        let verifyRegisteredMobNumberView : verifyRegisteredMobNumberVC = self.storyboard?.instantiateViewController(identifier: "VRMNVC") as! verifyRegisteredMobNumberVC
-        verifyRegisteredMobNumberView.mobileNumber = self.mobileNumber.text
-        verifyRegisteredMobNumberView.verificationCode = code
-        self.navigationController?.pushViewController(verifyRegisteredMobNumberView, animated: true)
+        if #available(iOS 13.0, *) {
+            let verifyRegisteredMobNumberView : verifyRegisteredMobNumberVC = self.storyboard?.instantiateViewController(identifier: "VRMNVC") as! verifyRegisteredMobNumberVC
+            verifyRegisteredMobNumberView.mobileNumber = self.mobileNumber.text
+            verifyRegisteredMobNumberView.verificationCode = code
+            self.navigationController?.pushViewController(verifyRegisteredMobNumberView, animated: true)
+        } else {
+            let verifyRegisteredMobNumberView : verifyRegisteredMobNumberVC = self.storyboard?.instantiateViewController(withIdentifier: "VRMNVC") as! verifyRegisteredMobNumberVC
+            verifyRegisteredMobNumberView.mobileNumber = self.mobileNumber.text
+            verifyRegisteredMobNumberView.verificationCode = code
+            self.navigationController?.pushViewController(verifyRegisteredMobNumberView, animated: true)
+        }
     }
     
 }
 
-@available(iOS 13.0, *)
 extension registerMobNumberVC: UITextFieldDelegate{
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

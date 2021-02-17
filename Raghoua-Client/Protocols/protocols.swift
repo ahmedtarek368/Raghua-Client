@@ -12,11 +12,19 @@ protocol dismissPopup {
 }
 
 protocol orderQuantity {
-    func increaseQuantity()
-    func decreaseQuantity()
+    func increaseQuantity(serviceIndex: Int)
+    func decreaseQuantity(serviceIndex: Int)
 }
 
 protocol orderSize {
     func increaseSize()
     func decreaseSize()
+}
+
+protocol removeItem {
+    func removeAndReloadTable()
+}
+
+protocol updateCellHeight{
+    func updateCellHeight(userCart: UserCart)
 }

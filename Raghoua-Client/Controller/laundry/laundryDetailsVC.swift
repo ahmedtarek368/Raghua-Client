@@ -9,13 +9,13 @@ import UIKit
 import Lottie
 import SwiftyStarRatingView
 
-@available(iOS 13.0, *)
 class laundryDetailsVC: UIViewController {
 
     var sectionIndex : Int?
     var laundryID : Int?
     var laundryDetails : laundryDetails?
-    
+    var userCartID : Int?
+    var guestFlag : Bool = false
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var laundryImage: UIImageView!
     @IBOutlet weak var laundryName: UILabel!
@@ -82,9 +82,15 @@ class laundryDetailsVC: UIViewController {
     }
     
     @IBAction func aboutBtnPressed(_ sender: Any) {
-        let aboutLaundryView : aboutLaundryVC = self.storyboard?.instantiateViewController(identifier: "ALVC") as! aboutLaundryVC
-        aboutLaundryView.aboutLaundry = self.laundryDetails?.about
-        self.navigationController?.pushViewController(aboutLaundryView, animated: true)
+        if #available(iOS 13.0, *) {
+            let aboutLaundryView : aboutLaundryVC = self.storyboard?.instantiateViewController(identifier: "ALVC") as! aboutLaundryVC
+            aboutLaundryView.aboutLaundry = self.laundryDetails?.about
+            self.navigationController?.pushViewController(aboutLaundryView, animated: true)
+        } else {
+            let aboutLaundryView : aboutLaundryVC = self.storyboard?.instantiateViewController(withIdentifier: "ALVC") as! aboutLaundryVC
+            aboutLaundryView.aboutLaundry = self.laundryDetails?.about
+            self.navigationController?.pushViewController(aboutLaundryView, animated: true)
+        }
     }
     
     @IBAction func rateBtnPressed(_ sender: Any) {
@@ -109,27 +115,43 @@ class laundryDetailsVC: UIViewController {
     }
     
     func pushToRateView(reviewsData: ReviewsData){
-        let laundryRateReviewsView : laundryRateReviewsVC = self.storyboard?.instantiateViewController(identifier: "LRRVC") as! laundryRateReviewsVC
-        laundryRateReviewsView.reviewsData = reviewsData
-        animationView?.stop()
-        animationView?.isHidden = true
-        self.navigationController?.pushViewController(laundryRateReviewsView, animated: true)
+        if #available(iOS 13.0, *) {
+            let laundryRateReviewsView : laundryRateReviewsVC = self.storyboard?.instantiateViewController(identifier: "LRRVC") as! laundryRateReviewsVC
+            laundryRateReviewsView.reviewsData = reviewsData
+            animationView?.stop()
+            animationView?.isHidden = true
+            self.navigationController?.pushViewController(laundryRateReviewsView, animated: true)
+        } else {
+            let laundryRateReviewsView : laundryRateReviewsVC = self.storyboard?.instantiateViewController(withIdentifier: "LRRVC") as! laundryRateReviewsVC
+            laundryRateReviewsView.reviewsData = reviewsData
+            animationView?.stop()
+            animationView?.isHidden = true
+            self.navigationController?.pushViewController(laundryRateReviewsView, animated: true)
+        }
     }
     
     func pushToOrderItemView(item: Item){
-        let orderItemView : orderItemVC = self.storyboard?.instantiateViewController(withIdentifier:"OPIVC") as! orderItemVC
-        orderItemView.item = item
-        self.navigationController?.pushViewController(orderItemView, animated: true)
+        if #available(iOS 13.0, *) {
+            let orderItemView : orderItemVC = self.storyboard?.instantiateViewController(identifier:"OPIVC") as! orderItemVC
+            orderItemView.item = item
+            orderItemView.userCartID = self.userCartID
+            self.navigationController?.pushViewController(orderItemView, animated: true)
+        } else {
+            let orderItemView : orderItemVC = self.storyboard?.instantiateViewController(withIdentifier:"OPIVC") as! orderItemVC
+            orderItemView.item = item
+            orderItemView.userCartID = self.userCartID
+            self.navigationController?.pushViewController(orderItemView, animated: true)
+        }
     }
     
-    func pushToOrderPerSizeView(){
-        let orderPerSizeView : orderPerSizeVC = self.storyboard?.instantiateViewController(withIdentifier:"OPSVC") as! orderPerSizeVC
-        self.navigationController?.pushViewController(orderPerSizeView, animated: true)
+    func setupAlert(title: String, message: String){
+            let successfulAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            successfulAlert.addAction(UIAlertAction(title: "Ok", style: .cancel , handler: nil))
+            self.present(successfulAlert, animated: true, completion: nil)
     }
 }
 
 
-@available(iOS 13.0, *)
 extension laundryDetailsVC: UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -170,6 +192,7 @@ extension laundryDetailsVC: UITableViewDelegate, UITableViewDataSource{
         let categoryItems = self.laundryDetails!.catgoriesItems[indexPath.section]
         let item = categoryItems.items[indexPath.row]
         pushToOrderItemView(item: item)
+        
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -184,7 +207,6 @@ extension laundryDetailsVC: UITableViewDelegate, UITableViewDataSource{
     
 }
 
-@available(iOS 13.0, *)
 extension laundryDetailsVC: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

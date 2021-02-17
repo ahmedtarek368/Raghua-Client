@@ -7,11 +7,12 @@
 
 import UIKit
 
-@available(iOS 13.0, *)
 class shoppingBasketVC: UIViewController{
 
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var basketTV: UITableView!
+    var userCart: UserCart?
+    var ordersCellHeight: Int?
     
     let sectionsTitles : [String] = ["your order".localized,"delivering items date".localized,"receiving items date".localized,"purchase voucher".localized,"payment summary".localized]
     
@@ -34,14 +35,34 @@ class shoppingBasketVC: UIViewController{
     
     
     @IBAction func continueBtnPressed(_ sender: Any) {
-        let purchaseWarningPopupView : purchaseWarningBottomPopupVC = self.storyboard?.instantiateViewController(identifier: "PWBPVC") as! purchaseWarningBottomPopupVC
-        purchaseWarningPopupView.delegate = self
-        self.present(purchaseWarningPopupView, animated: true)
+        if #available(iOS 13.0, *) {
+            let purchaseWarningPopupView : purchaseWarningBottomPopupVC = self.storyboard?.instantiateViewController(identifier: "PWBPVC") as! purchaseWarningBottomPopupVC
+            purchaseWarningPopupView.delegate = self
+            self.present(purchaseWarningPopupView, animated: true)
+        } else {
+            let purchaseWarningPopupView : purchaseWarningBottomPopupVC = self.storyboard?.instantiateViewController(withIdentifier: "PWBPVC") as! purchaseWarningBottomPopupVC
+            purchaseWarningPopupView.delegate = self
+            self.present(purchaseWarningPopupView, animated: true)
+        }
+    }
+    
+    func calculateItemsServicesNumber(userCart: UserCart) -> Int {
+        let itemsCount : Int = userCart.items.count
+        var cellHeight : Int = 0
+        let itemHeight : Int = 51
+        let serviceHeight : Int = 82
+        for i in 0..<itemsCount{
+            cellHeight = cellHeight + itemHeight
+            let servicesCount : Int = userCart.items[i].services.count
+            for _ in 0..<servicesCount {
+                cellHeight = cellHeight + serviceHeight
+            }
+        }
+        return cellHeight
     }
     
 }
 
-@available(iOS 13.0, *)
 extension shoppingBasketVC : UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -70,6 +91,9 @@ extension shoppingBasketVC : UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0{
+            if let cellHeight = self.ordersCellHeight{
+                return CGFloat(cellHeight)
+            }
             return 603
         }else if indexPath.section == 1 || indexPath.section == 2 || indexPath.section == 3{
             return 60
@@ -81,8 +105,9 @@ extension shoppingBasketVC : UITableViewDelegate, UITableViewDataSource{
         switch indexPath.section {
         case 0:
             let myOrdersCell : myOrdersCell = tableView.dequeueReusableCell(withIdentifier: "OC", for: indexPath) as! myOrdersCell
-            let titles = ["سجاد","ثوب (صيفية)"]
-            myOrdersCell.setSectionHeaderTitle(title: titles)
+            print(self.userCart!)
+            myOrdersCell.delegate = self
+            myOrdersCell.updateCell(userCart: self.userCart!)
             return myOrdersCell
         case 1:
             let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "DC", for: indexPath)
@@ -102,12 +127,23 @@ extension shoppingBasketVC : UITableViewDelegate, UITableViewDataSource{
     
 }
 
-@available(iOS 13.0, *)
 extension shoppingBasketVC: dismissPopup{
     func didDismissPopup() {
-        let paymentMethodsView : paymentMethodVC = self.storyboard?.instantiateViewController(identifier: "PMVC") as! paymentMethodVC
-        self.navigationController?.pushViewController(paymentMethodsView, animated: true)
+        if #available(iOS 13.0, *) {
+            let paymentMethodsView : paymentMethodVC = self.storyboard?.instantiateViewController(identifier: "PMVC") as! paymentMethodVC
+            self.navigationController?.pushViewController(paymentMethodsView, animated: true)
+        } else {
+            let paymentMethodsView : paymentMethodVC = self.storyboard?.instantiateViewController(withIdentifier: "PMVC") as! paymentMethodVC
+            self.navigationController?.pushViewController(paymentMethodsView, animated: true)
+        }
     }
-    
-    
+}
+
+extension shoppingBasketVC: updateCellHeight{
+    func updateCellHeight(userCart: UserCart) {
+        self.userCart = userCart
+        let cellHeight = self.calculateItemsServicesNumber(userCart: userCart)
+        self.ordersCellHeight = cellHeight
+        self.basketTV.reloadData()
+    }
 }

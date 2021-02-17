@@ -9,7 +9,6 @@ import UIKit
 import BottomPopup
 
 
-@available(iOS 13.0, *)
 class howDidYouKnowAboutUsVC: UIViewController {
     
     var user: User = User()
@@ -40,13 +39,18 @@ class howDidYouKnowAboutUsVC: UIViewController {
     }
     
     @IBAction func sendBtnPressed(_ sender: Any) {
-        let addressesListView : addressesListVC = self.storyboard?.instantiateViewController(identifier: "ALVC") as! addressesListVC
-        addressesListView.user = self.user
-        self.navigationController?.pushViewController(addressesListView, animated: true)
+        if #available(iOS 13.0, *) {
+            let addressesListView : addressesListVC = self.storyboard?.instantiateViewController(identifier: "ALVC") as! addressesListVC
+            addressesListView.user = self.user
+            self.navigationController?.pushViewController(addressesListView, animated: true)
+        } else {
+            let addressesListView : addressesListVC = self.storyboard?.instantiateViewController(withIdentifier: "ALVC") as! addressesListVC
+            addressesListView.user = self.user
+            self.navigationController?.pushViewController(addressesListView, animated: true)
+        }
     }
 }
 
-@available(iOS 13.0, *)
 extension howDidYouKnowAboutUsVC: UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {

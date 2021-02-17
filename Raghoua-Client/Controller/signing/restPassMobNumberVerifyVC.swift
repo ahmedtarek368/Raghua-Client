@@ -7,7 +7,6 @@
 
 import UIKit
 
-@available(iOS 13.0, *)
 class restPassMobNumberVerifyVC: UIViewController {
 
     var verificationCode:Int?
@@ -39,9 +38,15 @@ class restPassMobNumberVerifyVC: UIViewController {
     }
     
     func pushToSetNewPasswordView(){
-        let setNewPasswordView : setNewPasswordVC = self.storyboard?.instantiateViewController(identifier: "SNPVC") as! setNewPasswordVC
-        setNewPasswordView.mobileNumber = self.mobileNumber
-        self.navigationController?.pushViewController(setNewPasswordView, animated: true)
+        if #available(iOS 13.0, *) {
+            let setNewPasswordView : setNewPasswordVC = self.storyboard?.instantiateViewController(identifier: "SNPVC") as! setNewPasswordVC
+            setNewPasswordView.mobileNumber = self.mobileNumber
+            self.navigationController?.pushViewController(setNewPasswordView, animated: true)
+        } else {
+            let setNewPasswordView : setNewPasswordVC = self.storyboard?.instantiateViewController(withIdentifier: "SNPVC") as! setNewPasswordVC
+            setNewPasswordView.mobileNumber = self.mobileNumber
+            self.navigationController?.pushViewController(setNewPasswordView, animated: true)
+        }
     }
     
     func setupAlert(title: String, message: String){
@@ -52,7 +57,6 @@ class restPassMobNumberVerifyVC: UIViewController {
     
 }
 
-@available(iOS 13.0, *)
 extension restPassMobNumberVerifyVC: UITextFieldDelegate{
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
