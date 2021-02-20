@@ -9,9 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="ArbFONTS-NotoNaskhArabic-Bold.ttf">
-            <string>NotoNaskhArabic-Bold</string>
-        </array>
         <array key="FontsFree-Net-SFProText-Bold.ttf">
             <string>SFProText-Bold</string>
         </array>
@@ -1174,7 +1171,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="Gol-Kc-dlk"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="NotoNaskhArabic-Bold" family="Noto Naskh Arabic" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="متابعة">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -1871,7 +1868,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Wz8-aN-Kjr"/>
+        <segue reference="AX7-wL-4bB"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="(87)logo" width="87" height="88"/>

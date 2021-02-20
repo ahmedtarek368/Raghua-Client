@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CPC" id="56c-WW-68G" customClass="creditPayCell" customModule="Raghoua_Client" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="377"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="56c-WW-68G" id="uQF-iQ-VHs">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="377"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ilt-n6-AVo">
+                        <rect key="frame" x="16" y="20" width="382" height="357"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="13.4" translatesAutoresizingMaskIntoConstraints="NO" id="fUv-27-d42">
+                                <rect key="frame" x="222.5" y="309.5" width="143.5" height="24"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQY-Yq-ML5">
+                                        <rect key="frame" x="0.0" y="0.0" width="122" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="Or3-Jh-nDm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <state key="normal" title="عرض تفاصيل الطلب">
+                                            <color key="titleColor" red="0.14117647059999999" green="0.2274509804" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ArrowLeft_ar" translatesAutoresizingMaskIntoConstraints="NO" id="nFV-is-RuQ">
+                                        <rect key="frame" x="135.5" y="0.0" width="8" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="8" id="Jxp-gg-9Xl"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="71" translatesAutoresizingMaskIntoConstraints="NO" id="6r0-8a-3kW">
+                                <rect key="frame" x="16" y="16" width="261.5" height="45"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="C3t-vX-NlS">
+                                        <rect key="frame" x="0.0" y="0.0" width="88" height="45"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تاريخ الطلب" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEw-iN-fbS" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="88" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="HXI-V6-1gT"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" red="0.62745098040000002" green="0.63921568630000003" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 أكتوبر 2020" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zfn-FV-uqx" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="21" width="88" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="CeX-K4-hhI"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.070588235289999995" green="0.070588235289999995" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="h10-Rh-Q7o">
+                                        <rect key="frame" x="159" y="0.0" width="102.5" height="45"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم الطلب" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcq-7o-qXA" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="102.5" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="wkW-Wp-IFT"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" red="0.62745098040000002" green="0.63921568630000003" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OD-424923192" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfQ-QQ-1zs" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="21" width="102.5" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="7sI-RY-t1w"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.070588235289999995" green="0.070588235289999995" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45b-WZ-9Em">
+                                <rect key="frame" x="0.0" y="285" width="382" height="1"/>
+                                <color key="backgroundColor" red="0.87450980389999999" green="0.8862745098" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="NUb-Li-Vh2"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UN4-mf-aOn">
+                                <rect key="frame" x="0.0" y="73" width="382" height="1"/>
+                                <color key="backgroundColor" red="0.87450980389999999" green="0.8862745098" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="dhL-Sn-asJ"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="78f-mD-GOI">
+                                <rect key="frame" x="16" y="86" width="350" height="123"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="HbL-wd-BZm">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="75"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="69" translatesAutoresizingMaskIntoConstraints="NO" id="BZz-NK-13y">
+                                                <rect key="frame" x="0.0" y="0.0" width="269" height="51"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xPS-Ap-nJ1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="51"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسم افتراضي للمغسلة" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYN-m7-if2" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="120" height="24"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="24" id="B8U-1Y-eoX"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="textColor" red="0.070588235289999995" green="0.070588235289999995" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6 خدمة" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfR-X5-uFt" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="24" width="120" height="27"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="27" id="Rsm-8N-syt"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                                <color key="textColor" red="0.070588235289999995" green="0.070588235289999995" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cTO-Tq-MK1">
+                                                        <rect key="frame" x="189" y="0.0" width="80" height="51"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التكلفة النهائية" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qk-Pm-QPo" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="24"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="24" id="O6S-HL-xWU"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="textColor" red="0.95686274510000002" green="0.41176470590000003" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00.00 ريال" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ito-mg-xBU" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="24" width="80" height="27"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="27" id="VR2-We-ICu"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Mkf-5e-tJe">
+                                                <rect key="frame" x="0.0" y="51" width="168.5" height="24"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="حالة الطلب" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFx-l0-oJX" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="63.5" height="24"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="24" id="KNx-bm-R1q"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.62745098040000002" green="0.63921568630000003" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تم استلام الاغراض" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGO-fh-rHA" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                                        <rect key="frame" x="69.5" y="0.0" width="99" height="24"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="24" id="VQa-yA-8zB"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.95686274510000002" green="0.41176470590000003" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5DN-KL-FLn">
+                                        <rect key="frame" x="0.0" y="83" width="350" height="40"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الدفع بطاقة ائتمان" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mlb-56-EgU" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="8" width="102" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.95686274510000002" green="0.41176470590000003" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HaX-VA-pGD">
+                                                <rect key="frame" x="235" y="5" width="107" height="30"/>
+                                                <color key="backgroundColor" red="0.95686274510000002" green="0.41176470590000003" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="igq-g4-Qo5"/>
+                                                    <constraint firstAttribute="width" constant="107" id="mdN-fJ-Rcn"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                <state key="normal" title="دفع">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.95686274510000002" green="0.41176470590000003" blue="0.27450980390000002" alpha="0.11" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="HaX-VA-pGD" firstAttribute="top" secondItem="5DN-KL-FLn" secondAttribute="top" constant="5" id="1Cy-dz-Bvk"/>
+                                            <constraint firstAttribute="height" constant="40" id="Dmi-Yp-kxH"/>
+                                            <constraint firstAttribute="bottom" secondItem="HaX-VA-pGD" secondAttribute="bottom" constant="5" id="Oij-qi-ikw"/>
+                                            <constraint firstItem="mlb-56-EgU" firstAttribute="leading" secondItem="5DN-KL-FLn" secondAttribute="leading" constant="20" id="PbG-KX-ld9"/>
+                                            <constraint firstItem="HaX-VA-pGD" firstAttribute="centerY" secondItem="5DN-KL-FLn" secondAttribute="centerY" id="axC-F3-hc4"/>
+                                            <constraint firstItem="mlb-56-EgU" firstAttribute="top" secondItem="5DN-KL-FLn" secondAttribute="top" constant="8" id="lwp-30-FT3"/>
+                                            <constraint firstAttribute="bottom" secondItem="mlb-56-EgU" secondAttribute="bottom" constant="8" id="sgs-LL-KoV"/>
+                                            <constraint firstAttribute="trailing" secondItem="HaX-VA-pGD" secondAttribute="trailing" constant="8" id="wFG-sQ-jWZ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="D4l-N6-iHw">
+                                <rect key="frame" x="16" y="225" width="253.5" height="48"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="T7h-kg-NNS">
+                                        <rect key="frame" x="0.0" y="0.0" width="145.5" height="48"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GGalabia" translatesAutoresizingMaskIntoConstraints="NO" id="vlA-MF-2tx">
+                                                <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="4T0-Ld-e2g"/>
+                                                    <constraint firstAttribute="width" constant="48" id="rxJ-s6-OMo"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عبدالله محمد" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eru-mw-JdR" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                                <rect key="frame" x="61" y="14.5" width="84.5" height="19.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" red="0.070588235289999995" green="0.070588235289999995" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="QZk-Ep-gpS">
+                                        <rect key="frame" x="169.5" y="9.5" width="84" height="29"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8xn-yk-Zol" customClass="roundedQuantityView" customModule="Raghoua_Client" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="34" height="29"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message24Px" translatesAutoresizingMaskIntoConstraints="NO" id="GAf-h9-RO5">
+                                                        <rect key="frame" x="8" y="5.5" width="18" height="18"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="18" id="COf-m9-Tjl"/>
+                                                            <constraint firstAttribute="width" constant="18" id="KyH-JQ-coR"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="34" id="P9y-SR-lSV"/>
+                                                    <constraint firstItem="GAf-h9-RO5" firstAttribute="centerX" secondItem="8xn-yk-Zol" secondAttribute="centerX" id="mwa-mg-bRq"/>
+                                                    <constraint firstAttribute="height" constant="29" id="oVw-p0-IHf"/>
+                                                    <constraint firstItem="GAf-h9-RO5" firstAttribute="centerY" secondItem="8xn-yk-Zol" secondAttribute="centerY" id="uJo-r6-NaY"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="opG-B6-JJ0" customClass="roundedQuantityView" customModule="Raghoua_Client" customModuleProvider="target">
+                                                <rect key="frame" x="50" y="0.0" width="34" height="29"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="localPhone24Px" translatesAutoresizingMaskIntoConstraints="NO" id="rfH-VU-bBD">
+                                                        <rect key="frame" x="8" y="5.5" width="18" height="18"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="18" id="iUh-ln-Ebj"/>
+                                                            <constraint firstAttribute="width" constant="18" id="wRb-hD-xjs"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="rfH-VU-bBD" firstAttribute="centerX" secondItem="opG-B6-JJ0" secondAttribute="centerX" id="Vs2-kr-BZ9"/>
+                                                    <constraint firstAttribute="height" constant="29" id="WCQ-3b-Ciy"/>
+                                                    <constraint firstItem="rfH-VU-bBD" firstAttribute="centerY" secondItem="opG-B6-JJ0" secondAttribute="centerY" id="evr-BF-Xqx"/>
+                                                    <constraint firstAttribute="width" constant="34" id="iZw-Ip-LXp"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="fUv-27-d42" firstAttribute="top" secondItem="45b-WZ-9Em" secondAttribute="bottom" constant="23.5" id="FGU-b6-oNY"/>
+                            <constraint firstItem="D4l-N6-iHw" firstAttribute="top" secondItem="78f-mD-GOI" secondAttribute="bottom" constant="16" id="Nat-zZ-CB1"/>
+                            <constraint firstItem="78f-mD-GOI" firstAttribute="top" secondItem="UN4-mf-aOn" secondAttribute="bottom" constant="12" id="OHX-jT-JV3"/>
+                            <constraint firstItem="UN4-mf-aOn" firstAttribute="top" secondItem="6r0-8a-3kW" secondAttribute="bottom" constant="12" id="P6X-ux-yzg"/>
+                            <constraint firstAttribute="bottom" secondItem="fUv-27-d42" secondAttribute="bottom" constant="23.5" id="Q0m-yE-R0z"/>
+                            <constraint firstAttribute="trailing" secondItem="fUv-27-d42" secondAttribute="trailing" constant="16" id="Wuz-Oi-Znq"/>
+                            <constraint firstItem="45b-WZ-9Em" firstAttribute="leading" secondItem="ilt-n6-AVo" secondAttribute="leading" id="Xte-VP-4xT"/>
+                            <constraint firstAttribute="trailing" secondItem="UN4-mf-aOn" secondAttribute="trailing" id="ZcA-YV-IL6"/>
+                            <constraint firstItem="45b-WZ-9Em" firstAttribute="top" secondItem="D4l-N6-iHw" secondAttribute="bottom" constant="12" id="coe-As-K50"/>
+                            <constraint firstAttribute="trailing" secondItem="45b-WZ-9Em" secondAttribute="trailing" id="g8U-lB-n1s"/>
+                            <constraint firstItem="UN4-mf-aOn" firstAttribute="leading" secondItem="ilt-n6-AVo" secondAttribute="leading" id="gik-TV-oov"/>
+                            <constraint firstAttribute="trailing" secondItem="78f-mD-GOI" secondAttribute="trailing" constant="16" id="hsc-pO-suC"/>
+                            <constraint firstItem="6r0-8a-3kW" firstAttribute="leading" secondItem="ilt-n6-AVo" secondAttribute="leading" constant="16" id="jff-FG-dZD"/>
+                            <constraint firstItem="78f-mD-GOI" firstAttribute="leading" secondItem="ilt-n6-AVo" secondAttribute="leading" constant="16" id="t1E-jq-O4B"/>
+                            <constraint firstItem="D4l-N6-iHw" firstAttribute="leading" secondItem="ilt-n6-AVo" secondAttribute="leading" constant="16" id="wgW-Bs-CNI"/>
+                            <constraint firstItem="6r0-8a-3kW" firstAttribute="top" secondItem="ilt-n6-AVo" secondAttribute="top" constant="16" id="ydT-u6-weN"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="ilt-n6-AVo" firstAttribute="top" secondItem="uQF-iQ-VHs" secondAttribute="top" constant="20" id="4M3-yb-eXR"/>
+                    <constraint firstItem="ilt-n6-AVo" firstAttribute="leading" secondItem="uQF-iQ-VHs" secondAttribute="leading" constant="16" id="6Ka-yd-NUI"/>
+                    <constraint firstAttribute="trailing" secondItem="ilt-n6-AVo" secondAttribute="trailing" constant="16" id="KYu-su-vGX"/>
+                    <constraint firstAttribute="bottom" secondItem="ilt-n6-AVo" secondAttribute="bottom" id="m2h-OS-vf3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="mainRoundedView" destination="ilt-n6-AVo" id="5UF-3u-rpJ"/>
+                <outlet property="payBtn" destination="HaX-VA-pGD" id="Tsb-Xk-U7y"/>
+                <outlet property="statusView" destination="5DN-KL-FLn" id="bpb-9y-l2k"/>
+            </connections>
+            <point key="canvasLocation" x="141" y="-101"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ArrowLeft_ar" width="7" height="11.5"/>
+        <image name="GGalabia" width="72" height="72"/>
+        <image name="localPhone24Px" width="18" height="18"/>
+        <image name="message24Px" width="18" height="18"/>
+    </resources>
+</document>

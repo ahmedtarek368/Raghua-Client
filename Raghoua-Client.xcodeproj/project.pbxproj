@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0911407925DFFD58009B69C6 /* orderDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0911407725DFFD58009B69C6 /* orderDetailsCell.swift */; };
+		0911407A25DFFD58009B69C6 /* orderDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0911407825DFFD58009B69C6 /* orderDetailsCell.xib */; };
+		0911407E25E03C7E009B69C6 /* favoriteLaundryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0911407D25E03C7E009B69C6 /* favoriteLaundryVC.swift */; };
+		0911408225E04A8A009B69C6 /* favoriteLaundryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0911408125E04A8A009B69C6 /* favoriteLaundryCell.swift */; };
+		0911408525E062D9009B69C6 /* accountSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0911408425E062D9009B69C6 /* accountSettingsCell.swift */; };
+		0911408B25E06616009B69C6 /* accountSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0911408A25E06616009B69C6 /* accountSettingsVC.swift */; };
+		0911408E25E15695009B69C6 /* myPointsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0911408D25E15693009B69C6 /* myPointsVC.swift */; };
+		0911409125E1578E009B69C6 /* myAddressesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0911409025E1578E009B69C6 /* myAddressesVC.swift */; };
 		092DC80025DB06C8007D0454 /* paymentMethodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092DC7FF25DB06C8007D0454 /* paymentMethodVC.swift */; };
 		092DC80325DB11AA007D0454 /* paymentMethodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092DC80225DB11AA007D0454 /* paymentMethodsCell.swift */; };
 		092F07EE25D6CB610078E7D8 /* roundedQuantityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092F07ED25D6CB610078E7D8 /* roundedQuantityView.swift */; };
@@ -35,6 +43,15 @@
 		097F4EEF25C49D0B0098A855 /* registerMobNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F4EEE25C49D0B0098A855 /* registerMobNumberVC.swift */; };
 		097F4F0325C4C8BB0098A855 /* verifyRegisteredMobNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F4F0225C4C8BB0098A855 /* verifyRegisteredMobNumberVC.swift */; };
 		097F4F0625C4CE3C0098A855 /* createNewAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F4F0525C4CE3C0098A855 /* createNewAccountVC.swift */; };
+		09903B7525DF341B00ACA038 /* orderDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09903B7425DF341B00ACA038 /* orderDetailsVC.swift */; };
+		09903B8325DF3E5900ACA038 /* waitingCashPaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09903B8125DF3E5900ACA038 /* waitingCashPaymentCell.swift */; };
+		09903B8425DF3E5900ACA038 /* waitingCashPaymentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09903B8225DF3E5900ACA038 /* waitingCashPaymentCell.xib */; };
+		09903B8825DF3F9500ACA038 /* orderDeniedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09903B8625DF3F9500ACA038 /* orderDeniedCell.swift */; };
+		09903B8925DF3F9500ACA038 /* orderDenieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09903B8725DF3F9500ACA038 /* orderDenieCell.xib */; };
+		09903B8D25DF403D00ACA038 /* orderCompleteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09903B8B25DF403D00ACA038 /* orderCompleteCell.swift */; };
+		09903B8E25DF403D00ACA038 /* orderCompleteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09903B8C25DF403D00ACA038 /* orderCompleteCell.xib */; };
+		09903B9225DF40F700ACA038 /* creditPayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09903B9025DF40F700ACA038 /* creditPayCell.swift */; };
+		09903B9325DF40F700ACA038 /* creditPayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09903B9125DF40F700ACA038 /* creditPayCell.xib */; };
 		099DAC1925D9BB7000D3E53E /* Laundry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099DAC1825D9BB6F00D3E53E /* Laundry.swift */; };
 		09C1550025CA114300E7FC56 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C154FF25CA114300E7FC56 /* User.swift */; };
 		09C1550A25CA15D600E7FC56 /* networkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1550925CA15D600E7FC56 /* networkServices.swift */; };
@@ -82,6 +99,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0911407725DFFD58009B69C6 /* orderDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orderDetailsCell.swift; sourceTree = "<group>"; };
+		0911407825DFFD58009B69C6 /* orderDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = orderDetailsCell.xib; sourceTree = "<group>"; };
+		0911407D25E03C7E009B69C6 /* favoriteLaundryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoriteLaundryVC.swift; sourceTree = "<group>"; };
+		0911408125E04A8A009B69C6 /* favoriteLaundryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoriteLaundryCell.swift; sourceTree = "<group>"; };
+		0911408425E062D9009B69C6 /* accountSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accountSettingsCell.swift; sourceTree = "<group>"; };
+		0911408A25E06616009B69C6 /* accountSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accountSettingsVC.swift; sourceTree = "<group>"; };
+		0911408D25E15693009B69C6 /* myPointsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myPointsVC.swift; sourceTree = "<group>"; };
+		0911409025E1578E009B69C6 /* myAddressesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myAddressesVC.swift; sourceTree = "<group>"; };
 		092DC7FF25DB06C8007D0454 /* paymentMethodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paymentMethodVC.swift; sourceTree = "<group>"; };
 		092DC80225DB11AA007D0454 /* paymentMethodsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paymentMethodsCell.swift; sourceTree = "<group>"; };
 		092F07ED25D6CB610078E7D8 /* roundedQuantityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundedQuantityView.swift; sourceTree = "<group>"; };
@@ -113,6 +138,15 @@
 		097F4EEE25C49D0B0098A855 /* registerMobNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerMobNumberVC.swift; sourceTree = "<group>"; };
 		097F4F0225C4C8BB0098A855 /* verifyRegisteredMobNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = verifyRegisteredMobNumberVC.swift; sourceTree = "<group>"; };
 		097F4F0525C4CE3C0098A855 /* createNewAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createNewAccountVC.swift; sourceTree = "<group>"; };
+		09903B7425DF341B00ACA038 /* orderDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orderDetailsVC.swift; sourceTree = "<group>"; };
+		09903B8125DF3E5900ACA038 /* waitingCashPaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = waitingCashPaymentCell.swift; sourceTree = "<group>"; };
+		09903B8225DF3E5900ACA038 /* waitingCashPaymentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = waitingCashPaymentCell.xib; sourceTree = "<group>"; };
+		09903B8625DF3F9500ACA038 /* orderDeniedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orderDeniedCell.swift; sourceTree = "<group>"; };
+		09903B8725DF3F9500ACA038 /* orderDenieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = orderDenieCell.xib; sourceTree = "<group>"; };
+		09903B8B25DF403D00ACA038 /* orderCompleteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orderCompleteCell.swift; sourceTree = "<group>"; };
+		09903B8C25DF403D00ACA038 /* orderCompleteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = orderCompleteCell.xib; sourceTree = "<group>"; };
+		09903B9025DF40F700ACA038 /* creditPayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = creditPayCell.swift; sourceTree = "<group>"; };
+		09903B9125DF40F700ACA038 /* creditPayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = creditPayCell.xib; sourceTree = "<group>"; };
 		099DAC1825D9BB6F00D3E53E /* Laundry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Laundry.swift; sourceTree = "<group>"; };
 		09C154FF25CA114300E7FC56 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		09C1550925CA15D600E7FC56 /* networkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networkServices.swift; sourceTree = "<group>"; };
@@ -179,6 +213,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0911407C25E039FC009B69C6 /* favorite */ = {
+			isa = PBXGroup;
+			children = (
+				0911407D25E03C7E009B69C6 /* favoriteLaundryVC.swift */,
+			);
+			path = favorite;
+			sourceTree = "<group>";
+		};
+		0911408025E04A3F009B69C6 /* favorites */ = {
+			isa = PBXGroup;
+			children = (
+				0911408125E04A8A009B69C6 /* favoriteLaundryCell.swift */,
+			);
+			path = favorites;
+			sourceTree = "<group>";
+		};
+		0911408725E065CD009B69C6 /* account */ = {
+			isa = PBXGroup;
+			children = (
+				0911408425E062D9009B69C6 /* accountSettingsCell.swift */,
+			);
+			path = account;
+			sourceTree = "<group>";
+		};
+		0911408925E065F0009B69C6 /* account */ = {
+			isa = PBXGroup;
+			children = (
+				0911408A25E06616009B69C6 /* accountSettingsVC.swift */,
+				0911408D25E15693009B69C6 /* myPointsVC.swift */,
+				0911409025E1578E009B69C6 /* myAddressesVC.swift */,
+			);
+			path = account;
+			sourceTree = "<group>";
+		};
 		092F07F225D6CFB10078E7D8 /* laundry */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				095979B525DDB08500D46D58 /* myOrdersVC.swift */,
+				09903B7425DF341B00ACA038 /* orderDetailsVC.swift */,
 			);
 			path = reciept;
 			sourceTree = "<group>";
@@ -249,6 +318,16 @@
 		095979B425DDB01B00D46D58 /* reciept */ = {
 			isa = PBXGroup;
 			children = (
+				09903B8125DF3E5900ACA038 /* waitingCashPaymentCell.swift */,
+				09903B8225DF3E5900ACA038 /* waitingCashPaymentCell.xib */,
+				09903B8625DF3F9500ACA038 /* orderDeniedCell.swift */,
+				09903B8725DF3F9500ACA038 /* orderDenieCell.xib */,
+				09903B8B25DF403D00ACA038 /* orderCompleteCell.swift */,
+				09903B8C25DF403D00ACA038 /* orderCompleteCell.xib */,
+				09903B9025DF40F700ACA038 /* creditPayCell.swift */,
+				09903B9125DF40F700ACA038 /* creditPayCell.xib */,
+				0911407725DFFD58009B69C6 /* orderDetailsCell.swift */,
+				0911407825DFFD58009B69C6 /* orderDetailsCell.xib */,
 			);
 			path = reciept;
 			sourceTree = "<group>";
@@ -331,6 +410,7 @@
 		09F1A25025C15D8600E57AE1 /* Raghoua-Client */ = {
 			isa = PBXGroup;
 			children = (
+				09F1A25125C15D8600E57AE1 /* AppDelegate.swift */,
 				09CF85DD25D5666C0035C44C /* Raghoua-ClientRelease.entitlements */,
 				096988F425CCC129005E1563 /* Raghoua-Client.entitlements */,
 				09663FCB25C636A600EA80F8 /* Protocols */,
@@ -340,7 +420,6 @@
 				09F1A28225C1B51000E57AE1 /* View */,
 				09F1A28125C1B50700E57AE1 /* Controller */,
 				09F1A27D25C1B35900E57AE1 /* Extensions */,
-				09F1A25125C15D8600E57AE1 /* AppDelegate.swift */,
 				0969893A25CEE99A005E1563 /* Storyboards */,
 				09F1A26E25C1755700E57AE1 /* Localizable.strings */,
 				09F1A25F25C15DA400E57AE1 /* Info.plist */,
@@ -365,6 +444,8 @@
 				095979A025DDAEF800D46D58 /* signing */,
 				09D29A9125D492F200CE0DBB /* laundry */,
 				095979B225DDAFCB00D46D58 /* reciept */,
+				0911407C25E039FC009B69C6 /* favorite */,
+				0911408925E065F0009B69C6 /* account */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -375,6 +456,8 @@
 				095979AC25DDAF9700D46D58 /* signing */,
 				092F07F225D6CFB10078E7D8 /* laundry */,
 				095979B425DDB01B00D46D58 /* reciept */,
+				0911408025E04A3F009B69C6 /* favorites */,
+				0911408725E065CD009B69C6 /* account */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -470,14 +553,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				09DCD15F25CF08CD002EC380 /* Reciept.storyboard in Resources */,
+				09903B8425DF3E5900ACA038 /* waitingCashPaymentCell.xib in Resources */,
 				09F1A25E25C15DA400E57AE1 /* LaunchScreen.storyboard in Resources */,
+				09903B8E25DF403D00ACA038 /* orderCompleteCell.xib in Resources */,
 				09DCD16625CFD3F6002EC380 /* MyAccount.storyboard in Resources */,
+				09903B9325DF40F700ACA038 /* creditPayCell.xib in Resources */,
 				09C7552A25C21490003CC87F /* Loading Animation.json in Resources */,
+				09903B8925DF3F9500ACA038 /* orderDenieCell.xib in Resources */,
 				09DCD16825CFD51B002EC380 /* Laundries.storyboard in Resources */,
 				09F1A26C25C1755700E57AE1 /* Localizable.strings in Resources */,
 				09F1A25B25C15DA400E57AE1 /* Assets.xcassets in Resources */,
 				09DCD16325CFD206002EC380 /* Favorites.storyboard in Resources */,
 				09F1A25925C15D8600E57AE1 /* Main.storyboard in Resources */,
+				0911407A25DFFD58009B69C6 /* orderDetailsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,17 +636,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				09D29A8F25D4896400CE0DBB /* userReviewCell.swift in Sources */,
+				0911408B25E06616009B69C6 /* accountSettingsVC.swift in Sources */,
 				095979B625DDB08500D46D58 /* myOrdersVC.swift in Sources */,
 				09C7552025C1CBE7003CC87F /* welcomeBackVC.swift in Sources */,
+				0911407925DFFD58009B69C6 /* orderDetailsCell.swift in Sources */,
 				09FA9C7925C3AC0D00E718C4 /* restPassMobNumberVerifyVC.swift in Sources */,
 				09663FD825C6D5BB00EA80F8 /* addressCell.swift in Sources */,
 				09663FE025C6F63D00EA80F8 /* radioButton.swift in Sources */,
 				09663FDD25C6EBA000EA80F8 /* bottomPopupView.swift in Sources */,
 				09FF3D9E25C84510000C542B /* spotYourLocationVC.swift in Sources */,
+				0911407E25E03C7E009B69C6 /* favoriteLaundryVC.swift in Sources */,
 				09FF3D9B25C83CD7000C542B /* addAddressVC.swift in Sources */,
 				09645EA425CB6D550040C02A /* UIButtonExt.swift in Sources */,
 				09663FCD25C636BE00EA80F8 /* protocols.swift in Sources */,
 				092F07F625D6D0230078E7D8 /* orderPerSizeVC.swift in Sources */,
+				0911409125E1578E009B69C6 /* myAddressesVC.swift in Sources */,
 				097F4EDA25C48C6F0098A855 /* UIViewControllerExt.swift in Sources */,
 				09E1B88E25D72A9800AA61DD /* shoppingBasketVC.swift in Sources */,
 				095B86A425D356B8009F25C6 /* itemsCell.swift in Sources */,
@@ -582,6 +674,7 @@
 				09645EA125CB602C0040C02A /* verficationCode.swift in Sources */,
 				09DCD15C25CEF55A002EC380 /* laundriesVC.swift in Sources */,
 				0935F93825CC48F700F9CF5D /* Address.swift in Sources */,
+				09903B8D25DF403D00ACA038 /* orderCompleteCell.swift in Sources */,
 				09F1A27F25C1B3B900E57AE1 /* UIViewExt.swift in Sources */,
 				09F1A25625C15D8600E57AE1 /* welcomeHomeVC.swift in Sources */,
 				095B868D25D192EF009F25C6 /* reorderingLaundriesPopupVC.swift in Sources */,
@@ -591,6 +684,7 @@
 				09FA9C7625C3899600E718C4 /* continueWithGoogleBtn.swift in Sources */,
 				09C7554F25C36D37003CC87F /* basicTextField.swift in Sources */,
 				09FA9C7C25C4214F00E718C4 /* codeDigitsTextField.swift in Sources */,
+				09903B9225DF40F700ACA038 /* creditPayCell.swift in Sources */,
 				09C7553A25C2FEDC003CC87F /* basicShadowedBtn.swift in Sources */,
 				09C1550D25CA3F6500E7FC56 /* URLs.swift in Sources */,
 				095B869D25D2C73B009F25C6 /* laundryDetailsVC.swift in Sources */,
@@ -598,15 +692,21 @@
 				095B869025D199B4009F25C6 /* laundriesOrderCell.swift in Sources */,
 				097F4F0625C4CE3C0098A855 /* createNewAccountVC.swift in Sources */,
 				09E1B89125D761E000AA61DD /* myOrdersCell.swift in Sources */,
+				09903B7525DF341B00ACA038 /* orderDetailsVC.swift in Sources */,
 				09EF28A925D872600080102B /* purchaseVoucherCell.swift in Sources */,
 				092DC80325DB11AA007D0454 /* paymentMethodsCell.swift in Sources */,
 				097F4ED525C46BDD0098A855 /* setNewPasswordVC.swift in Sources */,
 				09C7553D25C30BA4003CC87F /* passwordTextField.swift in Sources */,
+				0911408525E062D9009B69C6 /* accountSettingsCell.swift in Sources */,
+				09903B8825DF3F9500ACA038 /* orderDeniedCell.swift in Sources */,
 				09FA9C7325C387AB00E718C4 /* basicLabel.swift in Sources */,
 				09ED8CB125DAF509002C8FB1 /* itemSizeCell.swift in Sources */,
 				09D29A9725D4944900CE0DBB /* orderItemVC.swift in Sources */,
+				0911408E25E15695009B69C6 /* myPointsVC.swift in Sources */,
+				09903B8325DF3E5900ACA038 /* waitingCashPaymentCell.swift in Sources */,
 				095B86A025D2DE90009F25C6 /* laundryTypesCell.swift in Sources */,
 				09C7551725C1C305003CC87F /* StringExt.swift in Sources */,
+				0911408225E04A8A009B69C6 /* favoriteLaundryCell.swift in Sources */,
 				09C326CF25D04E3D00B621F2 /* laundriesCell.swift in Sources */,
 				09C1550025CA114300E7FC56 /* User.swift in Sources */,
 			);

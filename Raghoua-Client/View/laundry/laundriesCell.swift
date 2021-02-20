@@ -38,4 +38,5 @@ class laundriesCell: UITableViewCell {
         }catch{}
     }
 
+    
 }

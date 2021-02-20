@@ -119,4 +119,17 @@ class passwordTextField: UITextField, UITextFieldDelegate{
         return true
     }
     
+    func isUnderlinedTextField() {
+        layer.borderWidth = 0
+        layer.cornerRadius = 0
+        layer.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        
+        let bottomLine = CALayer()
+        bottomLine.frame = CGRect(x: 0, y: layer.frame.size.height - 1.5 , width: layer.frame.width, height: 1.5)
+        bottomLine.backgroundColor = #colorLiteral(red: 0.9019607843, green: 0.9019607843, blue: 0.9019607843, alpha: 1)
+        layer.addSublayer(bottomLine)
+        autocorrectionType = .no
+        autocapitalizationType = .none
+    }
+    
 }

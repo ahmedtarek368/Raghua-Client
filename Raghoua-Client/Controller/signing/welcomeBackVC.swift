@@ -53,6 +53,7 @@ class welcomeBackVC: UIViewController{
             let laundriesVC = laundriesNav.viewControllers.first as! laundriesVC
             if let user = self.user{
                 laundriesVC.initUserData(user: user)
+                laundriesVC.addressIndex = 0
             }
         }
     }
