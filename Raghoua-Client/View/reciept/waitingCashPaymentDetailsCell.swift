@@ -1,20 +1,21 @@
 //
-//  waitingCashPaymentCell.swift
+//  waitingCashPaymentDetailsCell.swift
 //  Raghoua-Client
 //
-//  Created by Ahmed Tarek on 2/18/21.
+//  Created by Ahmed Tarek on 2/21/21.
 //
 
 import UIKit
 
-class waitingCashPaymentCell: UITableViewCell {
+class waitingCashPaymentDetailsCell: UITableViewCell {
 
-    var delegate: pushToWaitingCashPaymentOrderDetails?
-    
-    @IBOutlet weak var rightConstraint: UIView!
     @IBOutlet weak var mainRoundedView: UIView!
     @IBOutlet weak var labelOrangeView: UIView!
     @IBOutlet weak var statusMessage: UILabel!
+    @IBOutlet weak var orderDate: basicLabel!
+    @IBOutlet weak var orderNumber: basicLabel!
+    @IBOutlet weak var servicesQuantity: basicLabel!
+    @IBOutlet weak var totalCost: basicLabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,9 +27,6 @@ class waitingCashPaymentCell: UITableViewCell {
         self.labelOrangeView.layer.cornerRadius = 8
         //customizePayWithCreditCardCell()
     }
-    
-    @IBAction func showOrderDetailsBtnPressed(_ sender: Any) {
-        delegate!.pushToWaitingCashPaymentOrderDetails()
-    }
+
     
 }

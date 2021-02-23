@@ -33,7 +33,7 @@ class laundriesVC: UIViewController {
         self.tabBarController?.tabBar.shadowImage = UIImage()
         self.tabBarController?.tabBar.isTranslucent = true
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        prepareRequestLaundries()
+        
     }
     
     override func viewDidLoad() {
@@ -42,6 +42,7 @@ class laundriesVC: UIViewController {
         laundriesTVC.dataSource = self
         reorderBtn.isCircleButton()
         setUpAnimation()
+        prepareRequestLaundries()
         laundriesTVC.tableFooterView = UIView()
         if let user = self.user{
             print(user.userAddress!)
@@ -141,6 +142,7 @@ extension laundriesVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let laundriesData = self.laundriesData{
             return laundriesData.count
+            
         }
         return 0
     }
@@ -152,7 +154,14 @@ extension laundriesVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LC", for: indexPath) as! laundriesCell
         if let laundryData = self.laundriesData?[indexPath.row]{
-            cell.updateCell(laundryImageUrl: laundryData.img, laundryName: laundryData.name, laundryRate: laundryData.totalRate, minimumPrice: laundryData.minimumPrice, deliveryPrice: laundryData.deliveryPrice)
+            var deliveryCost : String?
+            switch laundryData.deliveryPrice {
+            case .double(let delivery):
+                deliveryCost = "\(delivery)"
+            case .string(let delivery):
+                deliveryCost = delivery
+            }
+            cell.updateCell(laundryImageUrl: laundryData.img, laundryName: laundryData.name, laundryRate: laundryData.totalRate, minimumPrice: laundryData.minimumPrice, deliveryPrice: deliveryCost ?? "")
         }
         return cell
     }
@@ -168,9 +177,7 @@ extension laundriesVC: UITableViewDelegate, UITableViewDataSource{
                     NetworkService.shared.requestLaundryDetails(param: parameter) { (response) in
                         laundryDetailsVC.laundryDetails = response.data
                         laundryDetailsVC.userCartID = self.user!.cartID
-                        if self.guestFlag == true{
-                            laundryDetailsVC.guestFlag = true
-                        }
+                        laundryDetailsVC.userAddressId = self.user!.userAddress[self.addressIndex!].id
                         self.animationView?.isHidden = true
                         self.animationView?.stop()
                         self.navigationController?.pushViewController(laundryDetailsVC, animated: true)
@@ -183,9 +190,7 @@ extension laundriesVC: UITableViewDelegate, UITableViewDataSource{
                     NetworkService.shared.requestLaundryDetails(param: parameter) { (response) in
                         laundryDetailsVC.laundryDetails = response.data
                         laundryDetailsVC.userCartID = self.user!.cartID
-                        if self.guestFlag == true{
-                            laundryDetailsVC.guestFlag = true
-                        }
+                        laundryDetailsVC.userAddressId = self.user!.userAddress[self.addressIndex!].id
                         self.animationView?.isHidden = true
                         self.animationView?.stop()
                         self.navigationController?.pushViewController(laundryDetailsVC, animated: true)

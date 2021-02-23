@@ -31,6 +31,9 @@
                                         <state key="normal" title="عرض تفاصيل الطلب">
                                             <color key="titleColor" red="0.14117647059999999" green="0.2274509804" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="showOrderDetailsBtnPressed:" destination="lGC-Is-QKR" eventType="touchUpInside" id="Zf8-oX-pRY"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ArrowLeft_ar" translatesAutoresizingMaskIntoConstraints="NO" id="doc-74-Ub7">
                                         <rect key="frame" x="135.5" y="0.0" width="8" height="24"/>
@@ -91,13 +94,18 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Co5-yQ-cio">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="olR-BW-5Kb">
                                 <rect key="frame" x="0.0" y="295" width="382" height="1"/>
-                                <color key="backgroundColor" red="0.87450980389999999" green="0.8862745098" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="xpY-6i-IKf"/>
-                                </constraints>
-                            </view>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Co5-yQ-cio">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="1"/>
+                                        <color key="backgroundColor" red="0.87450980389999999" green="0.8862745098" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="xpY-6i-IKf"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j9T-U2-Tbj">
                                 <rect key="frame" x="0.0" y="73" width="382" height="1"/>
                                 <color key="backgroundColor" red="0.87450980389999999" green="0.8862745098" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
@@ -277,20 +285,19 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Co5-yQ-cio" firstAttribute="leading" secondItem="fyi-yG-Fbl" secondAttribute="leading" id="0Vg-Ga-hmz"/>
                             <constraint firstAttribute="trailing" secondItem="j9T-U2-Tbj" secondAttribute="trailing" id="0t4-Wi-lgz"/>
-                            <constraint firstItem="Co5-yQ-cio" firstAttribute="top" secondItem="m9S-Oe-YXZ" secondAttribute="bottom" constant="12" id="2IV-0P-zXe"/>
                             <constraint firstItem="tos-tn-6md" firstAttribute="top" secondItem="j9T-U2-Tbj" secondAttribute="bottom" constant="12" id="8Pe-qd-Y5G"/>
                             <constraint firstAttribute="bottom" secondItem="fft-xX-jbs" secondAttribute="bottom" constant="23.5" id="Ahp-sx-AFQ"/>
                             <constraint firstAttribute="trailing" secondItem="fft-xX-jbs" secondAttribute="trailing" constant="16" id="AzV-5J-WV5"/>
                             <constraint firstItem="j9T-U2-Tbj" firstAttribute="leading" secondItem="fyi-yG-Fbl" secondAttribute="leading" id="Hhq-fP-pfD"/>
-                            <constraint firstAttribute="trailing" secondItem="Co5-yQ-cio" secondAttribute="trailing" id="I91-Wc-k4h"/>
+                            <constraint firstItem="olR-BW-5Kb" firstAttribute="top" secondItem="m9S-Oe-YXZ" secondAttribute="bottom" constant="12" id="HwX-uE-8Pg"/>
                             <constraint firstItem="RDH-Sx-57v" firstAttribute="top" secondItem="fyi-yG-Fbl" secondAttribute="top" constant="16" id="Jfi-BN-nvU"/>
+                            <constraint firstItem="olR-BW-5Kb" firstAttribute="leading" secondItem="fyi-yG-Fbl" secondAttribute="leading" id="L7t-a3-uLt"/>
                             <constraint firstItem="j9T-U2-Tbj" firstAttribute="top" secondItem="RDH-Sx-57v" secondAttribute="bottom" constant="12" id="Llw-Ki-ehE"/>
-                            <constraint firstItem="fft-xX-jbs" firstAttribute="top" secondItem="Co5-yQ-cio" secondAttribute="bottom" constant="23.5" id="OD9-Cz-w2F"/>
                             <constraint firstAttribute="trailing" secondItem="tos-tn-6md" secondAttribute="trailing" constant="16" id="SJD-Gg-Gat"/>
                             <constraint firstItem="RDH-Sx-57v" firstAttribute="leading" secondItem="fyi-yG-Fbl" secondAttribute="leading" constant="16" id="VJ2-Nh-gcW"/>
                             <constraint firstItem="m9S-Oe-YXZ" firstAttribute="leading" secondItem="fyi-yG-Fbl" secondAttribute="leading" constant="16" id="gp8-eM-41d"/>
+                            <constraint firstAttribute="trailing" secondItem="olR-BW-5Kb" secondAttribute="trailing" id="jhY-jE-ZWc"/>
                             <constraint firstItem="m9S-Oe-YXZ" firstAttribute="top" secondItem="tos-tn-6md" secondAttribute="bottom" constant="16" id="tSR-f8-daZ"/>
                             <constraint firstItem="tos-tn-6md" firstAttribute="leading" secondItem="fyi-yG-Fbl" secondAttribute="leading" constant="16" id="wa7-fe-wkA"/>
                         </constraints>
@@ -298,15 +305,16 @@
                 </subviews>
                 <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="fyi-yG-Fbl" secondAttribute="trailing" constant="16" id="9ru-8H-ghB"/>
-                    <constraint firstItem="fyi-yG-Fbl" firstAttribute="leading" secondItem="0eK-bG-ouP" secondAttribute="leading" constant="16" id="D3d-bz-W1Z"/>
-                    <constraint firstItem="fyi-yG-Fbl" firstAttribute="top" secondItem="0eK-bG-ouP" secondAttribute="top" constant="20" id="cXE-Ks-3vk"/>
+                    <constraint firstAttribute="trailing" secondItem="fyi-yG-Fbl" secondAttribute="trailing" constant="16" identifier="rightConst" id="9ru-8H-ghB"/>
+                    <constraint firstItem="fyi-yG-Fbl" firstAttribute="leading" secondItem="0eK-bG-ouP" secondAttribute="leading" constant="16" identifier="leftConst" id="D3d-bz-W1Z"/>
+                    <constraint firstItem="fyi-yG-Fbl" firstAttribute="top" secondItem="0eK-bG-ouP" secondAttribute="top" constant="20" identifier="topConst" id="cXE-Ks-3vk"/>
                     <constraint firstAttribute="bottom" secondItem="fyi-yG-Fbl" secondAttribute="bottom" id="o24-WL-4MK"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="labelOrangeView" destination="qbI-y3-RdI" id="04s-td-pJ4"/>
                 <outlet property="mainRoundedView" destination="fyi-yG-Fbl" id="nB3-4L-hoR"/>
+                <outlet property="rightConstraint" destination="0eK-bG-ouP" id="eLW-eQ-QiW"/>
                 <outlet property="statusMessage" destination="Awk-aZ-5R6" id="mJt-FY-b0I"/>
             </connections>
             <point key="canvasLocation" x="141" y="-96"/>

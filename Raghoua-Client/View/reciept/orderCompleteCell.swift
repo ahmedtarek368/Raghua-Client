@@ -6,13 +6,24 @@
 //
 
 import UIKit
+import SwiftyStarRatingView
 
 class orderCompleteCell: UITableViewCell {
 
+    var delegate: pushToCompleteOrderDetails?
+    
     @IBOutlet weak var mainRoundedOrderView: UIView!
+    @IBOutlet weak var orderDate: basicLabel!
+    @IBOutlet weak var orderNumber: basicLabel!
+    @IBOutlet weak var totalCost: basicLabel!
+    @IBOutlet weak var servicesQuantity: basicLabel!
+    @IBOutlet weak var starRate: SwiftyStarRatingView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        if "lang".localized == "ar" {
+            starRate.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+        }
     }
     
     override func layoutSubviews() {
@@ -25,5 +36,10 @@ class orderCompleteCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    @IBAction func showOrderDetailsBtnPressed(_ sender: Any) {
+        delegate!.pushToCompleteOrderDetails()
+    }
+    
     
 }

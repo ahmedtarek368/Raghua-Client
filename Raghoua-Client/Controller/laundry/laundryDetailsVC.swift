@@ -15,7 +15,8 @@ class laundryDetailsVC: UIViewController {
     var laundryID : Int?
     var laundryDetails : laundryDetails?
     var userCartID : Int?
-    var guestFlag : Bool = false
+    var userAddressId: Int?
+    
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var laundryImage: UIImageView!
     @IBOutlet weak var laundryName: UILabel!
@@ -101,7 +102,6 @@ class laundryDetailsVC: UIViewController {
     }
     
     func requestLaundryReviewsData(){
-        
         let parameter = [
             "laundary_id":"\(self.laundryDetails!.id)"
         ]
@@ -131,16 +131,34 @@ class laundryDetailsVC: UIViewController {
     }
     
     func pushToOrderItemView(item: Item){
+        let order: Order = Order()
+        order.setDeliveryFees(deliveryFees: Int(self.laundryDetails!.delivery)!)
+        order.setCartId(cartId: self.userCartID!)
+        order.setAddressesId(addressId: self.userAddressId!)
         if #available(iOS 13.0, *) {
             let orderItemView : orderItemVC = self.storyboard?.instantiateViewController(identifier:"OPIVC") as! orderItemVC
-            orderItemView.item = item
-            orderItemView.userCartID = self.userCartID
-            self.navigationController?.pushViewController(orderItemView, animated: true)
+            NetworkService.shared.requestUserCartData { (response) in
+                orderItemView.item = item
+                orderItemView.order = order
+                orderItemView.minimumPrice = Int(self.laundryDetails!.minimumPrice)
+                orderItemView.userCartID = self.userCartID
+                orderItemView.userCart = response.data
+                self.navigationController?.pushViewController(orderItemView, animated: true)
+            } onError: { (error) in
+                debugPrint(error)
+            }
         } else {
             let orderItemView : orderItemVC = self.storyboard?.instantiateViewController(withIdentifier:"OPIVC") as! orderItemVC
-            orderItemView.item = item
-            orderItemView.userCartID = self.userCartID
-            self.navigationController?.pushViewController(orderItemView, animated: true)
+            NetworkService.shared.requestUserCartData { (response) in
+                orderItemView.item = item
+                orderItemView.order = order
+                orderItemView.minimumPrice = Int(self.laundryDetails!.minimumPrice)
+                orderItemView.userCartID = self.userCartID
+                orderItemView.userCart = response.data
+                self.navigationController?.pushViewController(orderItemView, animated: true)
+            } onError: { (error) in
+                debugPrint(error)
+            }
         }
     }
     

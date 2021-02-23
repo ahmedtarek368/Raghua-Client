@@ -28,11 +28,11 @@ class laundriesCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func updateCell(laundryImageUrl: String, laundryName: String, laundryRate: Int, minimumPrice: String, deliveryPrice: Double){
+    func updateCell(laundryImageUrl: String, laundryName: String, laundryRate: Int, minimumPrice: String, deliveryPrice: String){
         self.laundryName.text = laundryName
         self.laundryRate.text = "\(laundryRate)"
         self.minimumPricePerOrder.text = minimumPrice
-        self.orderFees.text = "\(deliveryPrice)"
+        self.orderFees.text = deliveryPrice
         do{
             self.laundryImage.image = try UIImage(data: Data(contentsOf: NSURL(string: "\(laundryImageUrl)")! as URL))
         }catch{}

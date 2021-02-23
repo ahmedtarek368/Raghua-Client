@@ -1,17 +1,14 @@
 //
-//  creditPayCell.swift
+//  creditPaymentDetailsCell.swift
 //  Raghoua-Client
 //
-//  Created by Ahmed Tarek on 2/18/21.
+//  Created by Ahmed Tarek on 2/21/21.
 //
 
 import UIKit
 
-class creditPayCell: UITableViewCell {
-
-    var delegate: pushToCreditPaymentDetails?
+class creditPaymentDetailsCell: UITableViewCell {
     
-    @IBOutlet weak var mainRoundedView: UIView!
     @IBOutlet weak var statusView: UIView!
     @IBOutlet weak var payBtn: UIButton!
     @IBOutlet weak var orderDate: basicLabel!
@@ -26,7 +23,6 @@ class creditPayCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        mainRoundedView.layer.cornerRadius = 12
         statusView.layer.cornerRadius = 8
         customizePayBtn()
     }
@@ -45,10 +41,5 @@ class creditPayCell: UITableViewCell {
         payBtn.layer.masksToBounds = false
         payBtn.layer.cornerRadius = 12
     }
-    
-    @IBAction func showOrderDetailsBtnPressed(_ sender: Any) {
-        delegate!.pushToCreditPaymentDetails()
-    }
-    
     
 }

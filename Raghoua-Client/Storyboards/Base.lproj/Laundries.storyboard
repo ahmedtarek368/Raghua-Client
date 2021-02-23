@@ -321,7 +321,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OCb-mQ-Zc3">
                                 <rect key="frame" x="106.5" y="234" width="201" height="20"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fO-5C-7Xx" customClass="SwiftyStarRatingView" customModule="SwiftyStarRatingView">
+                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fO-5C-7Xx" customClass="SwiftyStarRatingView" customModule="SwiftyStarRatingView">
                                         <rect key="frame" x="0.0" y="0.0" width="123" height="20"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -867,7 +867,7 @@
                                     <constraint firstItem="vzB-1F-pZ0" firstAttribute="centerX" secondItem="qmK-1O-gqz" secondAttribute="centerX" id="rAa-bk-Kcu"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AAe-ER-dhe" customClass="SwiftyStarRatingView" customModule="SwiftyStarRatingView">
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AAe-ER-dhe" customClass="SwiftyStarRatingView" customModule="SwiftyStarRatingView">
                                 <rect key="frame" x="95" y="112" width="145" height="28"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1033,7 +1033,7 @@
                                                     <color key="textColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywT-ub-2uz" customClass="SwiftyStarRatingView" customModule="SwiftyStarRatingView">
+                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywT-ub-2uz" customClass="SwiftyStarRatingView" customModule="SwiftyStarRatingView">
                                                     <rect key="frame" x="268" y="20" width="110" height="20"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
@@ -2087,6 +2087,7 @@
                                                             </tableViewCellContentView>
                                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <connections>
+                                                                <outlet property="pricePerQuantity" destination="7FX-6H-OkQ" id="Dbw-36-l85"/>
                                                                 <outlet property="serviceName" destination="xsl-CC-LUR" id="a1o-KD-fao"/>
                                                                 <outlet property="servicePrice" destination="wVh-s3-ssu" id="e5u-c2-jkV"/>
                                                                 <outlet property="serviceQuantity" destination="Gjg-Fu-QQK" id="dQ9-Vc-NwJ"/>
@@ -2107,7 +2108,7 @@
                                             <outlet property="ordersTV" destination="rYa-7x-B4U" id="u9z-dP-jRc"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DC" rowHeight="60" id="QlJ-A0-pNq">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DC" id="QlJ-A0-pNq" customClass="datePickingCell" customModule="Raghoua_Client" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="483" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QlJ-A0-pNq" id="gox-Ef-QM0">
@@ -2123,48 +2124,51 @@
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="Woj-Af-DKb">
-                                                    <rect key="frame" x="178" y="18" width="24" height="24"/>
+                                                    <rect key="frame" x="158" y="18" width="24" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="6aF-s8-r0f"/>
                                                         <constraint firstAttribute="width" constant="24" id="Mvk-Cj-9C5"/>
                                                     </constraints>
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="حدد التاريخ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vG-Lf-Aaz" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="حدد التاريخ" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e4F-90-76b" customClass="basicTextField" customModule="Raghoua_Client" customModuleProvider="target">
                                                     <rect key="frame" x="58" y="18" width="65" height="24"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="24" id="ORL-DI-R2B"/>
+                                                        <constraint firstAttribute="height" constant="24" id="OXv-UD-aKA"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.62745098039215685" green="0.63921568627450975" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="حدد الوقت" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUg-zJ-gZN" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
-                                                    <rect key="frame" x="216" y="18" width="62" height="24"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="حدد الوقت" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J2A-j0-apl" customClass="basicTextField" customModule="Raghoua_Client" customModuleProvider="target">
+                                                    <rect key="frame" x="196" y="18" width="62" height="24"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="24" id="hyC-VY-fQh"/>
+                                                        <constraint firstAttribute="height" constant="24" id="ToS-ra-WOC"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.62745098040000002" green="0.63921568630000003" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstItem="mUg-zJ-gZN" firstAttribute="leading" secondItem="Woj-Af-DKb" secondAttribute="trailing" constant="14" id="1cx-dI-F46"/>
-                                                <constraint firstItem="zOk-mW-TPd" firstAttribute="centerY" secondItem="gox-Ef-QM0" secondAttribute="centerY" id="2MD-HZ-F7n"/>
-                                                <constraint firstItem="mUg-zJ-gZN" firstAttribute="centerY" secondItem="zOk-mW-TPd" secondAttribute="centerY" id="L4y-5n-yWI"/>
-                                                <constraint firstItem="1vG-Lf-Aaz" firstAttribute="centerY" secondItem="zOk-mW-TPd" secondAttribute="centerY" id="WZC-q9-IL8"/>
-                                                <constraint firstItem="1vG-Lf-Aaz" firstAttribute="leading" secondItem="zOk-mW-TPd" secondAttribute="trailing" constant="14" id="kTp-qv-a1f"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mUg-zJ-gZN" secondAttribute="trailing" constant="20" symbolic="YES" id="twL-ZD-tKS"/>
+                                                <constraint firstItem="e4F-90-76b" firstAttribute="centerY" secondItem="zOk-mW-TPd" secondAttribute="centerY" id="00g-3t-9fn"/>
+                                                <constraint firstItem="Woj-Af-DKb" firstAttribute="leading" secondItem="e4F-90-76b" secondAttribute="trailing" constant="35" id="0bz-Sw-ugD"/>
+                                                <constraint firstItem="J2A-j0-apl" firstAttribute="leading" secondItem="Woj-Af-DKb" secondAttribute="trailing" constant="14" id="2Rd-vk-fTR"/>
+                                                <constraint firstItem="J2A-j0-apl" firstAttribute="centerY" secondItem="Woj-Af-DKb" secondAttribute="centerY" id="5dA-V4-REr"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="J2A-j0-apl" secondAttribute="trailing" constant="20" symbolic="YES" id="Mm1-vV-72D"/>
+                                                <constraint firstItem="e4F-90-76b" firstAttribute="leading" secondItem="zOk-mW-TPd" secondAttribute="trailing" constant="14" id="PWN-JU-bxy"/>
+                                                <constraint firstItem="zOk-mW-TPd" firstAttribute="top" secondItem="gox-Ef-QM0" secondAttribute="top" constant="18" id="qaE-cj-MZG"/>
                                                 <constraint firstItem="zOk-mW-TPd" firstAttribute="leading" secondItem="gox-Ef-QM0" secondAttribute="leading" constant="20" id="ugP-Jw-HNV"/>
-                                                <constraint firstItem="Woj-Af-DKb" firstAttribute="leading" secondItem="1vG-Lf-Aaz" secondAttribute="trailing" constant="55" id="uss-vT-euM"/>
+                                                <constraint firstAttribute="bottom" secondItem="zOk-mW-TPd" secondAttribute="bottom" constant="18" id="wDP-CD-eCe"/>
                                                 <constraint firstItem="Woj-Af-DKb" firstAttribute="centerY" secondItem="zOk-mW-TPd" secondAttribute="centerY" id="wft-jM-GET"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="specifyDate" destination="e4F-90-76b" id="YRO-bg-ZAo"/>
+                                            <outlet property="specifyTime" destination="J2A-j0-apl" id="5Hs-Qk-Zpy"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PVC" rowHeight="60" id="lDt-E3-QIP" customClass="purchaseVoucherCell" customModule="Raghoua_Client" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PVC" id="lDt-E3-QIP" customClass="purchaseVoucherCell" customModule="Raghoua_Client" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="543" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lDt-E3-QIP" id="7iu-Dg-eio">
@@ -2193,16 +2197,20 @@
                                                     <color key="textColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="voucherEditingEnd:" destination="lDt-E3-QIP" eventType="editingDidEnd" id="Myu-cH-Mzy"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="4SC-SU-jq9" firstAttribute="centerY" secondItem="eZ6-hl-nUE" secondAttribute="centerY" id="4rd-7F-6FT"/>
+                                                <constraint firstItem="eZ6-hl-nUE" firstAttribute="top" secondItem="7iu-Dg-eio" secondAttribute="top" constant="18" id="5M9-T3-2v5"/>
                                                 <constraint firstItem="eZ6-hl-nUE" firstAttribute="leading" secondItem="7iu-Dg-eio" secondAttribute="leading" constant="20" id="FMR-9Y-r7B"/>
+                                                <constraint firstAttribute="bottom" secondItem="eZ6-hl-nUE" secondAttribute="bottom" constant="18" id="Ldo-Aj-vhK"/>
                                                 <constraint firstAttribute="trailing" secondItem="cMm-R5-CmN" secondAttribute="trailing" constant="16" id="SJH-zW-eoz"/>
                                                 <constraint firstItem="cMm-R5-CmN" firstAttribute="centerY" secondItem="eZ6-hl-nUE" secondAttribute="centerY" id="Sgk-US-BRB"/>
                                                 <constraint firstItem="4SC-SU-jq9" firstAttribute="leading" secondItem="eZ6-hl-nUE" secondAttribute="trailing" constant="12" id="bR4-2R-IsC"/>
                                                 <constraint firstItem="cMm-R5-CmN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4SC-SU-jq9" secondAttribute="trailing" constant="8" symbolic="YES" id="n7A-zR-5hr"/>
-                                                <constraint firstItem="eZ6-hl-nUE" firstAttribute="centerY" secondItem="7iu-Dg-eio" secondAttribute="centerY" id="zhw-gY-svo"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -2211,15 +2219,15 @@
                                             <outlet property="voucherTextField" destination="4SC-SU-jq9" id="RBw-T5-0w6"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PBC" rowHeight="190" id="rrM-O4-UJv">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PBC" id="rrM-O4-UJv" customClass="costDetailsCell" customModule="Raghoua_Client" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="603" width="414" height="190"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rrM-O4-UJv" id="rmo-By-2IF">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="المجموع الفرعي" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cfp-Ek-cqJ" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
-                                                    <rect key="frame" x="32" y="134" width="90" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="المجموع الكلي" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cfp-Ek-cqJ" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                                    <rect key="frame" x="32" y="134" width="81" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="c6X-Ng-ukG"/>
                                                     </constraints>
@@ -2327,12 +2335,22 @@
                                                 <constraint firstItem="S0g-hC-Zpa" firstAttribute="centerY" secondItem="Cfp-Ek-cqJ" secondAttribute="centerY" id="GXN-kF-TJV"/>
                                                 <constraint firstItem="lCr-xk-Mvw" firstAttribute="leading" secondItem="rmo-By-2IF" secondAttribute="leading" constant="32" id="GfB-iw-P0G"/>
                                                 <constraint firstItem="lCr-xk-Mvw" firstAttribute="top" secondItem="rmo-By-2IF" secondAttribute="top" constant="16" id="PHT-Ad-pqe"/>
+                                                <constraint firstAttribute="bottom" secondItem="Cfp-Ek-cqJ" secondAttribute="bottom" constant="32" id="Q9t-1h-DGi"/>
                                                 <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="S0g-hC-Zpa" secondAttribute="trailing" constant="162" id="hRl-0W-tL6"/>
                                                 <constraint firstItem="S0g-hC-Zpa" firstAttribute="leading" secondItem="QnI-Zu-Xuq" secondAttribute="leading" id="oyv-sw-RKJ"/>
                                                 <constraint firstItem="Cfp-Ek-cqJ" firstAttribute="top" secondItem="lCr-xk-Mvw" secondAttribute="bottom" constant="10" id="x8I-Br-Zxu"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="deliveryFees" destination="JE9-FP-nvZ" id="ldR-bP-1c3"/>
+                                            <outlet property="discount" destination="QnI-Zu-Xuq" id="tpO-jo-83H"/>
+                                            <outlet property="discountStack" destination="c7w-OC-Zdq" id="rQf-no-SQj"/>
+                                            <outlet property="purchaseVoucher" destination="q71-se-5qu" id="JDM-DQ-0iT"/>
+                                            <outlet property="subTotal" destination="Y8s-Zu-OOF" id="zKq-IF-De3"/>
+                                            <outlet property="totalCost" destination="S0g-hC-Zpa" id="Lio-NW-tCd"/>
+                                            <outlet property="voucherStack" destination="n2q-sT-d2q" id="YSY-GV-AVc"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

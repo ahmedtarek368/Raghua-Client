@@ -32,6 +32,9 @@
                                         <state key="normal" title="عرض تفاصيل الطلب">
                                             <color key="titleColor" red="0.14117647059999999" green="0.2274509804" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="showOrderDetailsBtnPressed:" destination="QSo-A9-dvO" eventType="touchUpInside" id="MIS-ZM-qhZ"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ArrowLeft_ar" translatesAutoresizingMaskIntoConstraints="NO" id="x5h-YN-hcn">
                                         <rect key="frame" x="135.5" y="0.0" width="8" height="24"/>
@@ -210,11 +213,15 @@
                                                         <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="value">
-                                                        <real key="value" value="3"/>
+                                                        <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="spacing">
-                                                        <real key="value" value="8"/>
+                                                        <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="allowsHalfStars" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="continuous" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="emptyStarImage" value="starEmp24Px"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="filledStarImage" value="starfill24Px"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
@@ -251,18 +258,25 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="mainRoundedOrderView" destination="iMr-8s-JON" id="gRQ-Wm-o29"/>
+                <outlet property="orderDate" destination="ZHb-da-tdY" id="lea-Xo-s1z"/>
+                <outlet property="orderNumber" destination="8rr-Du-oaV" id="YNd-KQ-kWF"/>
+                <outlet property="servicesQuantity" destination="gmS-4s-a67" id="7oj-BP-715"/>
+                <outlet property="starRate" destination="a5k-uL-YmV" id="sRA-67-y3L"/>
+                <outlet property="totalCost" destination="sh5-nU-SyU" id="Bhq-hY-kq3"/>
             </connections>
             <point key="canvasLocation" x="141" y="92"/>
         </tableViewCell>
     </objects>
     <designables>
         <designable name="a5k-uL-YmV">
-            <size key="intrinsicContentSize" width="252" height="44"/>
+            <size key="intrinsicContentSize" width="220" height="44"/>
         </designable>
     </designables>
     <resources>
         <image name="ArrowLeft_ar" width="7" height="11.5"/>
         <image name="checkCircle24Px" width="24" height="24"/>
+        <image name="starEmp24Px" width="20" height="20"/>
+        <image name="starfill24Px" width="20" height="20"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

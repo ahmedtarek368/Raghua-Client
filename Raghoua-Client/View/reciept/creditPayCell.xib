@@ -31,6 +31,9 @@
                                         <state key="normal" title="عرض تفاصيل الطلب">
                                             <color key="titleColor" red="0.14117647059999999" green="0.2274509804" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="showOrderDetailsBtnPressed:" destination="56c-WW-68G" eventType="touchUpInside" id="oKG-Bb-Xcm"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ArrowLeft_ar" translatesAutoresizingMaskIntoConstraints="NO" id="nFV-is-RuQ">
                                         <rect key="frame" x="135.5" y="0.0" width="8" height="24"/>
@@ -313,16 +316,20 @@
                 </subviews>
                 <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstItem="ilt-n6-AVo" firstAttribute="top" secondItem="uQF-iQ-VHs" secondAttribute="top" constant="20" id="4M3-yb-eXR"/>
-                    <constraint firstItem="ilt-n6-AVo" firstAttribute="leading" secondItem="uQF-iQ-VHs" secondAttribute="leading" constant="16" id="6Ka-yd-NUI"/>
-                    <constraint firstAttribute="trailing" secondItem="ilt-n6-AVo" secondAttribute="trailing" constant="16" id="KYu-su-vGX"/>
+                    <constraint firstItem="ilt-n6-AVo" firstAttribute="top" secondItem="uQF-iQ-VHs" secondAttribute="top" constant="20" identifier="topConst" id="4M3-yb-eXR"/>
+                    <constraint firstItem="ilt-n6-AVo" firstAttribute="leading" secondItem="uQF-iQ-VHs" secondAttribute="leading" constant="16" identifier="leftConst" id="6Ka-yd-NUI"/>
+                    <constraint firstAttribute="trailing" secondItem="ilt-n6-AVo" secondAttribute="trailing" constant="16" identifier="rightConst" id="KYu-su-vGX"/>
                     <constraint firstAttribute="bottom" secondItem="ilt-n6-AVo" secondAttribute="bottom" id="m2h-OS-vf3"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="mainRoundedView" destination="ilt-n6-AVo" id="5UF-3u-rpJ"/>
+                <outlet property="orderDate" destination="Zfn-FV-uqx" id="NwC-Zd-3lv"/>
+                <outlet property="orderNumber" destination="bfQ-QQ-1zs" id="0Rx-tb-cKi"/>
                 <outlet property="payBtn" destination="HaX-VA-pGD" id="Tsb-Xk-U7y"/>
+                <outlet property="servicesQuantity" destination="dfR-X5-uFt" id="si3-nW-g20"/>
                 <outlet property="statusView" destination="5DN-KL-FLn" id="bpb-9y-l2k"/>
+                <outlet property="totalCost" destination="Ito-mg-xBU" id="w9j-sT-Kgi"/>
             </connections>
             <point key="canvasLocation" x="141" y="-101"/>
         </tableViewCell>

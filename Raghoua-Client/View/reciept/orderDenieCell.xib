@@ -31,6 +31,9 @@
                                         <state key="normal" title="عرض تفاصيل الطلب">
                                             <color key="titleColor" red="0.14117647059999999" green="0.2274509804" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="showOrderDetailsBtnPressed:" destination="Akx-wx-YHU" eventType="touchUpInside" id="P7r-tx-uUa"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ArrowLeft_ar" translatesAutoresizingMaskIntoConstraints="NO" id="V4e-Pz-JdP">
                                         <rect key="frame" x="135.5" y="0.0" width="8" height="24"/>
@@ -134,9 +137,6 @@
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6 خدمة" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfp-n4-iey" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="24" width="120" height="27"/>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="height" constant="27" id="EpI-aU-091"/>
-                                                                                </constraints>
                                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                                                 <color key="textColor" red="0.070588235289999995" green="0.070588235289999995" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
@@ -243,15 +243,19 @@
                 </subviews>
                 <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Xjb-M5-7g3" secondAttribute="trailing" constant="16" id="8o9-kb-fkJ"/>
-                    <constraint firstItem="Xjb-M5-7g3" firstAttribute="leading" secondItem="mI0-BK-LZ8" secondAttribute="leading" constant="16" id="BQh-xX-dgl"/>
+                    <constraint firstAttribute="trailing" secondItem="Xjb-M5-7g3" secondAttribute="trailing" constant="16" identifier="rightConst" id="8o9-kb-fkJ"/>
+                    <constraint firstItem="Xjb-M5-7g3" firstAttribute="leading" secondItem="mI0-BK-LZ8" secondAttribute="leading" constant="16" identifier="leftConst" id="BQh-xX-dgl"/>
                     <constraint firstAttribute="bottom" secondItem="Xjb-M5-7g3" secondAttribute="bottom" id="W0T-th-980"/>
-                    <constraint firstItem="Xjb-M5-7g3" firstAttribute="top" secondItem="mI0-BK-LZ8" secondAttribute="top" constant="20" id="bld-i0-EU2"/>
+                    <constraint firstItem="Xjb-M5-7g3" firstAttribute="top" secondItem="mI0-BK-LZ8" secondAttribute="top" constant="20" identifier="topConst" id="bld-i0-EU2"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="mainRoundedOrderView" destination="Xjb-M5-7g3" id="Lx3-Ud-o6e"/>
+                <outlet property="orderDate" destination="Ghd-ES-aug" id="gUr-Ix-EL3"/>
+                <outlet property="orderNumber" destination="xm0-n6-fEL" id="Pfd-Pg-PkG"/>
+                <outlet property="servicesQuantity" destination="cfp-n4-iey" id="0us-Jj-JWv"/>
                 <outlet property="statusMessageView" destination="SkB-f2-vXx" id="K1x-Zt-mef"/>
+                <outlet property="totalCost" destination="XkI-kx-ggC" id="Gr2-Ik-W5w"/>
             </connections>
             <point key="canvasLocation" x="140.57971014492756" y="-81.361607142857139"/>
         </tableViewCell>

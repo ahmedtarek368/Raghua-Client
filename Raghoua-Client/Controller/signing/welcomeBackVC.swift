@@ -123,9 +123,6 @@ class welcomeBackVC: UIViewController{
                 self.performSegue(withIdentifier: "LGN", sender: self)
                 self.animationView?.stop()
                 self.animationView?.isHidden = true
-                print(response.data)
-                self.pushToHome()
-                self.setupAlert(title: "success".localized, message: "\(user.name!) \(user.id!)")
             } onError: { (error) in
                 self.animationView?.stop()
                 self.animationView?.isHidden = true

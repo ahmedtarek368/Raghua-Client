@@ -50,7 +50,43 @@ struct Laundry: Codable {
     let totalRate: Int
     let img: String
     let commnetCount: Int
-    let deliveryPrice: Double
+    let distance: Double
+    let deliveryTime: String
+    let deliveryPrice: DeliveryPrice
+
+    enum CodingKeys: String, CodingKey {
+        case id, name, minimumPrice, totalRate, img, commnetCount, distance
+        case deliveryTime = "delivery_time"
+        case deliveryPrice
+    }
+}
+
+enum DeliveryPrice: Codable {
+    case double(Double)
+    case string(String)
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        if let x = try? container.decode(Double.self) {
+            self = .double(x)
+            return
+        }
+        if let x = try? container.decode(String.self) {
+            self = .string(x)
+            return
+        }
+        throw DecodingError.typeMismatch(DeliveryPrice.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for DeliveryPrice"))
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        switch self {
+        case .double(let x):
+            try container.encode(x)
+        case .string(let x):
+            try container.encode(x)
+        }
+    }
 }
 
 // MARK: - Link
@@ -250,10 +286,11 @@ struct UserItem: Codable {
 struct Service: Codable {
     let id: Int
     let name: String
-    let quantity, price, priceMethod: Int
+    let price, priceMethod: Int
+    let quantity, width: Int?
 
     enum CodingKeys: String, CodingKey {
-        case id, name, quantity, price
+        case id, name, quantity, price, width
         case priceMethod = "price_method"
     }
 }

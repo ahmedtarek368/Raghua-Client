@@ -12,19 +12,58 @@ protocol dismissPopup {
 }
 
 protocol orderQuantity {
-    func increaseQuantity(serviceIndex: Int)
-    func decreaseQuantity(serviceIndex: Int)
+    func increaseQuantity(userCart: UserCart)
+    func decreaseQuantity(userCart: UserCart)
 }
 
 protocol orderSize {
-    func increaseSize()
-    func decreaseSize()
+    func increaseSize(userCart: UserCart)
+    func decreaseSize(userCart: UserCart)
 }
 
-protocol removeItem {
-    func removeAndReloadTable()
+protocol updateUserCart {
+    func removeAndReloadTable(userCart: UserCart)
+    func updateUserCart(userCart: UserCart)
 }
 
-protocol updateCellHeight{
+protocol updateCartView{
     func updateCellHeight(userCart: UserCart)
+    func updateCart(userCart: UserCart)
+}
+
+protocol pushToDeniedOrderDetails {
+    func pushToDeniedOrderDetails()
+}
+
+protocol pushToCreditPaymentDetails {
+    func pushToCreditPaymentDetails()
+}
+
+protocol pushToCompleteOrderDetails {
+    func pushToCompleteOrderDetails()
+}
+
+protocol pushToWaitingCashPaymentOrderDetails {
+    func pushToWaitingCashPaymentOrderDetails()
+}
+
+protocol reloadData {
+    func reloadData()
+}
+
+protocol confirmedVoucher{
+    func confirmedVoucher(discountAmount: Int)
+    
+    func deniedVoucher()
+}
+
+protocol confirmDeliverRecieveDateTime{
+    func confirmDeliverDate(date: String)
+    func confirmDeliverTime(time: String)
+    func confirmRecieveDate(date: String)
+    func confirmRecieveTime(time: String)
+}
+
+protocol updateCart {
+    func updateCart()
 }

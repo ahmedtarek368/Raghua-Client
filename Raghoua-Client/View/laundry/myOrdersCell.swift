@@ -12,7 +12,7 @@ class myOrdersCell: UITableViewCell{
     @IBOutlet weak var ordersTV: UITableView!
     
     var userCart: UserCart?
-    var delegate: updateCellHeight?
+    var delegate: updateCartView?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -74,15 +74,18 @@ extension myOrdersCell : UITableViewDelegate, UITableViewDataSource{
     
 }
 
-extension myOrdersCell: removeItem{
-    func removeAndReloadTable() {
-        NetworkService.shared.requestUserCartData { (response) in
-            self.userCart = response.data
-            self.ordersTV.reloadData()
-            self.delegate?.updateCellHeight(userCart: response.data)
-        } onError: { (error) in
-            debugPrint(error)
-        }
-
+extension myOrdersCell: updateUserCart{
+    
+    func updateUserCart(userCart: UserCart) {
+        self.userCart = userCart
+        self.ordersTV.reloadData()
+        delegate!.updateCart(userCart: userCart)
     }
+    
+    func removeAndReloadTable(userCart: UserCart) {
+        self.userCart = userCart
+        self.ordersTV.reloadData()
+        self.delegate?.updateCellHeight(userCart: userCart)
+    }
+    
 }

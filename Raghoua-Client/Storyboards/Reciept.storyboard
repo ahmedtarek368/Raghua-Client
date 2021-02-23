@@ -105,9 +105,152 @@
                                     <constraint firstItem="rwB-HG-TTG" firstAttribute="leading" secondItem="YMr-Fv-jNb" secondAttribute="leading" constant="16.5" id="hW5-Wk-Vyl"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zca-qm-t9H">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="Zca-qm-t9H">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MH" rowHeight="73" id="RuD-Sg-qZ6">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="73"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RuD-Sg-qZ6" id="1aT-pa-TGJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="73"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تفاصيل الطلب" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTi-Vn-WSU" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="16" width="126" height="41"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CTi-Vn-WSU" firstAttribute="top" secondItem="1aT-pa-TGJ" secondAttribute="top" constant="16" id="A3L-Nt-asm"/>
+                                                <constraint firstAttribute="bottom" secondItem="CTi-Vn-WSU" secondAttribute="bottom" constant="16" id="XVb-tM-def"/>
+                                                <constraint firstItem="CTi-Vn-WSU" firstAttribute="leading" secondItem="1aT-pa-TGJ" secondAttribute="leading" constant="16" id="aHk-Li-f7t"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MROC" rowHeight="499" id="9eq-DE-i6Z" customClass="myRecieptOrdersCell" customModule="Raghoua_Client" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="128.5" width="414" height="499"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9eq-DE-i6Z" id="IUt-XE-TlI">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="499"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="RBd-kJ-Fis">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="499"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="499" id="Ua6-dh-oBJ"/>
+                                                    </constraints>
+                                                    <prototypes>
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="H" id="kif-i8-0Uy">
+                                                            <rect key="frame" x="0.0" y="55.5" width="414" height="57"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kif-i8-0Uy" id="vkt-aD-G4R">
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="57"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سجاد" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QcP-y6-JlH" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                                                        <rect key="frame" x="16" y="15" width="35" height="27"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="27" id="0ER-RJ-dZ1"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARJ-5d-xUM">
+                                                                        <rect key="frame" x="0.0" y="56" width="414" height="1"/>
+                                                                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="1" id="7Uo-fc-cYW"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="ARJ-5d-xUM" secondAttribute="trailing" id="ZmW-dT-pRu"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="QcP-y6-JlH" secondAttribute="bottom" constant="15" id="ck5-Db-V0C"/>
+                                                                    <constraint firstItem="ARJ-5d-xUM" firstAttribute="leading" secondItem="vkt-aD-G4R" secondAttribute="leading" id="fac-Mb-Npg"/>
+                                                                    <constraint firstItem="QcP-y6-JlH" firstAttribute="top" secondItem="vkt-aD-G4R" secondAttribute="top" constant="15" id="fbI-LX-SsQ"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="ARJ-5d-xUM" secondAttribute="bottom" id="sNJ-yx-fQm"/>
+                                                                    <constraint firstItem="QcP-y6-JlH" firstAttribute="leading" secondItem="vkt-aD-G4R" secondAttribute="leading" constant="16" id="wb4-BT-86B"/>
+                                                                </constraints>
+                                                            </tableViewCellContentView>
+                                                        </tableViewCell>
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MO" id="73a-ip-ZJo">
+                                                            <rect key="frame" x="0.0" y="112.5" width="414" height="82"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="73a-ip-ZJo" id="hij-MY-RJi">
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="82"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="غسيل + كوي" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xmu-K3-Jze" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                                                        <rect key="frame" x="16" y="12" width="83" height="27"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="27" id="TW4-cF-KQB"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                        <color key="textColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00.00 ريال" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYZ-dQ-3pe" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                                                        <rect key="frame" x="16" y="42" width="65" height="24"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="24" id="du3-Sj-M8A"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 متر" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cqf-XX-12T" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                                                        <rect key="frame" x="87" y="42" width="30" height="24"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="24" id="f2w-vp-UHP"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <color key="textColor" red="0.62745098039215685" green="0.63921568627450975" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الكمية:1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZi-mb-6vg" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                                                        <rect key="frame" x="213" y="42" width="45" height="24"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="24" id="gTd-u1-znb"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="pZi-mb-6vg" firstAttribute="leading" secondItem="Cqf-XX-12T" secondAttribute="trailing" constant="96" id="GG9-fU-QOG"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="UYZ-dQ-3pe" secondAttribute="bottom" constant="16" id="HZo-kG-CYj"/>
+                                                                    <constraint firstItem="UYZ-dQ-3pe" firstAttribute="top" secondItem="Xmu-K3-Jze" secondAttribute="bottom" constant="3" id="QA1-ih-fXK"/>
+                                                                    <constraint firstItem="Xmu-K3-Jze" firstAttribute="leading" secondItem="hij-MY-RJi" secondAttribute="leading" constant="16" id="T8O-kD-YN4"/>
+                                                                    <constraint firstItem="pZi-mb-6vg" firstAttribute="centerY" secondItem="UYZ-dQ-3pe" secondAttribute="centerY" id="XUk-9d-oKk"/>
+                                                                    <constraint firstItem="Xmu-K3-Jze" firstAttribute="top" secondItem="hij-MY-RJi" secondAttribute="top" constant="12" id="YPg-n2-Aup"/>
+                                                                    <constraint firstItem="Cqf-XX-12T" firstAttribute="centerY" secondItem="UYZ-dQ-3pe" secondAttribute="centerY" id="b0W-r0-de6"/>
+                                                                    <constraint firstItem="Cqf-XX-12T" firstAttribute="leading" secondItem="UYZ-dQ-3pe" secondAttribute="trailing" constant="6" id="j8j-P0-nY1"/>
+                                                                    <constraint firstItem="UYZ-dQ-3pe" firstAttribute="leading" secondItem="hij-MY-RJi" secondAttribute="leading" constant="16" id="oTc-6u-gqx"/>
+                                                                </constraints>
+                                                            </tableViewCellContentView>
+                                                        </tableViewCell>
+                                                    </prototypes>
+                                                </tableView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="RBd-kJ-Fis" secondAttribute="bottom" id="9no-P4-DRd"/>
+                                                <constraint firstItem="RBd-kJ-Fis" firstAttribute="leading" secondItem="IUt-XE-TlI" secondAttribute="leading" id="NM8-fd-fBk"/>
+                                                <constraint firstAttribute="trailing" secondItem="RBd-kJ-Fis" secondAttribute="trailing" id="f90-5h-PAX"/>
+                                                <constraint firstItem="RBd-kJ-Fis" firstAttribute="top" secondItem="IUt-XE-TlI" secondAttribute="top" id="k4z-Kh-4mh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ordersTV" destination="RBd-kJ-Fis" id="QDi-Tt-YWp"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mq8-8s-xIb"/>
@@ -129,7 +272,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ltt-yy-ebr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1835" y="84"/>
+            <point key="canvasLocation" x="1834.7826086956522" y="83.705357142857139"/>
         </scene>
         <!--طلباتي-->
         <scene sceneID="1f7-va-mXk">

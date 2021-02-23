@@ -327,7 +327,7 @@ class NetworkService{
                         onSuccess(successResponse)
                     }else{
                         let failedResponse = try JSONDecoder().decode(basicResponse.self, from: response.data!)
-                        onError(failedResponse.msg)
+                        onError(failedResponse.errNum)
                     }
                     break
                 case .failure(let error):
@@ -368,6 +368,33 @@ class NetworkService{
         }
     }
     
+    func requestUpdateUserCartData(param: [String:String], onSuccess: @escaping (basicResponse) -> Void, onError: @escaping (String) -> Void){
+        
+        let url = URL(string: URLs.updateCart)!
+        
+        AF.request(url, method: .post, parameters: param, encoding: JSONEncoding.default, headers: nil, interceptor: nil, requestModifier: nil).responseJSON { (response) in
+            do{
+                switch response.result{
+                case .success(_):
+                    let status = try JSONDecoder().decode(responseStatus.self, from: response.data!)
+                    if status.status == true {
+                        let successResponse = try JSONDecoder().decode(basicResponse.self, from: response.data!)
+                        onSuccess(successResponse)
+                    }else{
+                        let failedResponse = try JSONDecoder().decode(basicResponse.self, from: response.data!)
+                        onError(failedResponse.msg)
+                    }
+                    break
+                case .failure(let error):
+                    onError(error.localizedDescription)
+                    break
+                }
+            }catch(let err){
+                onError(err.localizedDescription)
+            }
+        }
+    }
+    
     func requestRemoveItemInCart(itemID: Int,onSuccess: @escaping (basicResponse) -> Void, onError: @escaping (String) -> Void){
         
         let itemUrl = "/\(itemID)?"
@@ -376,6 +403,62 @@ class NetworkService{
         let requestUrl = URL(string: requestUrlString)!
         
         AF.request(requestUrl, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: nil, interceptor: nil, requestModifier: nil).responseJSON { (response) in
+            do{
+                switch response.result{
+                case .success(_):
+                    let status = try JSONDecoder().decode(responseStatus.self, from: response.data!)
+                    if status.status == true {
+                        let successResponse = try JSONDecoder().decode(basicResponse.self, from: response.data!)
+                        onSuccess(successResponse)
+                    }else{
+                        let failedResponse = try JSONDecoder().decode(basicResponse.self, from: response.data!)
+                        onError(failedResponse.msg)
+                    }
+                    break
+                case .failure(let error):
+                    onError(error.localizedDescription)
+                    break
+                }
+            }catch(let err){
+                onError(err.localizedDescription)
+            }
+        }
+    }
+    
+    func requestVoucherVerify(param: [String:String], onSuccess: @escaping (successfulVoucherResponse) -> Void, onError: @escaping (String) -> Void){
+        
+        let url = URL(string: URLs.verifyVoucher)!
+        //let header = HTTPHeaders(["Authorization":"Bearer \(userToken!)", "lang":"lang".localized])
+        
+        AF.request(url, method: .post, parameters: param, encoding: JSONEncoding.default, headers: nil, interceptor: nil, requestModifier: nil).responseJSON { (response) in
+            do{
+                switch response.result{
+                case .success(_):
+                    let status = try JSONDecoder().decode(responseStatus.self, from: response.data!)
+                    if status.status == true {
+                        let successResponse = try JSONDecoder().decode(successfulVoucherResponse.self, from: response.data!)
+                        onSuccess(successResponse)
+                    }else{
+                        let failedResponse = try JSONDecoder().decode(basicResponse.self, from: response.data!)
+                        onError(failedResponse.msg)
+                    }
+                    break
+                case .failure(let error):
+                    onError(error.localizedDescription)
+                    break
+                }
+            }catch(let err){
+                onError(err.localizedDescription)
+            }
+        }
+    }
+    
+    func requestStoreOrder(param: [String:String], onSuccess: @escaping (basicResponse) -> Void, onError: @escaping (String) -> Void){
+        
+        let url = URL(string: URLs.saveOrder)!
+        let header = HTTPHeaders(["Authorization":"Bearer \(userToken!)"])
+        
+        AF.request(url, method: .post, parameters: param, encoding: JSONEncoding.default, headers: header, interceptor: nil, requestModifier: nil).responseJSON { (response) in
             do{
                 switch response.result{
                 case .success(_):

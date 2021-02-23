@@ -49,16 +49,21 @@ extension myOrdersVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let cell : waitingCashPaymentCell = tableView.dequeueReusableCell(withIdentifier: "WCPC", for: indexPath) as! waitingCashPaymentCell
+            let cell : waitingCashPaymentCell = tableView.dequeueReusableCell(withIdentifier: "WCPC", for: indexPath)
+                as! waitingCashPaymentCell
+            cell.delegate = self
             return cell
         }else if indexPath.row == 1{
             let cell : creditPayCell = tableView.dequeueReusableCell(withIdentifier: "CPC", for: indexPath) as! creditPayCell
+            cell.delegate = self
             return cell
         }else if indexPath.row == 2{
             let cell : orderCompleteCell = tableView.dequeueReusableCell(withIdentifier: "OCC", for: indexPath) as! orderCompleteCell
+            cell.delegate = self
             return cell
         }else if indexPath.row == 3{
             let cell : orderDenieCell = tableView.dequeueReusableCell(withIdentifier: "ODC", for: indexPath) as! orderDenieCell
+            cell.delegate = self
             return cell
         }else{
             let cell : orderDenieCell = tableView.dequeueReusableCell(withIdentifier: "ODC", for: indexPath) as! orderDenieCell
@@ -67,6 +72,25 @@ extension myOrdersVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        if cell?.reuseIdentifier == "ODC"{
+            print("Denied cell")
+            //
+        }else if cell?.reuseIdentifier == "OCC"{
+            //
+        }else if cell?.reuseIdentifier == "WCPC"{
+            print("waiting cash cell")
+            //
+        }else {
+            print("credit cell")
+            //
+        }
+    }
+}
+
+
+extension myOrdersVC: pushToDeniedOrderDetails{
+    func pushToDeniedOrderDetails() {
         if #available(iOS 13.0, *) {
             let orderDetailsView : orderDetailsVC = self.storyboard?.instantiateViewController(identifier: "ODVC") as! orderDetailsVC
             orderDetailsView.cellNibName = "orderDenieCell"
@@ -74,8 +98,57 @@ extension myOrdersVC: UITableViewDelegate, UITableViewDataSource{
             self.navigationController?.pushViewController(orderDetailsView, animated: true)
         } else {
             let orderDetailsView : orderDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "ODVC") as! orderDetailsVC
+            orderDetailsView.cellNibName = "orderDenieCell"
+            orderDetailsView.reuseId =  "ODC"
             self.navigationController?.pushViewController(orderDetailsView, animated: true)
         }
-        
+    }
+}
+
+extension myOrdersVC: pushToCreditPaymentDetails{
+    func pushToCreditPaymentDetails() {
+        if #available(iOS 13.0, *) {
+            let orderDetailsView : orderDetailsVC = self.storyboard?.instantiateViewController(identifier: "ODVC") as! orderDetailsVC
+            orderDetailsView.cellNibName = "creditPayCell"
+            orderDetailsView.reuseId =  "CPC"
+            self.navigationController?.pushViewController(orderDetailsView, animated: true)
+        } else {
+            let orderDetailsView : orderDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "ODVC") as! orderDetailsVC
+            orderDetailsView.cellNibName = "creditPayCell"
+            orderDetailsView.reuseId =  "CPC"
+            self.navigationController?.pushViewController(orderDetailsView, animated: true)
+        }
+    }
+}
+
+extension myOrdersVC: pushToCompleteOrderDetails{
+    func pushToCompleteOrderDetails() {
+        if #available(iOS 13.0, *) {
+            let orderDetailsView : orderDetailsVC = self.storyboard?.instantiateViewController(identifier: "ODVC") as! orderDetailsVC
+            orderDetailsView.cellNibName = "orderCompleteCell"
+            orderDetailsView.reuseId =  "OCC"
+            self.navigationController?.pushViewController(orderDetailsView, animated: true)
+        } else {
+            let orderDetailsView : orderDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "ODVC") as! orderDetailsVC
+            orderDetailsView.cellNibName = "orderCompleteCell"
+            orderDetailsView.reuseId =  "OCC"
+            self.navigationController?.pushViewController(orderDetailsView, animated: true)
+        }
+    }
+}
+
+extension myOrdersVC: pushToWaitingCashPaymentOrderDetails{
+    func pushToWaitingCashPaymentOrderDetails() {
+        if #available(iOS 13.0, *) {
+            let orderDetailsView : orderDetailsVC = self.storyboard?.instantiateViewController(identifier: "ODVC") as! orderDetailsVC
+            orderDetailsView.cellNibName = "waitingCashPaymentCell"
+            orderDetailsView.reuseId =  "WCPC"
+            self.navigationController?.pushViewController(orderDetailsView, animated: true)
+        } else {
+            let orderDetailsView : orderDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "ODVC") as! orderDetailsVC
+            orderDetailsView.cellNibName = "waitingCashPaymentCell"
+            orderDetailsView.reuseId =  "WCPC"
+            self.navigationController?.pushViewController(orderDetailsView, animated: true)
+        }
     }
 }
