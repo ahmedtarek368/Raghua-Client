@@ -284,6 +284,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="laundryName" destination="ilS-Eh-qa0" id="CAr-fb-5ko"/>
                 <outlet property="orderDate" destination="mMV-rP-dV7" id="Dlw-pf-Spw"/>
                 <outlet property="orderNumber" destination="B1N-HQ-VlZ" id="UMt-Ie-l2I"/>
                 <outlet property="payBtn" destination="vk4-Z1-ote" id="SEi-tw-9PV"/>

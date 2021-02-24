@@ -26,7 +26,7 @@ class paymentMethodVC: UIViewController {
         continueBtn.isLockedButton()
         continueBtn.isUserInteractionEnabled = false
         let discount = order!.voucherDiscount ?? 0
-        self.totalPrice.text = "\((order!.subTotal!+order!.deliveryFees!)-discount) ريال"
+        self.totalPrice.text = "\((order!.subTotal!+order!.deliveryFees!)-discount) \("riyal".localized)"
     }
     
     override func viewDidLoad() {

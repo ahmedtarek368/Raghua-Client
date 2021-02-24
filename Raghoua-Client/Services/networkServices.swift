@@ -593,6 +593,62 @@ class NetworkService{
         }
     }
     
+    func requestMyOrders(onSuccess: @escaping (successfulOrdersDataResponse) -> Void, onError: @escaping (String) -> Void){
+        
+        let url = URL(string: URLs.myOrders)!
+        let header = HTTPHeaders(["Authorization":"Bearer \(userToken!)"])
+        
+        AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header, interceptor: nil, requestModifier: nil).responseJSON { (response) in
+            do{
+                switch response.result{
+                case .success(_):
+                    let status = try JSONDecoder().decode(responseStatus.self, from: response.data!)
+                    if status.status == true {
+                        let successResponse = try JSONDecoder().decode(successfulOrdersDataResponse.self, from: response.data!)
+                        onSuccess(successResponse)
+                    }else{
+                        let failedResponse = try JSONDecoder().decode(basicResponse.self, from: response.data!)
+                        onError(failedResponse.msg)
+                    }
+                    break
+                case .failure(let error):
+                    onError(error.localizedDescription)
+                    break
+                }
+            }catch(let err){
+                onError(err.localizedDescription)
+            }
+        }
+    }
+    
+    func requestOrderDetails(parameter: [String:String], onSuccess: @escaping (successfulOrderDetailsResponse) -> Void, onError: @escaping (String) -> Void){
+        
+        let url = URL(string: URLs.myOrderDetails)!
+        let header = HTTPHeaders(["Authorization":"Bearer \(userToken!)"])
+        
+        AF.request(url, method: .post, parameters: parameter, encoding: JSONEncoding.default, headers: header, interceptor: nil, requestModifier: nil).responseJSON { (response) in
+            do{
+                switch response.result{
+                case .success(_):
+                    let status = try JSONDecoder().decode(responseStatus.self, from: response.data!)
+                    if status.status == true {
+                        let successResponse = try JSONDecoder().decode(successfulOrderDetailsResponse.self, from: response.data!)
+                        onSuccess(successResponse)
+                    }else{
+                        let failedResponse = try JSONDecoder().decode(basicResponse.self, from: response.data!)
+                        onError(failedResponse.msg)
+                    }
+                    break
+                case .failure(let error):
+                    onError(error.localizedDescription)
+                    break
+                }
+            }catch(let err){
+                onError(err.localizedDescription)
+            }
+        }
+    }
+    
 }
 
 

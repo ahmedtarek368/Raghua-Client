@@ -43,6 +43,7 @@
 		093C60C925E2A59300ABCF29 /* deniedOrderDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093C60C725E2A59300ABCF29 /* deniedOrderDetailsCell.xib */; };
 		093E328825C59B92003BC986 /* successfulRegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093E328725C59B92003BC986 /* successfulRegistrationVC.swift */; };
 		093E328B25C5B2BE003BC986 /* howDidYouKnowAboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093E328A25C5B2BE003BC986 /* howDidYouKnowAboutUsVC.swift */; };
+		09524FF625E69C75007412F5 /* orderItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524FF525E69C75007412F5 /* orderItemCell.swift */; };
 		0959799E25DD9ABC00D46D58 /* outOfWorkingHoursWarningVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0959799D25DD9ABC00D46D58 /* outOfWorkingHoursWarningVC.swift */; };
 		095979B625DDB08500D46D58 /* myOrdersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095979B525DDB08500D46D58 /* myOrdersVC.swift */; };
 		095B868D25D192EF009F25C6 /* reorderingLaundriesPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095B868C25D192EE009F25C6 /* reorderingLaundriesPopupVC.swift */; };
@@ -159,6 +160,7 @@
 		093C60C725E2A59300ABCF29 /* deniedOrderDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = deniedOrderDetailsCell.xib; sourceTree = "<group>"; };
 		093E328725C59B92003BC986 /* successfulRegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = successfulRegistrationVC.swift; sourceTree = "<group>"; };
 		093E328A25C5B2BE003BC986 /* howDidYouKnowAboutUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = howDidYouKnowAboutUsVC.swift; sourceTree = "<group>"; };
+		09524FF525E69C75007412F5 /* orderItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orderItemCell.swift; sourceTree = "<group>"; };
 		0959799D25DD9ABC00D46D58 /* outOfWorkingHoursWarningVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = outOfWorkingHoursWarningVC.swift; sourceTree = "<group>"; };
 		095979B525DDB08500D46D58 /* myOrdersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myOrdersVC.swift; sourceTree = "<group>"; };
 		095B868C25D192EE009F25C6 /* reorderingLaundriesPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reorderingLaundriesPopupVC.swift; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 				093C60C625E2A59300ABCF29 /* deniedOrderDetailsCell.swift */,
 				093C60C725E2A59300ABCF29 /* deniedOrderDetailsCell.xib */,
 				09F851C025E306F400C63D0F /* myRecieptOrdersCell.swift */,
+				09524FF525E69C75007412F5 /* orderItemCell.swift */,
 			);
 			path = reciept;
 			sourceTree = "<group>";
@@ -721,6 +724,7 @@
 				095D797225E3D0C300B48E99 /* datePickingCell.swift in Sources */,
 				09FA9C7925C3AC0D00E718C4 /* restPassMobNumberVerifyVC.swift in Sources */,
 				09663FD825C6D5BB00EA80F8 /* addressCell.swift in Sources */,
+				09524FF625E69C75007412F5 /* orderItemCell.swift in Sources */,
 				091140A025E16F70009B69C6 /* updateUserNameVC.swift in Sources */,
 				09663FE025C6F63D00EA80F8 /* radioButton.swift in Sources */,
 				09663FDD25C6EBA000EA80F8 /* bottomPopupView.swift in Sources */,

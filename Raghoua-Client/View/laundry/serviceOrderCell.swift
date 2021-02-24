@@ -111,7 +111,7 @@ class serviceOrderCell: UITableViewCell {
         self.item = item
         self.serviceIndex = serviceIndex
         self.serviceName.text = item.services[serviceIndex].name
-        self.servicePrice.text = item.services[serviceIndex].price! + " ريال"
+        self.servicePrice.text = item.services[serviceIndex].price! + "riyal".localized
         self.userCartID = userCartID
         self.orderQuantity.text = "0"
     }

@@ -9,6 +9,7 @@ import UIKit
 
 class deniedOrderDetailsCell: UITableViewCell {
 
+    @IBOutlet weak var laundryName: basicLabel!
     @IBOutlet weak var statusMessageView: UIView!
     @IBOutlet weak var orderDate: basicLabel!
     @IBOutlet weak var orderNumber: basicLabel!
@@ -29,6 +30,14 @@ class deniedOrderDetailsCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func updateCell(laundryName: String, creationDate: String, orderNumber: String, servicesQuantity: String, totalCost: String){
+        self.laundryName.text = laundryName
+        self.orderDate.text = creationDate
+        self.orderNumber.text = orderNumber
+        self.servicesQuantity.text = servicesQuantity
+        self.totalCost.text = totalCost
     }
     
 }

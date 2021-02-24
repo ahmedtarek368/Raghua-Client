@@ -31,6 +31,8 @@ class URLs{
     static let favoriteLaundries = baseUrl + "myFav"
     static let myProfile = baseUrl + "myprofile"
     static let updateInfo = baseUrl + "updateUserInfo"
+    static let myOrders = baseUrl + "myOrders"
+    static let myOrderDetails = baseUrl + "singleOrderuser"
     
 }
 

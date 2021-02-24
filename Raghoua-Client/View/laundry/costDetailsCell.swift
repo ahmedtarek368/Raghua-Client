@@ -32,17 +32,17 @@ class costDetailsCell: UITableViewCell {
         voucherStack.isHidden = false
         discountStack.isHidden = false
         if subTotal == 0{
-            self.subTotal.text = "\(0) ريال"
-            self.deliveryFees.text = "\(0) ريال"
-            self.purchaseVoucher.text = "\(0) ريال"
+            self.subTotal.text = "\(0) \("riyal".localized)"
+            self.deliveryFees.text = "\(0) \("riyal".localized)"
+            self.purchaseVoucher.text = "\(0) \("riyal".localized)"
             voucherStack.isHidden = true
             discountStack.isHidden = true
-            self.totalCost.text = "\(0) ريال"
+            self.totalCost.text = "\(0) \("riyal".localized)"
         }else{
-            self.subTotal.text = "\(subTotal) ريال"
-            self.deliveryFees.text = "\(deliveryFees) ريال"
-            self.purchaseVoucher.text = "\(VoucherDiscount) ريال"
-            self.totalCost.text = "\(subTotal+deliveryFees-VoucherDiscount) ريال"
+            self.subTotal.text = "\(subTotal) \("riyal".localized)"
+            self.deliveryFees.text = "\(deliveryFees) \("riyal".localized)"
+            self.purchaseVoucher.text = "\(VoucherDiscount) \("riyal".localized)"
+            self.totalCost.text = "\(subTotal+deliveryFees-VoucherDiscount) \("riyal".localized)"
         }
     }
     
@@ -50,13 +50,13 @@ class costDetailsCell: UITableViewCell {
         voucherStack.isHidden = true
         discountStack.isHidden = true
         if subTotal == 0{
-            self.subTotal.text = "\(0) ريال"
-            self.deliveryFees.text = "\(0) ريال"
-            self.totalCost.text = "\(0) ريال"
+            self.subTotal.text = "\(0) \("riyal".localized)"
+            self.deliveryFees.text = "\(0) \("riyal".localized)"
+            self.totalCost.text = "\(0) \("riyal".localized)"
         }else{
-            self.subTotal.text = "\(subTotal) ريال"
-            self.deliveryFees.text = "\(deliveryFees) ريال"
-            self.totalCost.text = "\(subTotal+deliveryFees) ريال"
+            self.subTotal.text = "\(subTotal) \("riyal".localized)"
+            self.deliveryFees.text = "\(deliveryFees) \("riyal".localized)"
+            self.totalCost.text = "\(subTotal+deliveryFees) \("riyal".localized)"
         }
     }
 }

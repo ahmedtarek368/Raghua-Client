@@ -88,9 +88,11 @@ class cartUserItemCell: UITableViewCell {
             if let width = userCart.items[itemIndex].services[serviceIndex].width {
                 pricePerQuantity.text = "\(width) \("meter".localized)"
             }
+        }else{
+            pricePerQuantity.text = "perPiece".localized
         }
         self.serviceName.text = userCart.items[itemIndex].services[serviceIndex].name
-        self.servicePrice.text = "\(userCart.items[itemIndex].services[serviceIndex].price) ريال"
+        self.servicePrice.text = "\(userCart.items[itemIndex].services[serviceIndex].price) \("riyal".localized)"
         self.serviceQuantity.text = "\(userCart.items[itemIndex].services[serviceIndex].quantity!)"
     }
     

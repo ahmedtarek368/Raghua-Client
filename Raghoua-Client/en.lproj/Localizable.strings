@@ -63,3 +63,10 @@
 "name changed successfuly" = "name changed successfuly";
 "password changed successfuly" = "password changed successfuly";
 "failed to change password" = "failed to change password";
+"order under revision" = "order under revision";
+"riyal" = "riyal";
+"quantity" = "quantity";
+"perPiece" = "per Piece";
+"cash" = "cash";
+"credit card" = "credit card";
+"services" = "services";

@@ -12,6 +12,8 @@ class orderDetailsVC: UIViewController {
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var orderBriefTV: UITableView!
     
+    var order: OrderDetails?
+    var cellHeight: Int?
     var cellNibName: String?
     var reuseId: String?
     let sectionTitles : [String] = ["","order details".localized,"your order".localized]
@@ -58,7 +60,11 @@ extension orderDetailsVC: UITableViewDelegate, UITableViewDataSource{
         if indexPath.section <= 1 {
             return UITableView.automaticDimension
         }else{
-            return 770
+            if let cellHeight = self.cellHeight{
+                return CGFloat(cellHeight)
+            }else{
+                return 500
+            }
         }
     }
     
@@ -92,6 +98,10 @@ extension orderDetailsVC: UITableViewDelegate, UITableViewDataSource{
                 return cell
             }else if reuseId == "WCPC"{
                 let cell: waitingCashPaymentDetailsCell = tableView.dequeueReusableCell(withIdentifier: "WCPDC", for: indexPath) as! waitingCashPaymentDetailsCell
+                if let orderDetails = self.order{
+                    cell.updateCell(laundryName: orderDetails.laundryName, creationDate: "\(orderDetails.createdAt)", orderNumber: orderDetails.orderNumber, servicesQuantity: "\(orderDetails.serviceNumber)", totalCost: orderDetails.total, statusMessage: "order under revision".localized, orderStatus: "order under revision".localized)
+                    cell.deliveryInfoHidden()
+                }
                 return cell
             }else if reuseId == "OCC"{
                 let cell: waitingRateOrderCell = tableView.dequeueReusableCell(withIdentifier: "WRC", for: indexPath) as! waitingRateOrderCell
@@ -102,11 +112,19 @@ extension orderDetailsVC: UITableViewDelegate, UITableViewDataSource{
                 return cell
             }
         }else if indexPath.section == 1{
-            let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "RODC", for: indexPath)
+            let cell: orderDetailsCell = tableView.dequeueReusableCell(withIdentifier: "RODC", for: indexPath) as! orderDetailsCell
+            if let orderDetails = order{
+                cell.updateCell(orderDetails: orderDetails)
+            }
+            return cell
+        }else if indexPath.section == 2{
+            let cell : myRecieptOrdersCell = tableView.dequeueReusableCell(withIdentifier: "MROC") as! myRecieptOrdersCell
+            if let orderDetails = self.order{
+                cell.updateCell(orderDetails: orderDetails)
+            }
             return cell
         }else{
-            let cell : myRecieptOrdersCell = tableView.dequeueReusableCell(withIdentifier: "MROC") as! myRecieptOrdersCell
-            return cell
+            return UITableViewCell()
         }
     }
     

@@ -11,6 +11,7 @@ class orderDenieCell: UITableViewCell {
 
     var delegate: pushToDeniedOrderDetails?
 
+    @IBOutlet weak var laundryName: basicLabel!
     @IBOutlet weak var mainRoundedOrderView: UIView!
     @IBOutlet weak var statusMessageView: UIView!
     @IBOutlet weak var orderDate: basicLabel!
@@ -35,6 +36,13 @@ class orderDenieCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func updateCell(laundryName: String, creationDate: String, orderNumber: String, servicesQuantity: String, totalCost: String){
+        self.laundryName.text = laundryName
+        self.orderDate.text = creationDate
+        self.orderNumber.text = orderNumber
+        self.servicesQuantity.text = servicesQuantity
+        self.totalCost.text = totalCost
+    }
     
     @IBAction func showOrderDetailsBtnPressed(_ sender: Any) {
         delegate!.pushToDeniedOrderDetails()

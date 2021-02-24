@@ -138,7 +138,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="499"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="RBd-kJ-Fis">
+                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="RBd-kJ-Fis">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="499"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
@@ -152,7 +152,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="57"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سجاد" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QcP-y6-JlH" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سجاد" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QcP-y6-JlH" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
                                                                         <rect key="frame" x="16" y="15" width="35" height="27"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="27" id="0ER-RJ-dZ1"/>
@@ -179,7 +179,7 @@
                                                                 </constraints>
                                                             </tableViewCellContentView>
                                                         </tableViewCell>
-                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MO" id="73a-ip-ZJo">
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MO" id="73a-ip-ZJo" customClass="orderItemCell" customModule="Raghoua_Client" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="112.5" width="414" height="82"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="73a-ip-ZJo" id="hij-MY-RJi">
@@ -235,6 +235,12 @@
                                                                     <constraint firstItem="UYZ-dQ-3pe" firstAttribute="leading" secondItem="hij-MY-RJi" secondAttribute="leading" constant="16" id="oTc-6u-gqx"/>
                                                                 </constraints>
                                                             </tableViewCellContentView>
+                                                            <connections>
+                                                                <outlet property="pricePerItem" destination="Cqf-XX-12T" id="EDc-Zl-f4N"/>
+                                                                <outlet property="quantity" destination="pZi-mb-6vg" id="odx-aH-iWQ"/>
+                                                                <outlet property="serviceName" destination="Xmu-K3-Jze" id="Pxq-cj-MjT"/>
+                                                                <outlet property="servicePrice" destination="UYZ-dQ-3pe" id="n93-La-XKI"/>
+                                                            </connections>
                                                         </tableViewCell>
                                                     </prototypes>
                                                 </tableView>

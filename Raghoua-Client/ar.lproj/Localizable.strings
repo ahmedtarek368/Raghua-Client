@@ -63,3 +63,10 @@
 "name changed successfuly" = "تم تغيير الاسم بنجاح";
 "password changed successfuly" = "تم تغيير كلمة السر بنجاح";
 "failed to change password" = "فشل تغيير كلمة السر";
+"order under revision" = "طلبك تحت المراجعة";
+"riyal" = "ريال";
+"quantity" = "الكمية";
+"perPiece" = "للقطعة";
+"cash" = "كاش";
+"credit card" = "بطاقة ائتمانية";
+"services" = "خدمات";

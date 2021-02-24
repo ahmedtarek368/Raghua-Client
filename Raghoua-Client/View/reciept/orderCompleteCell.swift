@@ -12,6 +12,7 @@ class orderCompleteCell: UITableViewCell {
 
     var delegate: pushToCompleteOrderDetails?
     
+    @IBOutlet weak var laundryName: basicLabel!
     @IBOutlet weak var mainRoundedOrderView: UIView!
     @IBOutlet weak var orderDate: basicLabel!
     @IBOutlet weak var orderNumber: basicLabel!
@@ -35,6 +36,14 @@ class orderCompleteCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func updateCell(laundryName: String, creationDate: String, orderNumber: String, servicesQuantity: String, totalCost: String){
+        self.laundryName.text = laundryName
+        self.orderDate.text = creationDate
+        self.orderNumber.text = orderNumber
+        self.servicesQuantity.text = servicesQuantity
+        self.totalCost.text = totalCost
     }
     
     @IBAction func showOrderDetailsBtnPressed(_ sender: Any) {

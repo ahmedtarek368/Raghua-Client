@@ -12,6 +12,7 @@ class waitingRateOrderCell: UITableViewCell {
 
     var delegate : reloadData?
     
+    @IBOutlet weak var laundryName: basicLabel!
     @IBOutlet weak var addRate: basicLabel!
     @IBOutlet weak var rateImpression: UIView!
     @IBOutlet weak var impressionMessage: UILabel!
@@ -33,6 +34,14 @@ class waitingRateOrderCell: UITableViewCell {
         rateImpression.isHidden = true
     }
 
+    func updateCell(laundryName: String, creationDate: String, orderNumber: String, servicesQuantity: String, totalCost: String){
+        self.laundryName.text = laundryName
+        self.orderDate.text = creationDate
+        self.orderNumber.text = orderNumber
+        self.servicesQuantity.text = servicesQuantity
+        self.totalCost.text = totalCost
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

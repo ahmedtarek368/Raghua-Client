@@ -171,6 +171,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="address" destination="K6q-OJ-Xox" id="uuv-lv-AdQ"/>
+                <outlet property="addressDetails" destination="aGJ-IQ-aMz" id="yir-en-6JW"/>
                 <outlet property="deliveryFees" destination="vCF-3g-PIx" id="3DP-vE-wO0"/>
                 <outlet property="itemsDeliveringDate" destination="He2-5X-Q5e" id="k64-mQ-AW4"/>
                 <outlet property="itemsPickingDate" destination="VL4-Ma-EXl" id="CEp-8c-QX7"/>

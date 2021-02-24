@@ -48,7 +48,7 @@ protocol pushToCompleteOrderDetails {
 }
 
 protocol pushToWaitingCashPaymentOrderDetails {
-    func pushToWaitingCashPaymentOrderDetails()
+    func pushToWaitingCashPaymentOrderDetails(order: OrderData)
 }
 
 protocol reloadData {

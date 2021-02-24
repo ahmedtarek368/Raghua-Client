@@ -9,6 +9,7 @@ import UIKit
 
 class creditPaymentDetailsCell: UITableViewCell {
     
+    @IBOutlet weak var laundryName: basicLabel!
     @IBOutlet weak var statusView: UIView!
     @IBOutlet weak var payBtn: UIButton!
     @IBOutlet weak var orderDate: basicLabel!
@@ -33,6 +34,14 @@ class creditPaymentDetailsCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func updateCell(laundryName: String, creationDate: String, orderNumber: String, servicesQuantity: String, totalCost: String){
+        self.laundryName.text = laundryName
+        self.orderDate.text = creationDate
+        self.orderNumber.text = orderNumber
+        self.servicesQuantity.text = servicesQuantity
+        self.totalCost.text = totalCost
+    }
+    
     func customizePayBtn(){
         payBtn.layer.shadowRadius = 3
         payBtn.layer.shadowOpacity = 1

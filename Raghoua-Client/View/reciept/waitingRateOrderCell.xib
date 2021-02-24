@@ -255,6 +255,7 @@
             <connections>
                 <outlet property="addRate" destination="eYr-N0-dJW" id="U1n-MB-y43"/>
                 <outlet property="impressionMessage" destination="jqg-Jq-oLA" id="FiD-MA-Jiz"/>
+                <outlet property="laundryName" destination="2RO-sG-U7p" id="4Hp-6t-HxL"/>
                 <outlet property="orderDate" destination="68N-CJ-Xnz" id="rY2-n5-MEg"/>
                 <outlet property="orderNumber" destination="qgo-03-nJP" id="EVs-Ev-iGv"/>
                 <outlet property="orderStatus" destination="hY7-iN-Lde" id="cj6-W9-JVB"/>

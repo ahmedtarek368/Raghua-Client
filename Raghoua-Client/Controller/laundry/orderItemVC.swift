@@ -54,7 +54,7 @@ class orderItemVC: UIViewController {
     func updateCartInfo(userCart: UserCart){
         let servicesQuantity = calculateServicesNumber(userCart: userCart)
         let subTotal = calculateItemsServicesSubTotal(userCart: userCart)
-        self.totalOrderPrice.text = "\(subTotal) ريال"
+        self.totalOrderPrice.text = "\(subTotal) \("riyal".localized)"
         self.itemsInBasket.text = "\(servicesQuantity)"
         
     }
@@ -216,7 +216,7 @@ extension orderItemVC: updateCart{
             let subTotal = self.calculateItemsServicesSubTotal(userCart: response.data)
             let servicesQuantity = self.calculateServicesNumber(userCart: response.data)
             self.itemsInBasket.text = "\(servicesQuantity)"
-            self.totalOrderPrice.text = "\(subTotal) ريال"
+            self.totalOrderPrice.text = "\(subTotal) \("riyal".localized)"
             self.orderServicesTV.reloadData()
         } onError: { (error) in
             debugPrint(error)
