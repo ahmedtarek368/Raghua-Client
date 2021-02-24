@@ -294,3 +294,17 @@ struct Service: Codable {
         case priceMethod = "price_method"
     }
 }
+
+struct successfulFavoriteLaundriesResponse: Codable {
+    let status: Bool
+    let errNum, msg: String
+    let data: [FavoriteLaundry]
+}
+
+// MARK: - Datum
+struct FavoriteLaundry: Codable {
+    let id: Int
+    let name, minimumPrice: String
+    let img: String
+    let totalRate, commnetCount, deliveryPrice: Int
+}

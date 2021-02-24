@@ -11,6 +11,9 @@ import BottomPopup
 class reorderingLaundriesPopupVC: BottomPopupViewController, BottomPopupDelegate {
 
     let ordersArr : [String] = ["nearest".localized,"highly rated".localized,"fastest delivery".localized]
+    var laundriesData : [Laundry]?
+    
+    var delegate: sortLaundries?
     
     @IBOutlet weak var orderTVC: UITableView!
     override var popupShouldDismissInteractivelty: Bool{
@@ -38,8 +41,10 @@ class reorderingLaundriesPopupVC: BottomPopupViewController, BottomPopupDelegate
         orderTVC.delegate = self
         orderTVC.dataSource = self
     }
-
-
+    
+    func sortingLaundries(sortBy: Int){
+        
+    }
 }
 
 extension reorderingLaundriesPopupVC: UITableViewDelegate, UITableViewDataSource{
@@ -61,6 +66,7 @@ extension reorderingLaundriesPopupVC: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell : laundriesOrderCell = tableView.cellForRow(at: indexPath) as! laundriesOrderCell
         cell.setSelected(true, animated: true)
+        delegate!.sortLaundries(sortBy: indexPath.row)
     }
     
     

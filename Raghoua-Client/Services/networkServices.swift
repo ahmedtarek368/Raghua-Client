@@ -481,6 +481,118 @@ class NetworkService{
         }
     }
     
+    func requestSetUnsetFavorite(param: [String:String], onSuccess: @escaping (basicResponse) -> Void, onError: @escaping (String) -> Void){
+        
+        let url = URL(string: URLs.favorite)!
+        let header = HTTPHeaders(["Authorization":"Bearer \(userToken!)"])
+        
+        AF.request(url, method: .post, parameters: param, encoding: JSONEncoding.default, headers: header, interceptor: nil, requestModifier: nil).responseJSON { (response) in
+            do{
+                switch response.result{
+                case .success(_):
+                    let status = try JSONDecoder().decode(responseStatus.self, from: response.data!)
+                    if status.status == true {
+                        let successResponse = try JSONDecoder().decode(basicResponse.self, from: response.data!)
+                        onSuccess(successResponse)
+                    }else{
+                        let failedResponse = try JSONDecoder().decode(basicResponse.self, from: response.data!)
+                        onError(failedResponse.msg)
+                    }
+                    break
+                case .failure(let error):
+                    onError(error.localizedDescription)
+                    break
+                }
+            }catch(let err){
+                onError(err.localizedDescription)
+            }
+        }
+    }
+    
+    func requestFavoriteLaundries(onSuccess: @escaping (successfulFavoriteLaundriesResponse) -> Void, onError: @escaping (String) -> Void){
+        
+        let url = URL(string: URLs.favoriteLaundries)!
+        let header = HTTPHeaders(["Authorization":"Bearer \(userToken!)", "lang":"lang".localized])
+        
+        AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header, interceptor: nil, requestModifier: nil).responseJSON { (response) in
+            do{
+                switch response.result{
+                case .success(_):
+                    let status = try JSONDecoder().decode(responseStatus.self, from: response.data!)
+                    if status.status == true {
+                        let successResponse = try JSONDecoder().decode(successfulFavoriteLaundriesResponse.self, from: response.data!)
+                        onSuccess(successResponse)
+                    }else{
+                        let failedResponse = try JSONDecoder().decode(basicResponse.self, from: response.data!)
+                        onError(failedResponse.msg)
+                    }
+                    break
+                case .failure(let error):
+                    onError(error.localizedDescription)
+                    break
+                }
+            }catch(let err){
+                onError(err.localizedDescription)
+            }
+        }
+    }
+    
+    func requestMyProfile(onSuccess: @escaping (successLoginSignupResponse) -> Void, onError: @escaping (String) -> Void){
+        
+        let url = URL(string: URLs.myProfile)!
+        let header = HTTPHeaders(["Authorization":"Bearer \(userToken!)"])
+        
+        AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header, interceptor: nil, requestModifier: nil).responseJSON { (response) in
+            do{
+                switch response.result{
+                case .success(_):
+                    let status = try JSONDecoder().decode(responseStatus.self, from: response.data!)
+                    if status.status == true {
+                        let successResponse = try JSONDecoder().decode(successLoginSignupResponse.self, from: response.data!)
+                        onSuccess(successResponse)
+                    }else{
+                        let failedResponse = try JSONDecoder().decode(basicResponse.self, from: response.data!)
+                        onError(failedResponse.msg)
+                    }
+                    break
+                case .failure(let error):
+                    onError(error.localizedDescription)
+                    break
+                }
+            }catch(let err){
+                onError(err.localizedDescription)
+            }
+        }
+    }
+    
+    func requestUpdateInfo(parameter: [String:String], onSuccess: @escaping (successUpdateInfoResponse) -> Void, onError: @escaping (String) -> Void){
+        
+        let url = URL(string: URLs.updateInfo)!
+        let header = HTTPHeaders(["Authorization":"Bearer \(userToken!)"])
+        
+        AF.request(url, method: .post, parameters: parameter, encoding: JSONEncoding.default, headers: header, interceptor: nil, requestModifier: nil).responseJSON { (response) in
+            do{
+                switch response.result{
+                case .success(_):
+                    let status = try JSONDecoder().decode(responseStatus.self, from: response.data!)
+                    if status.status == true {
+                        let successResponse = try JSONDecoder().decode(successUpdateInfoResponse.self, from: response.data!)
+                        onSuccess(successResponse)
+                    }else{
+                        let failedResponse = try JSONDecoder().decode(basicResponse.self, from: response.data!)
+                        onError(failedResponse.msg)
+                    }
+                    break
+                case .failure(let error):
+                    onError(error.localizedDescription)
+                    break
+                }
+            }catch(let err){
+                onError(err.localizedDescription)
+            }
+        }
+    }
+    
 }
 
 

@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import Lottie
 
 class accountSettingsVC: UIViewController {
 
     @IBOutlet weak var accountSettingsTV: UITableView!
+    
+    var user: User?
+    var animationView: AnimationView?
     
     let sectionsTitles : [String] = ["my account".localized,"settings".localized,"raghua".localized]
     let accountTitles : [String] = ["my points".localized, "addresses list".localized]
@@ -17,19 +21,64 @@ class accountSettingsVC: UIViewController {
     let raghuaTitles : [String] = ["about app".localized, "usage policy".localized, "call us".localized, "facebook".localized, "twitter".localized, "instagram".localized, "share app".localized]
     let signOutTitle : String = "sign out".localized
     
+    override func viewWillAppear(_ animated: Bool) {
+        //requestUserProfile()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         accountSettingsTV.delegate = self
         accountSettingsTV.dataSource = self
         accountSettingsTV.contentInsetAdjustmentBehavior =  .never
+        setUpAnimation()
+        requestUserProfile()
     }
 
+    func setUpAnimation(){
+        animationView = .init(name: "Loading Animation")
+        animationView?.loopMode = .loop
+        animationView?.frame.size.height = view.frame.size.height/3.5
+        animationView?.frame.size.width = view.frame.size.width/3.5
+        animationView?.center = CGPoint(x: view.frame.size.width/2, y: view.frame.size.height/2)
+        animationView?.isHidden = true
+        self.view.addSubview(animationView!)
+    }
+    
+    func setupAlert(title: String, message: String){
+            let successfulAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            successfulAlert.addAction(UIAlertAction(title: "Ok", style: .cancel , handler: nil))
+            self.present(successfulAlert, animated: true, completion: nil)
+    }
+    
+    func requestUserProfile(){
+        animationView?.play()
+        animationView?.isHidden = false
+        NetworkService.shared.requestMyProfile { (response) in
+            let userData : userData = response.data
+            userToken = userData.apiToken
+            let user : User = User(id: userData.id, name: userData.name, email: userData.email, phone: userData.phone, img: userData.img, apiToken: userData.apiToken, points: userData.points, cartID: userData.cartID ?? 0, userAddress: userData.userAddress)
+            self.user = user
+            self.accountSettingsTV.reloadData()
+            self.animationView?.stop()
+            self.animationView?.isHidden = true
+        } onError: { (error) in
+            self.animationView?.stop()
+            self.animationView?.isHidden = true
+            self.setupAlert(title:"fail".localized, message: "\(error)")
+            print(error)
+        }
+    }
+    
     func pushToUpdateInfo(){
         if #available(iOS 13.0, *) {
             let updateInfoView : updateInfoVC = self.storyboard?.instantiateViewController(identifier: "UIVC") as! updateInfoVC
+            updateInfoView.initUserData(user: self.user!)
+            updateInfoView.delegate = self
             self.navigationController?.pushViewController(updateInfoView, animated: true)
         } else {
             let updateInfoView : updateInfoVC = self.storyboard?.instantiateViewController(withIdentifier: "UIVC") as! updateInfoVC
+            updateInfoView.initUserData(user: self.user!)
+            updateInfoView.delegate = self
             self.navigationController?.pushViewController(updateInfoView, animated: true)
         }
     }
@@ -37,6 +86,7 @@ class accountSettingsVC: UIViewController {
     func pushToMyPointsVC(){
         if #available(iOS 13.0, *) {
             let myPointsView : myPointsVC = self.storyboard?.instantiateViewController(identifier: "MPVC") as! myPointsVC
+            myPointsView.initPoints(userPoints: "\(self.user!.points!)")
             self.navigationController?.pushViewController(myPointsView, animated: true)
         } else {
             let myPointsView : myPointsVC = self.storyboard?.instantiateViewController(withIdentifier: "MPVC") as! myPointsVC
@@ -47,9 +97,11 @@ class accountSettingsVC: UIViewController {
     func pushToMyAddressesList(){
         if #available(iOS 13.0, *) {
             let myAddressesView : myAddressesVC = self.storyboard?.instantiateViewController(identifier: "MADVC") as! myAddressesVC
+            //myAddressesView.initUserData(user: self.user!)
             self.navigationController?.pushViewController(myAddressesView, animated: true)
         } else {
             let myAddressesView : myAddressesVC = self.storyboard?.instantiateViewController(withIdentifier: "MADVC") as! myAddressesVC
+            //myAddressesView.initUserData(user: self.user!)
             self.navigationController?.pushViewController(myAddressesView, animated: true)
         }
         
@@ -91,7 +143,10 @@ class accountSettingsVC: UIViewController {
 extension accountSettingsVC: UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 6
+        if self.user != nil{
+            return 6
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -144,24 +199,33 @@ extension accountSettingsVC: UITableViewDelegate, UITableViewDataSource{
         let accountSettingsCell : accountSettingsCell = tableView.dequeueReusableCell(withIdentifier: "ASC", for: indexPath) as! accountSettingsCell
         
         if indexPath.section == 0{
-            let userProfileCell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "UPC")!
+            let userProfileCell : userProfileCell = tableView.dequeueReusableCell(withIdentifier: "UPC") as! userProfileCell
+            if let user = self.user{
+                userProfileCell.updateCell(userImageUrl: user.img, userName: user.name, userMobileNumber: user.phone)
+            }
             return userProfileCell
         }else if indexPath.section == 1 {
-            accountSettingsCell.updateCell(settingTitle: accountTitles[indexPath.row], settingImage: "\(indexPath.row)account")
+            if indexPath.row == 0{
+                let userPointsCell : pointsLanguageCell = tableView.dequeueReusableCell(withIdentifier: "ASCB") as! pointsLanguageCell
+                userPointsCell.updateCell(settingTitle: accountTitles[indexPath.row], settingImage: "\(indexPath.row)account", miniView: "\(user!.points!)")
+                return userPointsCell
+            }else{
+                accountSettingsCell.updateCell(settingTitle: accountTitles[indexPath.row], settingImage: "\(indexPath.row)account")
+                return accountSettingsCell
+            }
         }else if indexPath.section == 2{
-            accountSettingsCell.updateCell(settingTitle: settingTitle, settingImage: "\(indexPath.row)settings")
+            let languageCell : pointsLanguageCell = tableView.dequeueReusableCell(withIdentifier: "ASCB") as! pointsLanguageCell
+            languageCell.updateCell(settingTitle: settingTitle, settingImage: "\(indexPath.row)settings", miniView: "applanguage".localized)
+            return languageCell
         }else if indexPath.section == 3{
+            if indexPath.row == 6{
+                let shareAppCell : shareAppCell = tableView.dequeueReusableCell(withIdentifier: "SAC") as! shareAppCell
+                shareAppCell.updateCell(settingTitle: raghuaTitles[indexPath.row], settingSubtitle: "shareAcc".localized, settingImage: "\(indexPath.row)raghua")
+                return shareAppCell
+            }
             accountSettingsCell.updateCell(settingTitle: raghuaTitles[indexPath.row], settingImage: "\(indexPath.row)raghua")
         }else {
             accountSettingsCell.updateCell(settingTitle: signOutTitle, settingImage: "\(indexPath.row)exit")
-        }
-        
-        if indexPath.section == 1 && indexPath.row == 0{
-            accountSettingsCell.showMiniView(content: "50")
-        }else if indexPath.section == 2 && indexPath.row == 0 {
-            accountSettingsCell.showMiniView(content: "applanguage".localized)
-        }else if indexPath.section == 3 && indexPath.row == 6 {
-            accountSettingsCell.showSubTitle(content: "shareAcc".localized)
         }
         return accountSettingsCell
     }
@@ -194,4 +258,11 @@ extension accountSettingsVC: UITableViewDelegate, UITableViewDataSource{
         }
     }
     
+}
+
+extension accountSettingsVC: updateUserInfo{
+    func updateUserInfo(user: User) {
+        self.user = user
+        self.accountSettingsTV.reloadData()
+    }
 }

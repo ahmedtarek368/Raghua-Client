@@ -1,16 +1,17 @@
 //
-//  accountSettingsCell.swift
+//  shareAppCell.swift
 //  Raghoua-Client
 //
-//  Created by Ahmed Tarek on 2/19/21.
+//  Created by Ahmed Tarek on 2/23/21.
 //
 
 import UIKit
 
-class accountSettingsCell: UITableViewCell {
+class shareAppCell: UITableViewCell {
 
     @IBOutlet weak var settingImage: UIImageView!
     @IBOutlet weak var settingTitle: basicLabel!
+    @IBOutlet weak var settingSubtitle: basicLabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,17 +21,10 @@ class accountSettingsCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
-    func updateCell(settingTitle: String, settingImage: String){
+    func updateCell(settingTitle: String, settingSubtitle: String, settingImage: String){
         self.settingTitle.text = settingTitle
         self.settingImage.image = UIImage(named: "\(settingImage)")
+        self.settingSubtitle.text = settingSubtitle
     }
-    
-//    func showSubTitle(content: String){
-//        settingSubTitle.isHidden = false
-//        settingSubTitle.text = content
-//    }
-//    func showMiniView(content: String){
-//        settingMiniView.isHidden = false
-//        settingMiniView.text = content
-//    }
+
 }

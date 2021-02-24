@@ -10,14 +10,20 @@ import UIKit
 class myPointsVC: UIViewController {
 
     @IBOutlet weak var backBtn: UIButton!
+    @IBOutlet weak var myPoints: UILabel!
     
+    var points: String?
     override func viewWillAppear(_ animated: Bool) {
         if "lang".localized == "ar"{
             backBtn.setImage(UIImage(named: "arrowBackW24Px"), for: .normal)
         }
+        myPoints.text = points!
     }
     
-    @IBOutlet weak var myPoints: UILabel!
+    func initPoints(userPoints:String){
+        self.points = userPoints
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

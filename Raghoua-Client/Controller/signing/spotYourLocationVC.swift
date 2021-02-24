@@ -23,6 +23,7 @@ class spotYourLocationVC: UIViewController {
     var cameraIsOnUserLocation = false
     
     override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
         let backButton = UIBarButtonItem(image: UIImage(named: "arrow_back_\("lang".localized)"), style: .plain, target: self, action: #selector(backBtnPressed))
         self.navigationItem.leftBarButtonItem = backButton
         cameraIsOnUserLocation = false

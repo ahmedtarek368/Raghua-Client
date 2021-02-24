@@ -13,5 +13,6 @@ target 'Raghoua-Client' do
   pod 'Alamofire'
   pod 'FBSDKLoginKit'
   pod 'SwiftyStarRatingView'
+  pod 'SDWebImage'
   
 end

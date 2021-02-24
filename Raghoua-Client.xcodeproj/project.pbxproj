@@ -25,6 +25,9 @@
 		091140A925E1766F009B69C6 /* sendMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091140A825E1766F009B69C6 /* sendMessageVC.swift */; };
 		091140AC25E17945009B69C6 /* thanksBottomPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091140AB25E17945009B69C6 /* thanksBottomPopup.swift */; };
 		09249E9C25E457D50075197D /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09249E9B25E457D50075197D /* Order.swift */; };
+		092BCA2925E5FE7B00BC1CD0 /* userProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092BCA2825E5FE7B00BC1CD0 /* userProfileCell.swift */; };
+		092BCA3625E623DB00BC1CD0 /* pointsLanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092BCA3525E623DB00BC1CD0 /* pointsLanguageCell.swift */; };
+		092BCA3925E630E300BC1CD0 /* shareAppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092BCA3825E630E200BC1CD0 /* shareAppCell.swift */; };
 		092DC80025DB06C8007D0454 /* paymentMethodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092DC7FF25DB06C8007D0454 /* paymentMethodVC.swift */; };
 		092DC80325DB11AA007D0454 /* paymentMethodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092DC80225DB11AA007D0454 /* paymentMethodsCell.swift */; };
 		092F07EE25D6CB610078E7D8 /* roundedQuantityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092F07ED25D6CB610078E7D8 /* roundedQuantityView.swift */; };
@@ -138,6 +141,9 @@
 		091140A825E1766F009B69C6 /* sendMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sendMessageVC.swift; sourceTree = "<group>"; };
 		091140AB25E17945009B69C6 /* thanksBottomPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thanksBottomPopup.swift; sourceTree = "<group>"; };
 		09249E9B25E457D50075197D /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		092BCA2825E5FE7B00BC1CD0 /* userProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userProfileCell.swift; sourceTree = "<group>"; };
+		092BCA3525E623DB00BC1CD0 /* pointsLanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pointsLanguageCell.swift; sourceTree = "<group>"; };
+		092BCA3825E630E200BC1CD0 /* shareAppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shareAppCell.swift; sourceTree = "<group>"; };
 		092DC7FF25DB06C8007D0454 /* paymentMethodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paymentMethodVC.swift; sourceTree = "<group>"; };
 		092DC80225DB11AA007D0454 /* paymentMethodsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paymentMethodsCell.swift; sourceTree = "<group>"; };
 		092F07ED25D6CB610078E7D8 /* roundedQuantityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundedQuantityView.swift; sourceTree = "<group>"; };
@@ -276,6 +282,9 @@
 			children = (
 				0911408425E062D9009B69C6 /* accountSettingsCell.swift */,
 				0911409325E15AA2009B69C6 /* myAddresseCell.swift */,
+				092BCA2825E5FE7B00BC1CD0 /* userProfileCell.swift */,
+				092BCA3525E623DB00BC1CD0 /* pointsLanguageCell.swift */,
+				092BCA3825E630E200BC1CD0 /* shareAppCell.swift */,
 			);
 			path = account;
 			sourceTree = "<group>";
@@ -722,6 +731,7 @@
 				09663FCD25C636BE00EA80F8 /* protocols.swift in Sources */,
 				092F07F625D6D0230078E7D8 /* orderPerSizeVC.swift in Sources */,
 				0911409125E1578E009B69C6 /* myAddressesVC.swift in Sources */,
+				092BCA2925E5FE7B00BC1CD0 /* userProfileCell.swift in Sources */,
 				097F4EDA25C48C6F0098A855 /* UIViewControllerExt.swift in Sources */,
 				09E1B88E25D72A9800AA61DD /* shoppingBasketVC.swift in Sources */,
 				095B86A425D356B8009F25C6 /* itemsCell.swift in Sources */,
@@ -731,6 +741,7 @@
 				09D29A8925D442B100CE0DBB /* aboutCell.swift in Sources */,
 				09C7554C25C361EB003CC87F /* forgetPasswordVC.swift in Sources */,
 				09C1550A25CA15D600E7FC56 /* networkServices.swift in Sources */,
+				092BCA3625E623DB00BC1CD0 /* pointsLanguageCell.swift in Sources */,
 				09663FD525C6CE7200EA80F8 /* addressesListVC.swift in Sources */,
 				097F4EEF25C49D0B0098A855 /* registerMobNumberVC.swift in Sources */,
 				0959799E25DD9ABC00D46D58 /* outOfWorkingHoursWarningVC.swift in Sources */,
@@ -743,6 +754,7 @@
 				09FF3DCE25C8B7E0000C542B /* basicTextView.swift in Sources */,
 				097F4EDD25C48EF70098A855 /* regionedMobileNumberTF.swift in Sources */,
 				099DAC1925D9BB7000D3E53E /* Laundry.swift in Sources */,
+				092BCA3925E630E300BC1CD0 /* shareAppCell.swift in Sources */,
 				092F07EE25D6CB610078E7D8 /* roundedQuantityView.swift in Sources */,
 				09645EA125CB602C0040C02A /* verficationCode.swift in Sources */,
 				09DCD15C25CEF55A002EC380 /* laundriesVC.swift in Sources */,

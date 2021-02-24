@@ -29,7 +29,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="57.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gift" translatesAutoresizingMaskIntoConstraints="NO" id="Yrg-Pm-sVF">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yrg-Pm-sVF">
                                                     <rect key="frame" x="16" y="16" width="24" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="24" id="PFv-ll-ycz"/>
@@ -48,46 +48,130 @@
                                                             <color key="textColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شارك التطبيق مع أصدقائك واحصل على نقاط مع كل تحميل" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5de-dv-pAC" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="281.5" height="21"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="21" id="8PS-ch-Lu3"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <color key="textColor" red="0.62745098039215685" green="0.63921568627450975" blue="0.65490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                     </subviews>
                                                 </stackView>
-                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIL-sI-Jl4">
-                                                    <rect key="frame" x="376.5" y="17.5" width="19.5" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="uQa-fw-KXs"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.95686274509803915" green="0.41176470588235292" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="sfT-U8-V46" secondAttribute="bottom" constant="16" id="1SK-tM-MtM"/>
                                                 <constraint firstItem="Yrg-Pm-sVF" firstAttribute="top" secondItem="4FK-vD-ckj" secondAttribute="top" constant="16" id="CTv-kI-xeW"/>
-                                                <constraint firstItem="wIL-sI-Jl4" firstAttribute="centerY" secondItem="yUC-jG-iLV" secondAttribute="centerY" id="ER6-UA-Duw"/>
                                                 <constraint firstItem="sfT-U8-V46" firstAttribute="leading" secondItem="Yrg-Pm-sVF" secondAttribute="trailing" constant="16" id="FXU-Bj-m7D"/>
-                                                <constraint firstAttribute="trailing" secondItem="wIL-sI-Jl4" secondAttribute="trailing" constant="18" id="XRA-Pw-loS"/>
                                                 <constraint firstItem="Yrg-Pm-sVF" firstAttribute="leading" secondItem="4FK-vD-ckj" secondAttribute="leading" constant="16" id="kNt-Ys-raj"/>
                                                 <constraint firstItem="yUC-jG-iLV" firstAttribute="centerY" secondItem="Yrg-Pm-sVF" secondAttribute="centerY" id="osA-XJ-g9B"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="settingImage" destination="Yrg-Pm-sVF" id="3Pg-nz-hAl"/>
-                                            <outlet property="settingMiniView" destination="wIL-sI-Jl4" id="6Cu-W7-nIS"/>
-                                            <outlet property="settingSubTitle" destination="5de-dv-pAC" id="phu-vY-nGs"/>
                                             <outlet property="settingTitle" destination="yUC-jG-iLV" id="P5W-qi-cyB"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SAC" id="C84-XR-bAy" customClass="shareAppCell" customModule="Raghoua_Client" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="113" width="414" height="78.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="C84-XR-bAy" id="Olc-5m-5Vh">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="78.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jCe-C6-AVb">
+                                                    <rect key="frame" x="16" y="16" width="24" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="24" id="FiV-eY-c0n"/>
+                                                        <constraint firstAttribute="height" constant="24" id="bML-p4-qG7"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="tnX-qC-UKm">
+                                                    <rect key="frame" x="56" y="14.5" width="281.5" height="48"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نقاطي" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6GL-bs-Nxd" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="27"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="27" id="LXv-cf-XpQ"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <color key="textColor" red="0.070588235289999995" green="0.070588235289999995" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شارك التطبيق مع أصدقائك واحصل على نقاط مع كل تحميل" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ea2-JS-z9Z" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="27" width="281.5" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="hns-jR-0Sd"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" red="0.62745098040000002" green="0.63921568630000003" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="jCe-C6-AVb" firstAttribute="top" secondItem="Olc-5m-5Vh" secondAttribute="top" constant="16" id="5XF-AI-PDn"/>
+                                                <constraint firstItem="jCe-C6-AVb" firstAttribute="leading" secondItem="Olc-5m-5Vh" secondAttribute="leading" constant="16" id="6Tn-qR-WXM"/>
+                                                <constraint firstItem="6GL-bs-Nxd" firstAttribute="centerY" secondItem="jCe-C6-AVb" secondAttribute="centerY" id="J2g-cj-455"/>
+                                                <constraint firstAttribute="bottom" secondItem="tnX-qC-UKm" secondAttribute="bottom" constant="16" id="aL8-Kl-ge0"/>
+                                                <constraint firstItem="tnX-qC-UKm" firstAttribute="leading" secondItem="jCe-C6-AVb" secondAttribute="trailing" constant="16" id="o1H-BN-mWh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="settingImage" destination="jCe-C6-AVb" id="BvM-Zd-nWl"/>
+                                            <outlet property="settingSubtitle" destination="ea2-JS-z9Z" id="4oF-qa-328"/>
+                                            <outlet property="settingTitle" destination="6GL-bs-Nxd" id="cXS-so-JVo"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ASCB" id="cR7-0w-fOZ" customClass="pointsLanguageCell" customModule="Raghoua_Client" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="191.5" width="414" height="57.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cR7-0w-fOZ" id="pZg-iT-TdG">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="57.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bYy-Y5-7En">
+                                                    <rect key="frame" x="16" y="16" width="24" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="SBX-dp-SR3"/>
+                                                        <constraint firstAttribute="width" constant="24" id="ZKa-Sr-Ffq"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="IzY-G7-Cf0">
+                                                    <rect key="frame" x="56" y="14.5" width="40" height="27"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نقاطي" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlz-Mv-aQ1" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="27"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="27" id="tiN-T1-2aA"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <color key="textColor" red="0.070588235289999995" green="0.070588235289999995" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrP-a3-cLc">
+                                                    <rect key="frame" x="376.5" y="17.5" width="19.5" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="vOL-IL-M5Q"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.95686274510000002" green="0.41176470590000003" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bYy-Y5-7En" firstAttribute="top" secondItem="pZg-iT-TdG" secondAttribute="top" constant="16" id="7yB-hc-WEr"/>
+                                                <constraint firstItem="IzY-G7-Cf0" firstAttribute="leading" secondItem="bYy-Y5-7En" secondAttribute="trailing" constant="16" id="IAK-zc-7Mf"/>
+                                                <constraint firstItem="RrP-a3-cLc" firstAttribute="centerY" secondItem="hlz-Mv-aQ1" secondAttribute="centerY" id="ULU-OR-jAR"/>
+                                                <constraint firstAttribute="trailing" secondItem="RrP-a3-cLc" secondAttribute="trailing" constant="18" id="eAZ-8O-UOp"/>
+                                                <constraint firstItem="hlz-Mv-aQ1" firstAttribute="centerY" secondItem="bYy-Y5-7En" secondAttribute="centerY" id="ekZ-NK-4aL"/>
+                                                <constraint firstAttribute="bottom" secondItem="IzY-G7-Cf0" secondAttribute="bottom" constant="16" id="hFm-Nk-5sk"/>
+                                                <constraint firstItem="bYy-Y5-7En" firstAttribute="leading" secondItem="pZg-iT-TdG" secondAttribute="leading" constant="16" id="sII-0d-yNc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="settingImage" destination="bYy-Y5-7En" id="mVc-ve-pb7"/>
+                                            <outlet property="settingMiniView" destination="RrP-a3-cLc" id="sg1-L9-S3K"/>
+                                            <outlet property="settingTitle" destination="hlz-Mv-aQ1" id="3WZ-IR-TIu"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TH" rowHeight="59" id="cc1-e1-7xy">
-                                        <rect key="frame" x="0.0" y="113" width="414" height="59"/>
+                                        <rect key="frame" x="0.0" y="249" width="414" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cc1-e1-7xy" id="Z6c-uG-06i">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="59"/>
@@ -112,7 +196,7 @@
                                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DBATIAF" rowHeight="189" id="SnR-8m-wki">
-                                        <rect key="frame" x="0.0" y="172" width="414" height="189"/>
+                                        <rect key="frame" x="0.0" y="308" width="414" height="189"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SnR-8m-wki" id="nlf-lx-fKR">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="189"/>
@@ -159,7 +243,7 @@
                                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SH" rowHeight="16" id="U5T-nU-2rB">
-                                        <rect key="frame" x="0.0" y="361" width="414" height="16"/>
+                                        <rect key="frame" x="0.0" y="497" width="414" height="16"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U5T-nU-2rB" id="vdF-wF-EuN">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="16"/>
@@ -167,8 +251,8 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="UPC" id="mQ3-P5-0mb">
-                                        <rect key="frame" x="0.0" y="377" width="414" height="144"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="UPC" id="mQ3-P5-0mb" customClass="userProfileCell" customModule="Raghoua_Client" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="513" width="414" height="144"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mQ3-P5-0mb" id="yum-eQ-iON">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="144"/>
@@ -181,8 +265,8 @@
                                                         <constraint firstAttribute="width" constant="72" id="nHE-b4-ud0"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ahmed Ali" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbg-Qv-ywH" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
-                                                    <rect key="frame" x="104" y="71" width="77.5" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="        " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbg-Qv-ywH" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                                    <rect key="frame" x="104" y="71" width="32" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="sW2-S6-JLo"/>
                                                     </constraints>
@@ -190,8 +274,8 @@
                                                     <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+96550012345" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oc4-1s-Yml" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
-                                                    <rect key="frame" x="104" y="93" width="114" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="              " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oc4-1s-Yml" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                                    <rect key="frame" x="104" y="93" width="59" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="HBW-mc-L91"/>
                                                     </constraints>
@@ -211,9 +295,14 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="userImage" destination="84h-2R-64E" id="ykB-A6-aFR"/>
+                                            <outlet property="userMobileNumber" destination="Oc4-1s-Yml" id="FDQ-Aq-08Z"/>
+                                            <outlet property="userName" destination="pbg-Qv-ywH" id="cFT-k6-hqp"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WC" id="LKB-j8-8PE">
-                                        <rect key="frame" x="0.0" y="521" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="657" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LKB-j8-8PE" id="bpJ-zn-OnI">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -348,7 +437,7 @@
                     </view>
                     <connections>
                         <outlet property="backBtn" destination="rEL-pn-egk" id="mbq-nb-oB9"/>
-                        <outlet property="myPoints" destination="RMl-lC-7Qt" id="hEN-Vl-Oxq"/>
+                        <outlet property="myPoints" destination="RMl-lC-7Qt" id="rhp-Xe-7s9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lqo-la-xts" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -396,29 +485,29 @@
                                     <constraint firstItem="9Wa-dp-7rj" firstAttribute="centerX" secondItem="6h3-R5-UxL" secondAttribute="centerX" id="vTn-wj-2sQ"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LB4-sT-sdn">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LB4-sT-sdn">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MADC" id="9gG-P9-rWA" customClass="myAddresseCell" customModule="Raghoua_Client" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="110.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9gG-P9-rWA" id="cvu-4M-3nY">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="110.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="b0u-T6-Tz1">
-                                                    <rect key="frame" x="16" y="16" width="334" height="84"/>
+                                                    <rect key="frame" x="16" y="16" width="334" height="83.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="المنزل" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wis-ks-cUE" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="334" height="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="334" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-2" translatesAutoresizingMaskIntoConstraints="NO" id="N7a-jP-bh8">
-                                                            <rect key="frame" x="0.0" y="20" width="334" height="64"/>
+                                                            <rect key="frame" x="0.0" y="19.5" width="334" height="64"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الرياض , الروضة , 1 , 12 , 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fa-KF-Hi6" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="334" height="24"/>
@@ -444,7 +533,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwZ-xH-3Td">
-                                                    <rect key="frame" x="0.0" y="109.5" width="414" height="1"/>
+                                                    <rect key="frame" x="0.0" y="109" width="414" height="1"/>
                                                     <color key="backgroundColor" red="0.87450980389999999" green="0.8862745098" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="TiC-8p-B1c"/>
@@ -485,7 +574,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAL-DH-VJo" customClass="basicShadowedBtn" customModule="Raghoua_Client" customModuleProvider="target">
-                                <rect key="frame" x="336" y="672" width="54" height="54"/>
+                                <rect key="frame" x="336" y="706" width="54" height="54"/>
                                 <color key="backgroundColor" red="0.14117647059999999" green="0.2274509804" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="OSy-0h-aXE"/>
@@ -502,7 +591,7 @@
                         <viewLayoutGuide key="safeArea" id="d3s-kB-BQj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="d3s-kB-BQj" firstAttribute="bottom" secondItem="dAL-DH-VJo" secondAttribute="bottom" constant="136" id="3mZ-Ty-gOw"/>
+                            <constraint firstAttribute="bottom" secondItem="dAL-DH-VJo" secondAttribute="bottom" constant="136" id="3mZ-Ty-gOw"/>
                             <constraint firstItem="LB4-sT-sdn" firstAttribute="leading" secondItem="d3s-kB-BQj" secondAttribute="leading" id="4Sz-gT-wmJ"/>
                             <constraint firstItem="6h3-R5-UxL" firstAttribute="top" secondItem="x6v-Ye-UTF" secondAttribute="top" id="Ix4-oO-TRH"/>
                             <constraint firstItem="d3s-kB-BQj" firstAttribute="trailing" secondItem="dAL-DH-VJo" secondAttribute="trailing" constant="24" id="UgK-ip-A7A"/>
@@ -955,8 +1044,8 @@
                                 <color key="textColor" red="0.62745098040000002" green="0.63921568630000003" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+966512345678" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65U-r8-Vux" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
-                                <rect key="frame" x="274.5" y="349" width="123.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                    " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65U-r8-Vux" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                <rect key="frame" x="314" y="349" width="84" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ctW-6R-wjw"/>
                                 </constraints>
@@ -964,8 +1053,8 @@
                                 <color key="textColor" red="0.12549019610000001" green="0.13725490200000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="info@atiafco.com" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4F-Rq-UJJ" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
-                                <rect key="frame" x="272" y="410" width="126" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                 " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4F-Rq-UJJ" customClass="basicLabel" customModule="Raghoua_Client" customModuleProvider="target">
+                                <rect key="frame" x="326.5" y="410" width="71.5" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="UbI-Vh-6w1"/>
                                 </constraints>
@@ -996,13 +1085,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sze-kV-UHl">
-                                <rect key="frame" x="324" y="285" width="74" height="27"/>
+                                <rect key="frame" x="335" y="285" width="63" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="Zps-WN-lfY"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="zQL-j5-Spz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Ahmed Ali">
+                                <state key="normal" title="               ">
                                     <color key="titleColor" red="0.12549019610000001" green="0.13725490200000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -1054,6 +1143,7 @@
                     <connections>
                         <outlet property="backBtn" destination="owB-Nh-mu8" id="pt6-xb-BAK"/>
                         <outlet property="userEmail" destination="G4F-Rq-UJJ" id="yNh-Oo-LxB"/>
+                        <outlet property="userImage" destination="Z1W-gt-PQZ" id="YzT-LK-ntI"/>
                         <outlet property="userMobileNumber" destination="65U-r8-Vux" id="yoP-Wt-aya"/>
                         <outlet property="userName" destination="Sze-kV-UHl" id="9nm-8z-Oyy"/>
                     </connections>
@@ -1079,7 +1169,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Ahmed Ali" placeholder="الاسم" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yhl-jS-PT6" customClass="basicTextField" customModule="Raghoua_Client" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="الاسم" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yhl-jS-PT6" customClass="basicTextField" customModule="Raghoua_Client" customModuleProvider="target">
                                 <rect key="frame" x="24" y="163" width="366" height="48"/>
                                 <color key="backgroundColor" red="0.87450980389999999" green="0.8862745098" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1089,7 +1179,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m4d-FV-OoC" customClass="basicShadowedBtn" customModule="Raghoua_Client" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m4d-FV-OoC" customClass="basicShadowedBtn" customModule="Raghoua_Client" customModuleProvider="target">
                                 <rect key="frame" x="25" y="265" width="364" height="48"/>
                                 <color key="backgroundColor" red="0.14117647059999999" green="0.2274509804" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1164,7 +1254,7 @@
                                 </constraints>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="كلمة المرور جديدة" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="db1-HS-RUQ" customClass="passwordTextField" customModule="Raghoua_Client" customModuleProvider="target">
                                 <rect key="frame" x="24" y="251" width="366" height="48"/>
@@ -1174,9 +1264,9 @@
                                 </constraints>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WnC-ml-IJd" customClass="basicShadowedBtn" customModule="Raghoua_Client" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WnC-ml-IJd" customClass="basicShadowedBtn" customModule="Raghoua_Client" customModuleProvider="target">
                                 <rect key="frame" x="25" y="362" width="364" height="48"/>
                                 <color key="backgroundColor" red="0.14117647059999999" green="0.2274509804" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1527,7 +1617,6 @@
         <image name="add-24" width="24" height="24"/>
         <image name="arrowBackWen24Px" width="24" height="24"/>
         <image name="arrow_back_en" width="24" height="24"/>
-        <image name="gift" width="24" height="24"/>
         <image name="giftBox" width="512" height="512"/>
         <image name="icAtiaf" width="24" height="24"/>
         <image name="ic_satisfied" width="120" height="120"/>

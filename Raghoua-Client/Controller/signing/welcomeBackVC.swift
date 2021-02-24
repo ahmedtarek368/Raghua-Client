@@ -55,6 +55,12 @@ class welcomeBackVC: UIViewController{
                 laundriesVC.initUserData(user: user)
                 laundriesVC.addressIndex = 0
             }
+            let favoritesNav = homeTabBar.viewControllers![2] as! UINavigationController
+            let favoriteLaundryVC = favoritesNav.viewControllers.first as! favoriteLaundryVC
+            if let user = self.user{
+                favoriteLaundryVC.initUserData(user: user)
+                favoriteLaundryVC.addressIndex = 0
+            }
         }
     }
     

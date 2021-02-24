@@ -278,6 +278,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="fwL-z4-brO"/>
                     <connections>
+                        <outlet property="address" destination="Tza-4T-gyx" id="rm0-iM-eRN"/>
                         <outlet property="laundriesCount" destination="CBp-Rl-JUK" id="iTz-Iv-53G"/>
                         <outlet property="laundriesTVC" destination="tef-8G-bdt" id="Xv9-eV-r8K"/>
                         <outlet property="reorderBtn" destination="fuV-fg-V1B" id="6KI-oO-R7E"/>
@@ -457,6 +458,9 @@
                                     <constraint firstAttribute="height" constant="24" id="ex0-te-0cD"/>
                                 </constraints>
                                 <state key="normal" image="favoriteBorder24Px"/>
+                                <connections>
+                                    <action selector="favoriteBtnPressed:" destination="usX-8U-Dd6" eventType="touchUpInside" id="kYE-Hg-z9J"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTo-Os-T5H">
                                 <rect key="frame" x="16.5" y="52" width="24" height="24"/>
@@ -677,6 +681,7 @@
                         <outlet property="backBtn" destination="GTo-Os-T5H" id="ari-hD-HT9"/>
                         <outlet property="clothesTV" destination="o85-Qm-n4l" id="k83-yM-Emr"/>
                         <outlet property="deliveryFees" destination="asm-gE-xIS" id="0pT-oW-BxS"/>
+                        <outlet property="favoriteBtn" destination="y68-U2-jxn" id="49k-oe-32s"/>
                         <outlet property="laundryImage" destination="ppK-FU-bd1" id="Sht-iD-3JS"/>
                         <outlet property="laundryName" destination="C8H-vA-IXb" id="wJC-P7-v9w"/>
                         <outlet property="laundryRate" destination="2fO-5C-7Xx" id="QCr-l9-Q6S"/>

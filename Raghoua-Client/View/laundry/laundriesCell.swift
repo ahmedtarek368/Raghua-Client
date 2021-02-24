@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class laundriesCell: UITableViewCell {
 
@@ -33,9 +34,8 @@ class laundriesCell: UITableViewCell {
         self.laundryRate.text = "\(laundryRate)"
         self.minimumPricePerOrder.text = minimumPrice
         self.orderFees.text = deliveryPrice
-        do{
-            self.laundryImage.image = try UIImage(data: Data(contentsOf: NSURL(string: "\(laundryImageUrl)")! as URL))
-        }catch{}
+        let imgUrl = NSURL(string: "\(laundryImageUrl)")! as URL
+        laundryImage.sd_setImage(with: imgUrl, completed: nil)
     }
 
     

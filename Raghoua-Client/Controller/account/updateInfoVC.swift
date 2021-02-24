@@ -13,25 +13,44 @@ class updateInfoVC: UIViewController {
     @IBOutlet weak var userName: UIButton!
     @IBOutlet weak var userMobileNumber: basicLabel!
     @IBOutlet weak var userEmail: basicLabel!
+    @IBOutlet weak var userImage: UIImageView!
+    
+    var delegate:updateUserInfo?
+    var user: User?
     
     override func viewWillAppear(_ animated: Bool) {
+        userImage.layer.cornerRadius = userImage.frame.size.height/2
         if "lang".localized == "ar"{
             backBtn.setImage(UIImage(named: "arrowBackW24Px"), for: .normal)
         }
+        setupView()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+    
+    func setupView(){
+        userName.setTitle(self.user!.name, for: .normal)
+        userMobileNumber.text = self.user!.phone
+        userEmail.text = self.user!.email
+        let imgUrl = NSURL(string: "\(self.user!.img!)")! as URL
+        userImage.sd_setImage(with: imgUrl, completed: nil)
+    }
+    
+    func initUserData(user: User){
+        self.user = user
     }
     
     func pushToEditUserName(){
         if #available(iOS 13.0, *) {
             let updateUserNameView : updateUserNameVC = self.storyboard?.instantiateViewController(identifier: "UUNVC") as! updateUserNameVC
+            updateUserNameView.delegate = self
             self.navigationController?.pushViewController(updateUserNameView, animated: true)
         } else {
             let updateUserNameView : updateUserNameVC = self.storyboard?.instantiateViewController(withIdentifier: "UUNVC") as! updateUserNameVC
+            updateUserNameView.delegate = self
             self.navigationController?.pushViewController(updateUserNameView, animated: true)
         }
     }
@@ -61,4 +80,13 @@ class updateInfoVC: UIViewController {
         pushToUpdatePassword()
     }
     
+}
+
+extension updateInfoVC: updateUserInfo{
+    
+    func updateUserInfo(user: User) {
+        initUserData(user: user)
+        setupView()
+        delegate!.updateUserInfo(user: user)
+    }
 }

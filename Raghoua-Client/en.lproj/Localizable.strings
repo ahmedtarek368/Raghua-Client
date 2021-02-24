@@ -59,3 +59,7 @@
 "Continue" = "Continue";
 "Cancel" = "Cancel";
 "meter" = "meter";
+"nameWarning" = "please type name";
+"name changed successfuly" = "name changed successfuly";
+"password changed successfuly" = "password changed successfuly";
+"failed to change password" = "failed to change password";

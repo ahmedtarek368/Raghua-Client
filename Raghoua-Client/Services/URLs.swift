@@ -27,6 +27,10 @@ class URLs{
     static let verifyVoucher = baseUrl + "checkcopouns"
     static let saveOrder = baseUrl + "saveOrder"
     static let updateCart = baseUrl + "updatecart"
+    static let favorite = baseUrl + "addremovefav"
+    static let favoriteLaundries = baseUrl + "myFav"
+    static let myProfile = baseUrl + "myprofile"
+    static let updateInfo = baseUrl + "updateUserInfo"
     
 }
 

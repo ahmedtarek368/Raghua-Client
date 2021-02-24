@@ -18,6 +18,9 @@ PODS:
     - GoogleMaps/Base
   - lottie-ios (3.1.9)
   - MOLH (1.4.3)
+  - SDWebImage (5.10.4):
+    - SDWebImage/Core (= 5.10.4)
+  - SDWebImage/Core (5.10.4)
   - SwiftyStarRatingView (1.0.4)
 
 DEPENDENCIES:
@@ -27,6 +30,7 @@ DEPENDENCIES:
   - GoogleMaps
   - lottie-ios
   - MOLH
+  - SDWebImage
   - SwiftyStarRatingView
 
 SPEC REPOS:
@@ -38,6 +42,7 @@ SPEC REPOS:
     - GoogleMaps
     - lottie-ios
     - MOLH
+    - SDWebImage
     - SwiftyStarRatingView
 
 SPEC CHECKSUMS:
@@ -48,8 +53,9 @@ SPEC CHECKSUMS:
   GoogleMaps: 008e2c80e38605b56b560e8deb73d4194ff30bef
   lottie-ios: 3a3758ef5a008e762faec9c9d50a39842f26d124
   MOLH: e45827d200aeb1310641090fd8cd03ad2b42ae72
+  SDWebImage: c666b97e1fa9c64b4909816a903322018f0a9c84
   SwiftyStarRatingView: a2b0057700e0adeb8e7442c55d99cb53b531d2f4
 
-PODFILE CHECKSUM: 18e79a36a58c0e36c3d04198889f24214d945618
+PODFILE CHECKSUM: 50e9285f73960151eea449d9989e9d45b3754008
 
 COCOAPODS: 1.9.3

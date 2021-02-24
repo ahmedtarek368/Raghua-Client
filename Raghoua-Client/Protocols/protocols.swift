@@ -11,6 +11,10 @@ protocol dismissPopup {
     func didDismissPopup()
 }
 
+protocol sortLaundries {
+    func sortLaundries(sortBy: Int)
+}
+
 protocol orderQuantity {
     func increaseQuantity(userCart: UserCart)
     func decreaseQuantity(userCart: UserCart)
@@ -66,4 +70,12 @@ protocol confirmDeliverRecieveDateTime{
 
 protocol updateCart {
     func updateCart()
+}
+
+protocol updateFavorites{
+    func updateFavorites()
+}
+
+protocol updateUserInfo {
+    func updateUserInfo(user: User)
 }

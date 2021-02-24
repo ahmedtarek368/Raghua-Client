@@ -12,9 +12,7 @@ import FBSDKCoreKit
 //AIzaSyDDN8kxOEXKznFoCeiXXFCMiinpCvj8Gsc
 
 
-//@UIApplicationMain
-@available(iOS 13.0, *)
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?

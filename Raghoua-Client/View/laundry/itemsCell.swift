@@ -29,9 +29,8 @@ class itemsCell: UITableViewCell {
     func updateCell(itemImageUrl: String, itemName: String,services: [Catgory]){
         self.services = services
         self.itemName.text = itemName
-        do{
-            self.itemImage.image = try UIImage(data: Data(contentsOf: NSURL(string: "\(itemImageUrl)")! as URL))
-        }catch{}
+        let imgUrl = NSURL(string: itemImageUrl)! as URL
+        itemImage.sd_setImage(with: imgUrl, completed: nil)
 
     }
 

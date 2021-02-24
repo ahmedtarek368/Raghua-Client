@@ -30,9 +30,8 @@ class userReviewCell: UITableViewCell {
     func updateCell(userImageUrl: String, userName: String, userComment: String){
         self.userName.text = userName
         self.userReview.text = userComment
-        do{
-            self.userImage.image = try UIImage(data: Data(contentsOf: NSURL(string: "\(userImageUrl)")! as URL))
-        }catch{}
+        let imgUrl = NSURL(string: "\(userImageUrl)")! as URL
+        userImage.sd_setImage(with: imgUrl, completed: nil)
     }
 
 }

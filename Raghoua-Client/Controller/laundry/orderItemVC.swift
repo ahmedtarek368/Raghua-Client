@@ -61,9 +61,8 @@ class orderItemVC: UIViewController {
     
     func setupItemData(){
         self.itemName.text = item!.name
-        do{
-            self.itemImage.image = try UIImage(data: Data(contentsOf: NSURL(string: "\(item!.img)")! as URL))
-        }catch{}
+        let imgUrl = NSURL(string: "\(item!.img)")! as URL
+        itemImage.sd_setImage(with: imgUrl, completed: nil)
     }
     
     @IBAction func exitBtnPressed(_ sender: Any) {

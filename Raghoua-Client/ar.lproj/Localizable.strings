@@ -59,3 +59,7 @@
 "Continue" = "متابعه";
 "Cancel" = "الغاء";
 "meter" = "متر";
+"nameWarning" = "برجاء كتابة اسم";
+"name changed successfuly" = "تم تغيير الاسم بنجاح";
+"password changed successfuly" = "تم تغيير كلمة السر بنجاح";
+"failed to change password" = "فشل تغيير كلمة السر";

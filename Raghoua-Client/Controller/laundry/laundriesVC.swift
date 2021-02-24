@@ -13,6 +13,7 @@ class laundriesVC: UIViewController {
     @IBOutlet weak var laundriesTVC: UITableView!
     @IBOutlet weak var reorderBtn: basicShadowedBtn!
     @IBOutlet weak var laundriesCount: UILabel!
+    @IBOutlet weak var address: UILabel!
     
     var user : User?
     var addressIndex : Int?
@@ -23,6 +24,24 @@ class laundriesVC: UIViewController {
     var latitude : String?
     
     override func viewWillAppear(_ animated: Bool) {
+        address.text = user?.userAddress![addressIndex!].address
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupView()
+        laundriesTVC.delegate = self
+        laundriesTVC.dataSource = self
+        reorderBtn.isCircleButton()
+        setUpAnimation()
+        prepareRequestLaundries()
+        laundriesTVC.tableFooterView = UIView()
+        if let user = self.user{
+            print(user.userAddress!)
+        }
+    }
+    
+    func setupView(){
         self.tabBarController?.tabBar.layer.shadowOffset = CGSize(width: 0, height: 7)
         self.tabBarController?.tabBar.layer.shadowRadius = 9
         self.tabBarController?.tabBar.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -33,20 +52,6 @@ class laundriesVC: UIViewController {
         self.tabBarController?.tabBar.shadowImage = UIImage()
         self.tabBarController?.tabBar.isTranslucent = true
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        laundriesTVC.delegate = self
-        laundriesTVC.dataSource = self
-        reorderBtn.isCircleButton()
-        setUpAnimation()
-        prepareRequestLaundries()
-        laundriesTVC.tableFooterView = UIView()
-        if let user = self.user{
-            print(user.userAddress!)
-        }
     }
     
     //will pass address index
@@ -104,6 +109,7 @@ class laundriesVC: UIViewController {
             successfulAlert.addAction(UIAlertAction(title: "Ok", style: .cancel , handler: nil))
             self.present(successfulAlert, animated: true, completion: nil)
     }
+    
     func setupSignupAlert(title: String, message: String){
             let successfulAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             successfulAlert.addAction(UIAlertAction(title: "Signup", style: .default , handler: transitionToHome(alert:)))
@@ -124,9 +130,17 @@ class laundriesVC: UIViewController {
     @IBAction func reorderBtnPressed(_ sender: Any) {
         if #available(iOS 13.0, *) {
             let reorderingLaundriesPopup : reorderingLaundriesPopupVC = self.storyboard?.instantiateViewController(identifier: "RLPVC") as! reorderingLaundriesPopupVC
+            if self.laundriesData != nil {
+                reorderingLaundriesPopup.laundriesData = self.laundriesData
+                reorderingLaundriesPopup.delegate = self
+            }
             self.present(reorderingLaundriesPopup, animated: true)
         } else {
             let reorderingLaundriesPopup : reorderingLaundriesPopupVC = self.storyboard?.instantiateViewController(withIdentifier: "RLPVC") as! reorderingLaundriesPopupVC
+            if self.laundriesData != nil {
+                reorderingLaundriesPopup.laundriesData = self.laundriesData
+                reorderingLaundriesPopup.delegate = self
+            }
             self.present(reorderingLaundriesPopup, animated: true)
         }
     }
@@ -178,6 +192,7 @@ extension laundriesVC: UITableViewDelegate, UITableViewDataSource{
                         laundryDetailsVC.laundryDetails = response.data
                         laundryDetailsVC.userCartID = self.user!.cartID
                         laundryDetailsVC.userAddressId = self.user!.userAddress[self.addressIndex!].id
+                        laundryDetailsVC.laundryID = laundryData.id
                         self.animationView?.isHidden = true
                         self.animationView?.stop()
                         self.navigationController?.pushViewController(laundryDetailsVC, animated: true)
@@ -191,6 +206,7 @@ extension laundriesVC: UITableViewDelegate, UITableViewDataSource{
                         laundryDetailsVC.laundryDetails = response.data
                         laundryDetailsVC.userCartID = self.user!.cartID
                         laundryDetailsVC.userAddressId = self.user!.userAddress[self.addressIndex!].id
+                        laundryDetailsVC.laundryID = laundryData.id
                         self.animationView?.isHidden = true
                         self.animationView?.stop()
                         self.navigationController?.pushViewController(laundryDetailsVC, animated: true)
@@ -205,4 +221,17 @@ extension laundriesVC: UITableViewDelegate, UITableViewDataSource{
         }
     }
     
+}
+
+extension laundriesVC: sortLaundries{
+    func sortLaundries(sortBy: Int) {
+        if sortBy == 0{//Nearest
+            laundriesData = laundriesData!.sorted(by: { $0.distance < $1.distance })
+        }else if sortBy == 1{//Top Rated
+            laundriesData = laundriesData!.sorted(by: { $0.totalRate > $1.totalRate })
+        }else{// Delivery Time
+            laundriesData = laundriesData!.sorted(by: { Int($0.deliveryTime)! < Int($1.deliveryTime)! })
+        }
+        laundriesTVC.reloadData()
+    }
 }

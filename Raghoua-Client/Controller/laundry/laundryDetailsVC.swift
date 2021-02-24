@@ -26,6 +26,7 @@ class laundryDetailsVC: UIViewController {
     @IBOutlet weak var ratesCount: UILabel!
     @IBOutlet weak var laundryTypesCV: UICollectionView!
     @IBOutlet weak var clothesTV: UITableView!
+    @IBOutlet weak var favoriteBtn: UIButton!
     
     var animationView: AnimationView?
     let laundryTypes : [String] = ["basic".localized,"shirts".localized,"official suits".localized,"pants".localized,"jackets".localized]
@@ -37,12 +38,13 @@ class laundryDetailsVC: UIViewController {
         }
         laundryImage.layer.cornerRadius = laundryImage.frame.size.height/2
         self.tabBarController?.tabBar.isHidden = false
-        setupLaundryDetails()
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpAnimation()
+        setupLaundryDetails()
         laundryTypesCV.delegate = self
         laundryTypesCV.dataSource = self
         clothesTV.delegate = self
@@ -57,15 +59,15 @@ class laundryDetailsVC: UIViewController {
         animationView?.frame.size.width = view.frame.size.width/3.5
         animationView?.center = CGPoint(x: view.frame.size.width/2, y: view.frame.size.height/2)
     }
-//    func requestLaundryData(){
-//        print(self.laundryID!)
-//        let parameter = ["laundary_id":"\(self.laundryID!)"]
-//        NetworkService.shared.requestLaundryDetails(param: parameter) { (response) in
-//            self.setupLaundryDetails(response: response)
-//        } onError: { (error) in
-//            debugPrint(error)
-//        }
-//    }
+    
+    func updateLaundryData(){
+        let parameter = ["laundary_id":"\(self.laundryID!)"]
+        NetworkService.shared.requestLaundryDetails(param: parameter) { (response) in
+            self.laundryDetails = response.data
+        } onError: { (error) in
+            debugPrint(error)
+        }
+    }
     
     func setupLaundryDetails(){
         self.laundryRate.value = CGFloat(self.laundryDetails!.totalRate)
@@ -73,11 +75,35 @@ class laundryDetailsVC: UIViewController {
         self.minimumPrice.text = self.laundryDetails?.minimumPrice
         self.deliveryFees.text = "\(self.laundryDetails!.delivery)"
         self.ratesCount.text =  "\(self.laundryDetails!.commnetCount)"
-        do{
-            self.laundryImage.image = try UIImage(data: Data(contentsOf: NSURL(string: "\(self.laundryDetails!.img)")! as URL))
-        }catch{}
+        let imgUrl = NSURL(string: self.laundryDetails!.img)! as URL
+        laundryImage.sd_setImage(with: imgUrl, completed: nil)
+        if laundryDetails!.fav == 0{
+            favoriteBtn.setImage(UIImage(named: "favoriteBorder24Px"), for: .normal)
+        }else{
+            favoriteBtn.setImage(UIImage(named: "favorite"), for: .normal)
+        }
     }
-        
+      
+    @IBAction func favoriteBtnPressed(_ sender: Any) {
+        if laundryDetails!.fav == 0 {
+            let parameter = ["laundary_id":"\(self.laundryID!)", "status":"1"]
+            NetworkService.shared.requestSetUnsetFavorite(param: parameter) { (response) in
+                self.favoriteBtn.setImage(UIImage(named: "favorite"), for: .normal)
+                self.updateLaundryData()
+            } onError: { (error) in
+                self.setupAlert(title: "fail".localized, message: error)
+            }
+        }else{
+            let parameter = ["laundary_id":"\(self.laundryID!)", "status":"0"]
+            NetworkService.shared.requestSetUnsetFavorite(param: parameter) { (response) in
+                self.favoriteBtn.setImage(UIImage(named: "favoriteBorder24Px"), for: .normal)
+                self.updateLaundryData()
+            } onError: { (error) in
+                self.setupAlert(title: "fail".localized, message: error)
+            }
+        }
+    }
+    
     @IBAction func backBtnPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

@@ -20,10 +20,10 @@ class myAddresseCell: UITableViewCell {
         }
     }
     
-    func updateCell(address: Address){
+    func updateCell(address: addressesData){
         self.addressType.text = "\(address.addressType)"
         self.address.text = "\(address.address)"
-        self.detailedAddress.text = "\(address.street) \(address.nearestPlace)"
+        self.detailedAddress.text = "\(address.street) \(address.nearstPlace)"
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
